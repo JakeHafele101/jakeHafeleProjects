@@ -1,0 +1,109 @@
+html {
+  height: 100%
+}
+
+body {
+  height: 100%
+}
+
+div{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.hero-image{
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("IowaState.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* Style the top navigation bar */
+nav {
+  overflow: hidden; /* Hide overflow */
+  background-color: #333; /* Dark background color */
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  margin: 0;
+}
+
+nav a{
+  float: left; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; 
+  text-decoration: none; /* Remove underline */
+}
+
+nav a:hover{
+  background-color: #ddd; /* Grey background color */
+  color: black; /* Black text color */
+}
+
+.title {
+  text-align: center;
+  background-color: #fdbe55;
+  color: #740b11;
+  font-size: 45px;
+}
+
+.textChunk {
+  background-color: #fdbe55;
+  color: #740b11;
+  padding-bottom: 10px;
+}
+
+.contentHeader {
+  font-size: 40px;
+}
+
+.contentMain {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 30px;
+}
+
+.githubButton {
+  font-size: 75px;
+  color: #333;
+  text-align: center;
+}
+
+.iframe-container{
+  position: relative;
+  
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  }
+  .iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+}
