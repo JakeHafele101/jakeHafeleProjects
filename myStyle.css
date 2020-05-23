@@ -200,6 +200,19 @@ nav a:hover{
   background-color: #717171;
 }
 
+/* Fading animation */
+.fade {
+
+}
+
+@-webkit-keyframes fade {
+
+}
+
+@keyframes fade {
+
+}
+
 .iframe-container{
   overflow:hidden;
   padding-bottom:56.25%;
