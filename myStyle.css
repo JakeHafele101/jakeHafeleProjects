@@ -4,11 +4,7 @@ html {
 
 body {
   height: 100%
-}
-
-div{
-  margin-left: 20px;
-  margin-right: 20px;
+  
 }
 
 .hero-image{
@@ -106,18 +102,20 @@ nav a:hover{
 }
 
 .textChunk {
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #fdbe55;
   color: #740b11;
 }
 
 .contentHeader {
   font-size: 20px;
+  margin: 20px;
 }
 
 .contentMain {
-  padding-top: 15px;
-  padding-bottom: 15px;
   font-size: 16px;
+  margin: 20px;
 }
 
 .githubButton {
@@ -130,15 +128,23 @@ nav a:hover{
   opacity: 0.7
 }
 
-.resumeLink {
+* {box-sizing:border-box}
 
+img.resize {
+  max-width:50%;
+  max-height:50%;
 }
 
-* {box-sizing:border-box}
+img {
+  width: 100%;
+  margin: 1px auto;
+  display: block;
+}
 
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
+  width: 50%;
   position: relative;
   margin: auto;
 }
@@ -167,7 +173,7 @@ nav a:hover{
 /* Position the "next button" to the right */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px; 
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -200,33 +206,19 @@ nav a:hover{
   background-color: #717171;
 }
 
-/* Fading animation */
-.fade {
-  
-}
-
-@-webkit-keyframes fade {
-
-}
-
-@keyframes fade {
-
-}
-
 .iframe-container{
-  overflow:hidden;
-  padding-bottom:56.25%;
-  position:relative;
-  height:0;
-  }
-
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  margin-top: 20px;
+  height: 0;
+}
 .iframe-container iframe{
-  left:0;
-  top:0;
-  height:100%;
-  width:100%;
-  position:absolute;
-  padding-top: 20px;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 50%;
 }
 
 footer {
