@@ -40,7 +40,7 @@
             </div>
             <div class="contentMain">
                 The goal of this project was to make the most faithful recreation of an old style tetris game. I 
-                specifically wanted to class inheritance to reinforce what I learned in my java coding class at school. 
+                specifically wanted to use class inheritance to reinforce what I learned in my java coding class at school. 
                 To do this, I planned on making a general class for the blocks and a specific one for each block. I wanted
                 the controls to be done through keyboard input by the player. I also wanted a start, pause, and game over
                 screen to make the game more accessible for the user. To be more faithful towards tetris, a score, level, 
@@ -65,7 +65,7 @@
 
                 To make a usable grid for the actual tetris blocks, I ended up making a Cell and Grid class. The cell class
                 would keep track of the variables of each block on the grid. The Grid class would then take an x and y 
-                parameter in its constructor to make a 2d array of Cells. This helped model my layout of cells, sine I could
+                parameter in its constructor to make a 2d array of Cells. This helped model my layout of cells, since I could
                 access this 2d array object inside of the grid class and use certain x and y indexes to manipulate the cells.
                 The cells were not constructed anywhere but inside of the grid class. After the grid class was cosntructed
                 inside of the main program in setup(), it would loop to be shown to the UI inside of draw(). To specify,
