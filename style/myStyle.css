@@ -139,7 +139,6 @@ nav a:hover{
 
 @media screen and (min-width: 600px){
   .tetrisGame{
-    visibility: hidden;
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
