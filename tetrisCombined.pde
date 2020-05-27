@@ -7,12 +7,12 @@ final int STATE_PLAYING = 1;
 final int STATE_PAUSE = 2;
 final int STATE_OVER = 3;
 
-Menu menu;
-Grid grid;
-Grid heldGrid;
-Grid nextGrid;
+Menu menu = new Menu();
+Grid grid = new Grid(12, 25, 200, 40, 20, 155, 155, 155, 90, 90, 90, false);
+Grid heldGrid = new Grid(4, 2, 450, 140, 20, 155, 155, 155, 90, 90, 90, true);
+Grid nextGrid = new Grid(4, 2, 450, 270, 20, 155, 155, 155, 90, 90, 90, true);
 Block currentBlock;
-Block nextBlock;
+Block afterBlock = new I(grid, 4, 3);
 Block heldBlock;
 
 int currentBlockValue;
@@ -27,10 +27,10 @@ boolean hasSwitched;
 void setup() {
   size(640, 640); //Screen Resolution
   background(90, 90, 90); //Sets Background Color
-  menu = new Menu();
-  grid = new Grid(12, 25, 200, 40, 20, 155, 155, 155, 90, 90, 90, false);
-  nextGrid = new Grid(4, 2, 450, 140, 20, 155, 155, 155, 90, 90, 90, true);
-  heldGrid = new Grid(4, 2, 450, 270, 20, 155, 155, 155, 90, 90, 90, true);
+  //menu = new Menu();
+  //grid = new Grid(12, 25, 200, 40, 20, 155, 155, 155, 90, 90, 90, false);
+  //nextGrid = new Grid(4, 2, 450, 140, 20, 155, 155, 155, 90, 90, 90, true);
+  //heldGrid = new Grid(4, 2, 450, 270, 20, 155, 155, 155, 90, 90, 90, true);
   currentBlockValue = 0;
   heldBlockValue = -1;
   nextBlock(currentBlockValue);
@@ -194,39 +194,39 @@ void nextBlock(int value) {
 }
 
 void nextBlockAfter() {
-  switch(int(random(7))){
+  switch((int)(random(7))){
     case 0:
-      nextBlock = new I(nextGrid, 0, 1);
+      afterBlock = new I(nextGrid, 0, 1);
       nextBlockValue = 0;
       break;
       
     case 1:
-      nextBlock = new J(nextGrid, 0, 1);
+      afterBlock = new J(nextGrid, 0, 1);
       nextBlockValue = 1;
       break;
       
     case 2:
-      nextBlock = new L(nextGrid, 0, 1);
+      afterBlock = new L(nextGrid, 0, 1);
       nextBlockValue = 2;
       break;
       
     case 3:
-      nextBlock = new O(nextGrid, 1, 1);
+      afterBlock = new O(nextGrid, 1, 1);
       nextBlockValue = 3;
       break;
       
     case 4:
-      nextBlock = new S(nextGrid, 0, 1);
+      afterBlock = new S(nextGrid, 0, 1);
       nextBlockValue = 4;
       break;
       
     case 5:
-      nextBlock = new T(nextGrid, 0, 1);
+      afterBlock = new T(nextGrid, 0, 1);
       nextBlockValue = 5;
       break;
       
     case 6:
-      nextBlock = new Z(nextGrid, 1, 1);
+      afterBlock = new Z(nextGrid, 1, 1);
       nextBlockValue = 6;
       break;
   }
@@ -495,7 +495,7 @@ void nextBlockHeld(int value) {
   boolean hitSolid() {
     for(int i = 4; i < map.length - 1; i++){
       for(int j = 0; j < map[0].length; j++){
-        if(map[i + 1][j].isSolid && map[i][j].isPlaying()){
+        if(map[i + 1][j].isSolid && map[i][j].isPlaying){
           return true;
         }
       }
@@ -588,7 +588,7 @@ class Cell {
   void show() {
     fill(redFill, greenFill, blueFill);
     stroke(redStroke, greenStroke, blueStroke);
-    square(x, y, heightAndWidth);
+    rect(x, y, heightAndWidth, heightAndWidth);
   }
   int redFill() {
     return redFill;
