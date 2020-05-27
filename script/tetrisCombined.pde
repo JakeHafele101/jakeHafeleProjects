@@ -9,8 +9,8 @@ final int STATE_OVER = 3;
 
 Menu menu = new Menu();
 Grid grid = new Grid(12, 25, 200, 40, 20, 155, 155, 155, 90, 90, 90, false);
-Grid heldGrid = new Grid(4, 2, 450, 140, 20, 155, 155, 155, 90, 90, 90, true);
-Grid nextGrid = new Grid(4, 2, 450, 270, 20, 155, 155, 155, 90, 90, 90, true);
+Grid heldGrid = new Grid(4, 2, 450, 270, 20, 155, 155, 155, 90, 90, 90, true); 
+Grid nextGrid = new Grid(4, 2, 450, 140, 20, 155, 155, 155, 90, 90, 90, true); 
 Block currentBlock;
 Block afterBlock = new I(grid, 4, 3);
 Block heldBlock;
