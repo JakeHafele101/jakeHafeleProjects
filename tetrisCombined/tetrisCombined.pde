@@ -78,7 +78,7 @@ void statePlaying(){
     gameState = STATE_OVER;
   }
   
-  if(fallFast && frameCount % (SPEED_DOWN / 10) == 0) {
+  if(fallFast && frameCount % ((int) SPEED_DOWN / 10) == 0) {
     currentBlock.fall();  
   }
   
@@ -1254,7 +1254,7 @@ class Menu {
     lines += change;
     linesIncrease += change;
     
-    if(linesIncrease / LINES_PER_LEVEL >= 1){
+    if((int)linesIncrease / LINES_PER_LEVEL >= 1){
         level++;
         setDropSpeed();
         linesIncrease -= LINES_PER_LEVEL;
