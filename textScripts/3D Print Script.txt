@@ -37,3 +37,16 @@ So, if layer shifting ever becomes an issue again I will keep an eye on the belt
 lever to push the piece farther over so the belt gets tighter. After this, I rescrew in the two bolts that hold the piece to the bar. Now that 
 I know how to fix this issue, it shouldn't be a problem in the future if I regularly check the belt.
 
+
+Fixing the Filament Spool
+
+After I used up all of the filament that came with the printer, which wasn't that much, I ordered more black filament
+that came in a large spool. Like before, I threaded the filament through the hole that held the plastic up, instead of
+letting it hang and feed straight into the extruder entry. This led to lots of tension being built up when the plastic
+couldn't bend around the corners as the extruder pulled more and more filament through. This led to two different prints
+of the same thing being stopped. So, after this, I changed the filament so it hangs off more loosely. This will make it 
+so there will be no tension on the filament and no worry about feeding in more plastic for my prints.
+
+
+
+
