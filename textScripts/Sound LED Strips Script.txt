@@ -1,0 +1,68 @@
+Goals
+
+The main goal of this project was to get more comfortable with using LED strips and an input sensor to change the strips.
+I ended up using a sound sensor for my input, since I could have the LED strips respond and light up to the sounds. I 
+also wanted to use my new 3D printer to design and print off the structure to support all of the electronics. I will
+solder and connect the wires with a breadboard and arduino uno. I also wanted to make the design of the box practical
+enough to make the project easier on me.
+
+
+Process
+
+Out of all the projects I have done this Summer, this one is probably the one that took the most planning and development
+from the beginning. Once I figured out some planning and design details, the project went along a lot smoother. For 
+example, since this was my first time using a CAD modeling software, that took longer than expected. I went through
+two different iterations of my 3D print through this project. I made the print much more condensed and smaller with the
+second version so it would print easier. I ended up importing CAD models of my arduino, breadboard, and other parts to 
+make sure the dimensions were accurate. I also had some trouble with using the sound sensor, since I could never get the
+analog input just right. The analog input would return a voltage between 0 and 1023 based on loud the surroundings were.
+Since this didnt work out well, I ended up using the digital pin to sense whether sound was being detected in an on or 
+off state. After putting the right resistor into the sound sensor to decrease the gain, this worked out well for me. The
+last part of prep for this project was testing and using the LED strips. The FastLED library made this go a lot easier 
+than I thought, and I am really happy with how the LEDs display. Once the individual parts were all ready, it was time
+to connect everything. 
+
+While my 3D print was still going on, I soldered the pin headers for the sound sensor on. Once the print was done, 
+I started to move parts onto the build. I used adhesive pads to place the arduino and sound sensor on it. The breadboard
+already had adhesive on it, so I just used that. I connected the ground, 5V, and digital pins from the sound sensor to 
+the arduino first. This was because there was less wires than the LED strips and it would be easier to get these plugged 
+in first. I then cut up the LED strips to have 10 LEDs each and soldered 3 8 inch jumper wires to the ends of them. These
+signals would give the power, ground, and digital to the arduino. I used craft wire to bundle up each trio of wires for 
+the strips to try and keep the back more organized. I would thread the wires through the opening on the 3D print and 
+test the LED strip before sticking it on the front. This was so I could resolder them easier if needed. All of them ended
+up working without having to be soldered again which was very nice. I also set a capacitor on the breadboard to try and 
+help reduce flickering from the LED strips. By this point, everything was hooked up correctly, and it was time to code 
+these parts together.
+
+Like I said before, I used the FastLED arduino library to help me use my LED Strips. For each pin used, I would define
+what pin number it was in at the top of my code. I would also define things like how many strips I used, and how many
+LEDs were on each strip. I also had to specific the brightness, color order, and type of LED strip to set it up correctly
+with FastLED. FastLED has a function to add LEDs by defining the type, pin, and color order. I also had to use a function
+named setBrightness with the brightness constant. After this I had to set a pinMode up for the digital pin so that the 
+input could be read during the loop of the code. This was all done in the setup() function for arduino, which runs once, 
+similar to the first part of processing. In the loop, I first initialized an integer called gate that would read the 
+input of my digital pin on the sound sensor. This would return a 1 or 0 depending on if sound was being picked up or not. 
+I then added an integer called hue that would constantly switch through the values of 0 and 254 to change the colors of
+the reacted LEDs. I also added an if check so I could modify how fast the change in hues was over time. I then added some
+if else statements to check when the gate value was 1 or 0. If sound was detected, the LED strips would increase the amount
+of changing colors by 2 for every strip. If sound wasn't detected, the LED strips would decrease the changing colors by 
+one. I added two functions at the bottom of my code to help me display the LEDs. setWhite() was made to make all of the 
+LED strips white, acting as a background. Then, I made the other function called setRainbowWithWhite(). This would call
+setWhite() from within it and then write over that by defining a set amount of LEDs to make the rainbow colors. I had an
+array called rainbowNum to keep track of how many LEDs in each strip should be one of the changing colors at any given time.
+At the bottom of my main loop, I added the line FastLED.show(), which would display every LED that I set up at the start 
+of my code. This wrapped most of my code for the sound responsive LED strips, but I plan on making more patterns for this 
+project in the future, since it allows for a lot to be done with the LED strips. 
+
+
+Reflection
+
+This project helped me get more used to a lot of different things. For one, this helped me get my feet wet with CAD modeling
+and 3D printing. This will be a huge help for projects going forward and I can tell I have already learned a lot through
+working with it in the past few weeks. I also enjoyed being able to work with an input/output system through using the
+sound sensor to affect the LED Strips. This has helped me learn of good ways to test the different parts of my project 
+before putting it all together, which is something new to me. The LED strips have got me hooked on using them, so I am
+sure that I will find ways to stick them in other projects when I have a chance. it is easier to use strips that are
+connected instead of being split up, since you need less wires and soldering. I plan on adding more patterns to this project
+since I have a 9 X 10 set of LEDs at my disposal now. I am planning on working on designing some type of car for my next
+project so I hope to have that stuff up on here soon too. Thanks for reading!
