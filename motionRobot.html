@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Jake's Summer Projects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="./script/processing.js"></script>
+
+        
+    </head>
+
+    <body style="background-color: #e41937;">
+
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Jake Hafele Summer Projects</h1>
+            </div>
+        </div>
+
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tetris.html">Tetris</a></li>
+                    <li><a href="ledCube.html">LED Cube</a></li>
+                    <li><a href="soundLedStrips.html">Sound LED Strips</a></li>
+                    <li><a href="motionRobot.html">Motion Controlled Arm</a></li>
+                    <li><a href="3dPrint.html">3D Printing</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="title">
+            <h2>Making a Motion Controlled Robot Arm<h2>
+        </div>
+
+        <div class="textChunk">
+            <div class="contentHeader">
+                Parts
+            </div>
+            <ol>
+                <li>Arduino nano</li>
+                <li>5 MG90S micro servos</li>
+                <li>MPU 6050 motion sensor</li>
+                <li>2.2 inch flex sensor</li>
+                <li>1 220k ohm resistor</li>
+                <li>4 AA battery pack</li>
+                <li>9V battery pack</li>
+                <li>Heat shrink tubing</li>
+                <li>2 breadboards</li>
+                <li>8 and 4 inch jumper cables</li>
+                <li>M2 and M4 screws</li>
+                <li>3d printer and PLA filament</li>
+                <li>Soldering iron and 60/40 rohsin</li>
+
+            </ol> <br>
+            <div class="contentHeader">
+                Goals
+            </div>
+            <div class="contentMain">
+                The main goal of this project was to create a robot arm that would respond to my movements when wearing a glove. The
+                input from the glove would be gathered from two different sensors. These sensors would be a flex sensor and a motion 
+                sensor, or the MPU6050. The robot arm would be controlled by micro servos at four different joints. I will end up having
+                to solder wires together so the glove has enough room to move around from the arduino. I will need two seperate power 
+                supplies so the servos and arduino do not damage each other. The ground wires will still need to be connected through the
+                two power supplies though.
+            </div>
+            <div class="contentHeader">
+                Process
+            </div>
+            <div class="contentMain">
+                One of the first goals of this project was to design the different parts of the robot arm. I did this in CAD software
+                and then printed it out on my 3D printer. This section probably took the most time out of the project overall. This is
+                because I had to test and design ways to mount the servos effictively to the arm for joints. I started with designing 
+                the base for the first servo, which was a large cylinder. The piece that attached to the first servo was a thin disk that
+                screwed into the servo. This would rotate 90 degrees to the left and right to simulate the arm turning left and right. 
+                The next 3 servos acted as arm joints near the top of the arm. These would handle the arm for moving up and down. These 
+                joints were mounted sideways and were very similar. The final servo was attached to a gear and clamp. Another gear was 
+                made to mirror the servo gear so that when the servo would move back or forth, the opposite gear would follow suit. I 
+                was really happy with how this turned out and it makes me want to try more gear prints in the future. By this point I had
+                to wait for these seperate parts to print, where I know started testing the servos and sensors. <br><br>
+
+                For this project, I made a few test programs before putting together the final code. I made one program which tested 
+                just the flex sensor, which only used one analog pin. The code for this was very simple, and the wiring wasn't too 
+                complicated either. After this, I wrote a program to test the servo library and make sure my servos would work properly.
+                To do this, you have to define a digital pin for the servo and make a servo object. Then, you have to use the servo object
+                you made and call the function write() to it to tell it how far over to rotate. You can use any value between 0 and 180 
+                since it is defined in degrees. This program helped me immensely for making sure my servos worked and for when I had to 
+                actually put together the build. Finally, I wrote a program to get input from both the flex sensor and the motion sensor.
+                I used a MPU6050 library online to help me get the best data from the motion sensor. After I used this code, I put in the
+                flex sensor code from my other program in it. After this worked, I wrote my final program to place in the conditional 
+                checks for the flex and motion sensors. These would check the values of my input sensors to see if and where the servos
+                should move. By this point, I was ready to put everything together. <br><br>
+
+                I had some trouble with putting together the pieces with the holes for the servos to go in. Mounting the servos in to the
+                seperate parts was not a problem though. So, to fix this, I ended up putting on the plastic arms that come with the servos
+                on the servos and then hot glueing the parts together. I didn't fully like this solution, since it makes it harder to take
+                the arm apart for the future. Although, if I didn't do this, I would have had to fully reprint many of the parts and it 
+                would have probably not been worth the effort. The code actually ended up working really smoothly on the first runs. I 
+                started the final code by testing one servo joint at a time. I did this so I could make sure each one was working correctly
+                and so they wouldn't all break at once and damage the robot arm. At this point the project was pretty much done and now 
+                I had an extra robot hand to help me do whatever I needed. <br><br>
+            </div>
+            <div class="contentHeader">
+                Reflection
+            </div>
+            <div class="contentMain">
+                This project helped motivate me to get better at CAD design and it really helped spark my interest in robotics and 
+                prosthetics. I hope I can keep getting better with using servos and motors in the future so I can keep doing things like
+                this. At some point I hope to recreate a human arm but I would probably need stronger motors for that. I plan for my
+                next project to use similar micro servos but I hope I can design and plan them better so that I do not need to worry as
+                much about the stability of the project. I can't wait to do more stuff like this because the feedback on the input to 
+                output is very satisfying to create. Thanks for reading about my fun robot project and if you are still interested there
+                are videos down below where I talk about them more. Thank you for reading!
+            </div>
+            <a class="githubButton" href="https://github.com/JakeHafele101/Motion-Controlled-Robot-Arm" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+        
+        <br>
+        
+        <div class="iframe-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HVVmGFH9a2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="iframe-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/AtvTtYe_6_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div><footer></footer></div>
+
+        <script type="text/javascript" src="./script/myScript.js"></script>
+    </body>
+</html>
