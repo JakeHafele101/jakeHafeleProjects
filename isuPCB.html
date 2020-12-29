@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Jake's Summer Projects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="./script/processing.js"></script>
+
+        
+    </head>
+
+    <body style="background-color: #e41937;">
+
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Jake Hafele Summer Projects</h1>
+            </div>
+        </div>
+
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tetris.html">Tetris</a></li>
+                    <li><a href="ledCube.html">LED Cube</a></li>
+                    <li><a href="soundLedStrips.html">Sound LED Strips</a></li>
+                    <li><a href="motionRobot.html">Motion Controlled Arm</a></li>
+                    <li><a href="spiderRobot.html">Spider Robot</a></li>
+                    <li><a href="isuPCB.html">ISU PCB</a></li>
+                    <li><a href="3dPrint.html">3D Printing</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="title">
+            <h2>Iowa State PCB Logo<h2>
+        </div>
+
+        <div class="textChunk">
+            <div class="contentHeader">
+                Parts
+            </div>
+            <ol>
+                <li>1 barrel jack</li>
+                <li>1 DC Adapter</li>
+                <li>1 fuse</li>
+                <li>1 switch</li>
+                <li>38 yellow LEDs</li>
+                <li>30 red LEDs</li>
+                <li>10 NPN transistors</li>
+                <li>1 1k ohm resistor</li>
+                <li>1 150k ohm resistor</li>
+                <li>10 10k ohm resistors</li>
+                <li>68 110 ohm resistors</li>
+                <li>1 10 uf capacitor</li>
+                <li>1 0.01 uf capacitor</li>
+                <li>Soldering kit</li>
+                <li>3D printer</li>
+            </ol> <br>
+            <div class="contentHeader">
+                Goals
+            </div>
+            <div class="contentMain">
+                The main goal of this project was to create a PCB that would light up an Iowa State University logo with LEDs. I wanted
+                to also design a box and glass cover over the circuit board. Since I was using a PCB, I wanted to try and design a 
+                circuit without using an Arduino microcontroller and instead apply some of what I learned through my digital logic class
+                that I took in the Fall semester. To do this, I would use a oscillator to act as a clock and a counter to activate the 
+                transistors that would light up the yellow LEDs. I also would like to further learn how to use Alitum, which is the 
+                PCB design software I used to design my board. 
+            </div>
+            <div class="contentHeader">
+                Process
+            </div>
+            <div class="contentMain">
+                In general, this is a PCB that I personally designed and soldered that used a counter and a clock to make different LED’s flash to show off an Iowa State logo. The red LEDs are always on, and by using transistors and yellow LEDs I made it so they would turn on and off around the red ones. Through my digital logic class, I took in the fall, I learned how to use a counter and apply it to these transistors. <br><br>
+                The first thing I started doing was designing the schematic in Altium, a PCB design software, and prototyping the circuit on a breadboard with Arduino. This helped me feel much more confident using transistors. I used NPN transistors and when turned on, they would connect the ground line of the yellow LEDs so a circuit would be made with their resistor and 5v plane. Each number on a modulo ten counter was connected to one of these transistors, so when the clock went from low to high, the next transistor would turn on and the previous one would turn off. I tried to apply more low-level logic and do more stuff by hand this time around, unlike my previous projects where Arduino lent a hand in many spots. I found an oscillator online and an equation to help delay the timing of the pulse, so I wouldn’t accidentally give anyone a seizure with the lights. This led me to a circuit that used two capacitors and a resistor to delay the pulse. Overall, I am happy with how the timing of the clock turned out. The wiring of the counter was very straightforward, I just had to pay close attention to the datasheet for which of the other pins to keep high and low so the counter would act as normal. I also used a dc barrel jack and a fuse to get 5v of power. I then wired a switch to the barrel jack so you could turn the board on and off without unplugging it. This was super easy to do and way more accessible doing it on a PCB than a breadboard, which I said a lot during this project. With that done, the schematic was mostly finished, so I moved on to designing the actual PCB. <br><br>
+                I wanted the physical board to be compact, but easy to solder. Since I had so many parts to solder because of the LEDs, and since I was still mostly new to surface mount soldering, I didn’t want to shoot my own foot here. I constantly checked the distance between the closest parts to make sure it was possible, and it turned out alright. I used the alignment tools in Altium to make sure the LEDs were all straight and I really liked the final board because of this. Without this tool, this project wouldn’t have been possible. I put the transistors surrounding the I, while still trying to keep it condense. I then put the counter and clock to the right side of the board, near the barrel jack and switch, since these were the first parts that would go through my circuit. This worked very well with my final 3D design and I am happy I kept these parts together. I poured a 5v plane on the top layer and a ground plane on the bottom. If I ever needed to connect ground to anything, I would just use a small hole, or a via, to route it through to the bottom layer and connect it to ground. <br><br>
+                After the PCB was finished, I waited for the parts to ship and started on the 3D printing design. I used two separate parts and some plexiglass to act as a screen for the LEDs. The bottom box had screw holes to mount the PCB to the box so it was sturdy, and a part to hang it on a wall if wanted. I used a smaller piece with screw holes that would hold the plexiglass in place after I scored and fitted it for the parts. The prints themselves were straightforward after a few test prints to make sure the dimensions of the PCB were good. At this point, I feel like I am getting more confident with the CAD design and using my ender 3 printer. <br><br>
+                After the prints were done, all that was left was to solder the actual board. After putting on all the parts, I used a multimeter to test the counter and clock. Around the edges of the board, I placed test joints which would tell me when different parts of the counter were on or off. This was useful because it helped me learn if my circuit would have an issue with power, the counter, or parts that were not soldered on correctly the first time. <br><br>
+                Overall, I was happy with how bright the LEDs were and how it turned out. This project was partly inspired by those neon lights that people put in their basements or bars of sports teams. Using a PCB was very helpful to this project and I am going to keep applying it to my future projects, since it is much sturdier than breadboards. 
+            </div>
+            <div class="contentHeader">
+                Reflection
+            </div>
+            <div class="contentMain">
+                Overall, I learned a lot from this project. It helped to reinforce a lot of what I learned through clubs and classes 
+                at Iowa state from the Fall. So, this lead to this specific project to be a great way to wrap up what I learned in 
+                my Fall 2020 semester of school. I will definitely be using more PCB's that I design in future projects alongside 
+                Arduino and my usual 3D printing. With these three things combined there are so many possibilities for projects
+                that I am interested in. 
+
+            </div>
+            <a class="githubButton" href="https://github.com/JakeHafele101/LED_PCB_Boards" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+        
+        <br>
+
+        <div class="iframe-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IgXi9hINJ74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div><footer></footer></div>
+
+        <script type="text/javascript" src="./script/myScript.js"></script>
+    </body>
+</html>
