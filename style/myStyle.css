@@ -60,11 +60,33 @@ nav a:hover{
   color: black; /* Black text color */
 }
 
+textLink {
+  overflow: hidden; /* Hide overflow */
+  background-color: #fdbe55; /* Dark background color */
+}
+
+textLink a {
+  float: center; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  color: #740b11; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 10px 10px; 
+  text-decoration: none; /* Remove underline */
+  font-size: larger;
+  font-weight: bold;
+}
+
+textLink a:hover{
+  background-color:  #e41937; /* Grey background color */
+  color:  white; /* Black text color */
+}
+
 .title {
   text-align: center;
   background-color: #fdbe55;
   color: #740b11;
   font-size: 24px;
+  margin: 10px;
 }
 
 .fa {

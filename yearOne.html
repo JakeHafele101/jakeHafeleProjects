@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Jake's Summer Projects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="./script/processing.js"></script>
+
+        
+    </head>
+
+    <body style="background-color: #e41937;">
+
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Jake Hafele Summer Projects</h1>
+            </div>
+        </div>
+
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="yearOne.html">Year One</a></li>
+                    <li><a href="yearTwo.html">Year Two</a></li>
+                    <li><a href="3dPrint.html">3D Printing</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="title">
+            <h2>Year One Projects</h2>
+            <h4>Click on the title of a project to go to that specific page.</h4>
+            <h4>Click on the github logo to go to that projects repository on my Github.</h4>
+        </div>
+
+        <div class="textChunk">
+            <div class="contentHeader">
+                <textLink><a href="tetris.html">Tetris</a></textLink>
+            </div>
+            <div class="contentMain">
+                The goal of this project was to make the most faithful recreation of an old style tetris game. I 
+                specifically wanted to use class inheritance to reinforce what I learned in my java coding class at school. 
+                To do this, I planned on making a general class for the blocks and a specific one for each block. I wanted
+                the controls to be done through keyboard input by the player. I also wanted a start, pause, and game over
+                screen to make the game more accessible for the user. To be more faithful towards tetris, a score, level, 
+                and lines cleared tabs will be needed on the sides of the main grid. The game will also display a next block
+                feature and a held block feature. These will be used to give the player some help with the game. 
+                finally, I wished to make the resolution a moderate to small size so the game could be more accessible. 
+                This project will be done in Processing, which is a Java tool that helps to make drawing shapes and 
+                objects much easier. Currently, this is my go to application for making simple games.
+            </div>
+            <a class="githubButton" href="https://github.com/JakeHafele101/Tetris-Clone" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <br>
+
+        <div class="textChunk">
+            <div class="contentHeader">
+                <textLink><a href="ledCube.html">LED Cube</a></textLink>
+            </div>
+            <div class="contentMain">
+                The goal of the last two week for me has been to create a 4 x 4 x 4 LED cube. For this project, my main goal was to get 
+                more familiar with soldering electronic parts to be used with arduino boards.I had never soldered before so I figured 
+                that this would be the most challenging part of this build for me. I would have to solder together every LED, resistor, 
+                and wire all to connect back to the arduino board to send different signals for the pattern. To do this, I would need to
+                create a template to create one layer of the cube. After all the layers would be built, I would have to solder them 
+                together and wire it up to a board to make a more permanent and final structure. At every point, I would need to check
+                to make sure each LED could light up after soldering the layers together with 5 volt and ground pins. After that, wires
+                and resistors would be added to the board and the arduino uno would be placed on the permanent. After that, I could use 
+                some test code I found online to test my cube and then create my own fun patterns.
+            </div>
+            <a class="githubButton" href="https://github.com/JakeHafele101/LED-Cube" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <br>
+
+        <div class="textChunk">
+            <div class="contentHeader">
+                <textLink><a href="soundLedStrips.html">Sound LED Strips</a></textLink>
+            </div>
+            <div class="contentMain">
+                The main goal of this project was to get more comfortable with using LED strips and an input sensor to change the strips.
+                I ended up using a sound sensor for my input, since I could have the LED strips respond and light up to the sounds. I 
+                also wanted to use my new 3D printer to design and print off the structure to support all of the electronics. I will
+                solder and connect the wires with a breadboard and arduino uno. I also wanted to make the design of the box practical
+                enough to make the project easier on me.
+            </div>
+            <a class="githubButton" href="https://github.com/JakeHafele101/Sound-Responsive-LED-Strips" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <br>
+
+        <div class="textChunk">
+            <div class="contentHeader">
+                <textLink><a href="motionRobot.html">Motion Controlled Arm</a></textLink>
+            </div>
+            <div class="contentMain">
+                The main goal of this project was to create a robot arm that would respond to my movements when wearing a glove. The
+                input from the glove would be gathered from two different sensors. These sensors would be a flex sensor and a motion 
+                sensor, or the MPU6050. The robot arm would be controlled by micro servos at four different joints. I will end up having
+                to solder wires together so the glove has enough room to move around from the arduino. I will need two seperate power 
+                supplies so the servos and arduino do not damage each other. The ground wires will still need to be connected through the
+                two power supplies though.
+            </div>
+            <a class="githubButton" href="https://github.com/JakeHafele101/Motion-Controlled-Robot-Arm" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <br>
+
+        <div class="textChunk">
+            <div class="contentHeader">
+                <textLink><a href="spiderRobot.html">Spider Robot</a></textLink>
+            </div>
+            <div class="contentMain">
+                The main goal of this project was to create a robot that would act like a spider. This would be done by creating 
+                different parts of legs to connect to servos, that would act as joints. I would also need to design a base that could
+                connect the four seperate legs and hold the arduino and other electronics. I would use a servo driver to control the 
+                seperate legs with arduino code and a servo driver library. I will also design a controller that will be used with
+                wireless receivers between the controller and spider. Two seperate power supplies will be needed on the spider to power
+                the arduino nano and the servos seperately. I planned on making the spider be able to move forwards and backwards, while
+                also being able to turn left and right. I also added more buttons on the controller to make the spider be able to do
+                other fun actions.
+            </div>
+            <a class="githubButton" href="https://github.com/JakeHafele101/Spider-Robot" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div><footer></footer></div>
+
+        <script type="text/javascript" src="./script/myScript.js"></script>
+    </body>
+</html>
