@@ -299,7 +299,7 @@
 
 @media screen and (max-width: 1024px){
 
-  .pageNav a:active{
+  /* .pageNav a:active{
     background-color: var(--hover-color);
     color: var(--hover-text-color);
   }
@@ -312,7 +312,7 @@
   
   .dropdown:active .dropdown-content {
     display: block;
-  }
+  } */
 
   .tetrisGame{
     display: none;
