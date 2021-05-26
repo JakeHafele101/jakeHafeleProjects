@@ -286,6 +286,11 @@
   .tetrisGame{
     display: none;
   }
+  
+  .dropdown-content a:hover {
+    background-color: var(--hover-color);
+    color: var(--hover-text-color);
+  }
 }
 
 .picture {
