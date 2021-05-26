@@ -1,12 +1,8 @@
-Making My Own Website
-
-Hello to anyone and everyone who has stumbled across my website! This is my first time working with 
-Javascript and HTML and I am excited to get my first website up and running. I have lots of ideas and
-plans for future projects and hope to keep them all organized on this website in the future. I plan on
-having a youtube video going over the project and what I learned throughout the process of creating different
-things. These will all be posted on my youtube channel and embedded in this very here website too. I also
-have a page about me and another for my contact information for anyone interested. At the ends of every page
-I also am planning on posting a github link to each seperate repository of code. This is done so people can
-understand my projects and take a look into my process of coding as a college student. I'm sure I could be doing
-a lot of stuff better or more efficiently but I am having a lot of fun learning and doing my own stuff along
-the way. If any of this sounds interesting, please check out my other tabs of stuff!
+Hello to anyone and everyone who has stumbled upon my website! This is a place all about yours truly, Jake Hafele. On here I mainly
+post projects I make, but also have links to my social media accounts, youtube videos, and some other fun things like 3D printing. 
+This acts as a hub to all of the content and stuff I like to show off, which can also be seen through my youtube videos (Link below
+in footer) or in my github repositories (button below this paragraph). This is the second iteration of my html portfolio, with the 
+first one being done back in May of 2020. As I have finished my second year of college, I figured it would be a great time to clean
+up my website and make it even easier for people to enjoy my content. Feel free to click on the content tabs above this paragraph
+to see some other general information about me, or click on the page headers at the top to see different projects I have created so 
+far. Hope you enjoy your stay!

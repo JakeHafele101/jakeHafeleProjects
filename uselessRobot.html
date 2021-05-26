@@ -1,113 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Jake's Summer Projects</title>
+    <head >
+        <title>Jake Hafele - Project Portfolio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="./script/processing.js"></script>
-
         
     </head>
 
-    <body style="background-color: #e41937;">
+    <body class="body">
 
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1>Jake Hafele Summer Projects</h1>
+        <div class="content">
+
+            <div class="titleBlock">
+                <a>Jake Hafele</a>
+                <div></div>
+                <a>Project Portfolio</a>
             </div>
-        </div>
 
-        <div>
-            <nav>
+            <div class="pageNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="yearOne.html">Year One</a></li>
-                    <li><a href="yearTwo.html">Year Two</a></li>
+                    <li class="dropdown">
+                        <a>Year One</a>
+                        <div class="dropdown-content">
+                            <a href="tetris.html">Tetris</a>
+                            <a href="ledCube.html">LED Cube</a>
+                            <a href="soundLedStrips.html">Sound LED Strips</a>
+                            <a href="motionRobot.html">Motion Arm</a>
+                            <a href="spiderRobot.html">Spider Robot</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a>Year Two</a>
+                        <div class="dropdown-content">
+                            <a href="isuPCB.html">ISU PCB</a>
+                            <a href="uselessRobot.html">Useless Robot</a>
+                        </div>
+                    </li>
                     <li><a href="3dPrint.html">3D Printing</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </nav>
+            </div>
+
+            <div class="videoBlock">
+                <div class= "videoWrapper">
+                    <iframe width="853" height="505" src="https://www.youtube.com/embed/x7lennWXEGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="contentNav">
+                <ul>
+                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
+                </ul>
+            </div>
+
+            <div class="contentBlock">
+                <div id="tab1" class="tabcontent">
+                    <Header>
+                    My Goals
+                    </Header>
+    
+                    <General>
+                        With this project, I wanted to create something that would push what I have done so far with electronics design while 
+                        also making something fun. For this, I decided to make a useless machine. The sole job of this robot was to flip off
+                        any switch that I pressed down or turned on with the box. The robot arm is an improved version of my robot from 
+                        the motion controlled arm, which was a big challenge for this project. Overall, it is a very interesting build and 
+                        was tons of fun to make. 
+                    </General>
+
+                </div>
+
+                <div id="tab2" class="tabcontent">
+                    <Header>
+                    The Process
+                    </Header>
+    
+                    <General>
+                        I had been working on this project all throughout my sophomore year at college. In the fall, I was mainly focused on improving my ideas of a robot arm. 
+                        This time I wanted to use stronger servos since I was having problems with weight and support with the smaller microservos. This ended up being a really good choice, since the 
+                        new servos worked exactly how I wanted. I think the overall design is better, since the robot arm can rotate both the upper and lower part of the arm, instead of just the upper 
+                        part like before. This makes me want to remake my old robot and use the same analog sensors to see how much better it would do. Anyways, not much coding was done during this. 
+                        Most of the time was spent with trial and error with the 3D design. We also were thinking of ways in how we wanted the robot to interact and interface with the box. This 
+                        led us to winter break, where my groupmate Tyler designed the wooden box that the robot would go in. We measured out the dimensions to roughly be something we thought would fit
+                        well for it. During break for myself, I worked on designing a simple PCB to interface the switches, since we both agreed a breadboard would be too weak to use. This was mostly 
+                        because we were worried about parts falling out of the breadboard, since this happened with my spider robot project. After both of these were done and ordered, our next job was
+                        to get the robot arm to work inside of the box. <br> <br>
+       
+                        Our first job for doing this was to get two small microservos to open the window of the box. This ended up being easier than I thought. Like before, I was worried about the weight
+                        being too much for the small microservos to handle, but it ended up being okay. After this, I soldered our new PCB and designed a 3D printed mounting plate for it to go on top of
+                        the box. We were now ready to start coding the robot arm. The servo driver and library make interfacing the servos super easy. Since I am taking an embedded systems class right now,
+                        I hope I can start learning how to do some of this stuff without as many libraries. In a lab I had a week ago we were learning how to use PWM outputs with registers, so maybe I will
+                        try to build my own library for that soon. We ended up making a function to turn any servo we wanted a set amount of degrees. We then made some functions to prime the robot arm so it
+                        was facing outside of the box. We also made a function so that it would retract back into the box. Since this was a common action for when each switch was hit, this made reusing code 
+                        super nice. We then had a function to read the input of all the buttons and switches. On the PCB i designed, I used pull down resistors so they would all default to be read as 0. This 
+                        meant that when a switch or button was pressed a 1 would go off in the code and signal the robot arm should start moving. This was the general idea of how the robot moves,  and I am
+                        pretty happy with how it turned out. If you want to hear more about how I built it, feel free to check out my video below. 
+                    </General>
+
+                </div>
+
+                <div id="tab3" class="tabcontent">
+                    <Header>
+                    My Reflection
+                    </Header>
+                    
+                    <General>
+                        Overall I really enjoyed this project. It was so much fun to work on throughout the school year and make the final video. I wish I took more pictures and videos throughout me working on
+                        it, but this was more due to not having much time. I felt rushed at points just to get it done since I had lots of other classes to worry about. I currently have a few more things in the 
+                        works so I really hope that I can record more of the whole process because I think that makes the videos a lot more interesting for people to follow through with. Either way, this project 
+                        was a blast to make and people seem to like it too. This will probably end up as an outreach thing for our club Critical Tinkers to use for something like clubfest in the future. Thanks
+                        so much for reading about this project! Theres a lot more content in the video below. I'm not sure how you got here but I hope this useless machine helps give you some cool ideas for your
+                        own stuff in the future. 
+                    </General>
+                </div>
+
+                <div class="githubBox">
+                    <a href="https://github.com/JakeHafele101/Switch-Box-Robot" target="_blank">Github Repo</a>
+                </div>
+            </div>
         </div>
 
-        <div class="title">
-            <h2>Iowa State PCB Logo<h2>
+        <div class=footer>
+            <a href="https://twitter.com/Jake_Hafele" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/jakehafele/" target="_blank" class="fa fa-instagram"></a> 
         </div>
 
-        <div class="textChunk">
-            <div class="contentHeader">
-                Parts
-            </div>
-            <ol>
-                <li>Arduino Uno</li>
-                <li>Servo driver</li>
-                <li>3 servos</li>
-                <li>2 microservos</li>
-                <li>2 tactile switches</li>
-                <li>2 pushbuttons</li>
-                <li>2 slide switches</li>
-                <li>2 toggle switches</li>
+    </div>
 
-            </ol> <br>
-            <div class="contentHeader">
-                Goals
-            </div>
-            <div class="contentMain">
-                With this project, I wanted to create something that would push what I have done so far with electronics design while 
-                also making something fun. For this, I decided to make a useless machine. The sole job of this robot was to flip off
-                any switch that I pressed down or turned on with the box. The robot arm is an improved version of my robot from 
-                the motion controlled arm, which was a big challenge for this project. Overall, it is a very interesting build and 
-                was tons of fun to make. 
-            </div>
-            <div class="contentHeader">
-                Process
-            </div>
-            <div class="contentMain">
-                 I had been working on this project all throughout my sophomore year at college. In the fall, I was mainly focused on improving my ideas of a robot arm. 
-                 This time I wanted to use stronger servos since I was having problems with weight and support with the smaller microservos. This ended up being a really good choice, since the 
-                 new servos worked exactly how I wanted. I think the overall design is better, since the robot arm can rotate both the upper and lower part of the arm, instead of just the upper 
-                 part like before. This makes me want to remake my old robot and use the same analog sensors to see how much better it would do. Anyways, not much coding was done during this. 
-                 Most of the time was spent with trial and error with the 3D design. We also were thinking of ways in how we wanted the robot to interact and interface with the box. This 
-                 led us to winter break, where my groupmate Tyler designed the wooden box that the robot would go in. We measured out the dimensions to roughly be something we thought would fit
-                 well for it. During break for myself, I worked on designing a simple PCB to interface the switches, since we both agreed a breadboard would be too weak to use. This was mostly 
-                 because we were worried about parts falling out of the breadboard, since this happened with my spider robot project. After both of these were done and ordered, our next job was
-                 to get the robot arm to work inside of the box. <br> <br>
-
-                 Our first job for doing this was to get two small microservos to open the window of the box. This ended up being easier than I thought. Like before, I was worried about the weight
-                 being too much for the small microservos to handle, but it ended up being okay. After this, I soldered our new PCB and designed a 3D printed mounting plate for it to go on top of
-                 the box. We were now ready to start coding the robot arm. The servo driver and library make interfacing the servos super easy. Since I am taking an embedded systems class right now,
-                 I hope I can start learning how to do some of this stuff without as many libraries. In a lab I had a week ago we were learning how to use PWM outputs with registers, so maybe I will
-                 try to build my own library for that soon. We ended up making a function to turn any servo we wanted a set amount of degrees. We then made some functions to prime the robot arm so it
-                 was facing outside of the box. We also made a function so that it would retract back into the box. Since this was a common action for when each switch was hit, this made reusing code 
-                 super nice. We then had a function to read the input of all the buttons and switches. On the PCB i designed, I used pull down resistors so they would all default to be read as 0. This 
-                 meant that when a switch or button was pressed a 1 would go off in the code and signal the robot arm should start moving. This was the general idea of how the robot moves,  and I am
-                 pretty happy with how it turned out. If you want to hear more about how I built it, feel free to check out my video below. 
-            </div>
-            <div class="contentHeader">
-                Reflection
-            </div>
-            <div class="contentMain">
-                Overall I really enjoyed this project. It was so much fun to work on throughout the school year and make the final video. I wish I took more pictures and videos throughout me working on
-                it, but this was more due to not having much time. I felt rushed at points just to get it done since I had lots of other classes to worry about. I currently have a few more things in the 
-                works so I really hope that I can record more of the whole process because I think that makes the videos a lot more interesting for people to follow through with. Either way, this project 
-                was a blast to make and people seem to like it too. This will probably end up as an outreach thing for our club Critical Tinkers to use for something like clubfest in the future. Thanks
-                so much for reading about this project! Theres a lot more content in the video below. I'm not sure how you got here but I hope this useless machine helps give you some cool ideas for your
-                own stuff in the future. 
-
-            </div>
-            <a class="githubButton" href="https://github.com/JakeHafele101/Switch-Box-Robot" target="_blank"><i class="fa fa-github"></i></a>
-        </div>
-        
-        <br>
-
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/x7lennWXEGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <div><footer></footer></div>
-
-        <script type="text/javascript" src="./script/myScript.js"></script>
+    <script type="text/javascript" src="./script/myScript.js"></script>
     </body>
 </html>

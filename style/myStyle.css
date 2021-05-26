@@ -1,162 +1,285 @@
-html {
-  height: 100%
+:root {
+  /*Colors*/
+  --background-color: #0d1117;
+  --header-footer-color: #639cdd;
+  --page-nav-color: #4375af;
+  --content-nav-color: #4375af;
+  --text-color: white;
+  --hover-color: #518ed3;
+  --hover-text-color: black;
+  --button-color: #4375af;
+  --text-block-color: #242a38;
+  --dropdown-color: white;
+
+  --text-size-title: 32px;
+  --text-size-header: 24px;
+  --text-size-button: 20px;
+  --text-size-general: 16px;
 }
 
-body {
-  height: 100%
-  
+.body {
+  margin: 0px;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #0d1117;
 }
 
-.hero-image{
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/all/IowaState.jpg");
-
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+.content {
+  min-height: calc(100vh - 70px);
 }
 
-.hero-text {
+.titleBlock {
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  background-color: var(--header-footer-color);
+  color: var(--text-color);
+  font-size: var(--text-size-title);
+  padding: 10px;
+  width: 100%;
+}
+
+.titleBlock a{
+  padding: 15px;
 }
 
 /* Style the top navigation bar */
-nav {
-  overflow: hidden; /* Hide overflow */
-  background-color: #333; /* Dark background color */
+.pageNav {
+  overflow: hidden; 
+  background-color: var(--page-nav-color);
+  margin: 0px;
 }
 
-nav ul{
+.pageNav ul{
+  margin: 0;
+  padding: 0;
+}
+
+.pageNav li{
+  text-align: center;
+  list-style: none;
+  float: left;
+  width: 25%;
+  cursor: pointer;
+}
+
+.pageNav a{
+  float: center; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  color: var(--text-color); /* White text color */
+  text-align: center; /* Center the text */
+  font-size: var(--text-size-general);
+  padding: 20px;
+  text-decoration: none; /* Remove underline */
+}
+
+.pageNav a:hover{
+  background-color: var(--hover-color);
+  color: var(--hover-text-color);
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 25%;
+  z-index: 10;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+  background-image: linear-gradient(to right, transparent, transparent 50%, var(--dropdown-color) 50%, var(--dropdown-color));
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: all .25s ease-in;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--hover-color);
+  color: var(--hover-text-color);
+  background-position: 0 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.videoBlock{
+  background-color: var(--background-color);
+  text-align: center;
+  margin: 10px;
+}
+
+.contentNav {
+  overflow: hidden; 
+  background-color: var(--content-nav-color); /* Dark background color */
+  position:static;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 853px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 853px;
+  margin: auto;
+}
+
+.contentNav ul{
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 100%;
 }
 
-nav li{
-  margin: 0;
+.contentNav li{
+  text-align: center;
+  list-style: none;
+  float: left;
+  width: 33.33%;
+  cursor: pointer;
+  top: 50%;
 }
 
-nav a{
-  float: left; /* Make sure that the links stay side-by-side */
-  display: block; /* Change the display to block, for responsive reasons (see below) */
-  color: white; /* White text color */
-  text-align: center; /* Center the text */
-  padding: 14px 20px; 
-  text-decoration: none; /* Remove underline */
-}
-
-nav a:hover{
-  background-color: #ddd; /* Grey background color */
-  color: black; /* Black text color */
-}
-
-textLink {
-  overflow: hidden; /* Hide overflow */
-  background-color: #fdbe55; /* Dark background color */
-}
-
-textLink a {
+.contentNav a{
   float: center; /* Make sure that the links stay side-by-side */
   display: block; /* Change the display to block, for responsive reasons (see below) */
-  color: #740b11; /* White text color */
+  color: var(--text-color); /* White text color */
   text-align: center; /* Center the text */
-  padding: 10px 10px; 
+  font-size: var(--text-size-general);
+  padding: 20px;
   text-decoration: none; /* Remove underline */
-  font-size: larger;
-  font-weight: bold;
+
+  background-image: linear-gradient(to bottom, transparent, transparent 50%, var(--content-nav-color) 50%, var(--content-nav-color));
+  background-position: 0 100%;
+  background-size: 100% 200%;
+  transition: all .25s ease-in;
 }
 
-textLink a:hover{
-  background-color:  #e41937; /* Grey background color */
-  color:  white; /* Black text color */
+.contentNav a:hover{
+  background-color: var(--hover-color);
+  color: var(--hover-text-color);
+  background-position: 0 0;
 }
 
-.title {
+* {box-sizing:border-box}
+
+.contentBlock {
+  background-color: var(--text-block-color);
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 853px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.contentBlock Header {
+  font-size: var(--text-size-header);
   text-align: center;
-  background-color: #fdbe55;
-  color: #740b11;
-  font-size: 24px;
-  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contentBlock  {
+  font-size: var(--text-size-general);
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding: 20px;
+  line-height: 24px;
+}
+
+.tabcontent {
+  display: "none";
+}
+
+.githubBox {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.githubBox:hover {
+  opacity: 0.7;
+  transition: 1s ease;
+}
+
+.githubBox a{
+  font-size: var(--text-size-button);
+  padding: 10px;
+  border-radius: 15px;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  background-color: var(--header-footer-color);
+  color: var(--text-color);
+  width: 100%;
+  bottom: 0;
 }
 
 .fa {
   padding: 20px;
-  font-size: 75px;
-  width: 125px;
+  font-size: 25px;
+  width: 75px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-  border-radius: 50%;
+  border-radius: 75%;
 }
 
 .fa-twitter {
-  background: #55ACEE;
-  color: white;
+  background: var(--page-nav-color);
+  color: var(--text-color);
 }
 
 .fa-linkedin {
-  background: #007bb5;
-  color: white;
+  background: var(--page-nav-color);
+  color: var(--text-color);
 }
 
 .fa-youtube {
-  background: #bb0000;
-  color: white;
+  background: var(--page-nav-color);
+  color: var(--text-color);
 }
 
 .fa-instagram {
-  background: #125688;
-  color: white;
+  background: var(--page-nav-color);
+  color: var(--text-color);
 }
 
 .fa:hover {
   opacity: 0.7;
 }
 
-.textChunk {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #fdbe55;
-  color: #740b11;
-}
-
-.contentHeader {
-  font-size: 20px;
-  margin: 20px;
-}
-
-.contentMain {
-  font-size: 16px;
-  margin: 20px;
-}
-
-.githubButton {
-  font-size: 75px;
-  color: #333;
-  text-align: center;
-}
-
-.githubButton:hover {
-  opacity: 0.7
-}
-
 .tetrisGame{
-  padding-left: 0;
-  padding-right: 0;
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
   display: block;
   width: 640px;
+  z-index: 20;
 }
 
 @media screen and (max-width: 640px){
@@ -165,102 +288,52 @@ textLink a:hover{
   }
 }
 
-* {box-sizing:border-box}
-
-img.resize {
-  max-width:50%;
-  max-height:50%;
-}
-
-img {
-  width: 100%;
-  margin: 1px auto;
-  display: block;
-}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  width: 50%;
-  position: relative;
+.pdf {
   margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: #fdbe55;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px; 
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-.iframe-container{
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; 
-  margin-top: 20px;
-  height: 0;
-}
-.iframe-container iframe{
-  position: absolute;
-  top: 0;
-  left: 0;
+.picture {
   width: 100%;
   height: 100%;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #e41937;
-  color: white;
+@media screen and (max-width: 1024px){
+  .tetrisGame{
+    display: none;
+  }
+
+  .contentNav {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .contentBlock {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .contentBlock Header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .contentBlock General {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

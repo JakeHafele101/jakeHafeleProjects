@@ -1,154 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Jake's Summer Projects</title>
+    <head >
+        <title>Jake Hafele - Project Portfolio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="./script/processing.js"></script>
-
+        <script src="./script/processing.js"></script>
         
     </head>
 
-    <body style="background-color: #e41937;">
+    <body class="body">
 
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1>Jake Hafele Summer Projects</h1>
+        <div class="content">
+
+            <div class="titleBlock">
+                <a>Jake Hafele</a>
+                <div></div>
+                <a>Project Portfolio</a>
             </div>
-        </div>
 
-        <div>
-            <nav>
+            <div class="pageNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="yearOne.html">Year One</a></li>
-                    <li><a href="yearTwo.html">Year Two</a></li>
+                    <li class="dropdown">
+                        <a>Year One</a>
+                        <div class="dropdown-content">
+                            <a href="tetris.html">Tetris</a>
+                            <a href="ledCube.html">LED Cube</a>
+                            <a href="soundLedStrips.html">Sound LED Strips</a>
+                            <a href="motionRobot.html">Motion Arm</a>
+                            <a href="spiderRobot.html">Spider Robot</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a>Year Two</a>
+                        <div class="dropdown-content">
+                            <a href="isuPCB.html">ISU PCB</a>
+                            <a href="uselessRobot.html">Useless Robot</a>
+                        </div>
+                    </li>
                     <li><a href="3dPrint.html">3D Printing</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </nav>
-        </div>
-
-        <div class="title">
-            <h2>Making Tetris</h2>
-        </div>
-
-        <div class="textChunk">
-            <div class="contentHeader">
-                Goals
             </div>
-            <div class="contentMain">
-                The goal of this project was to make the most faithful recreation of an old style tetris game. I 
-                specifically wanted to use class inheritance to reinforce what I learned in my java coding class at school. 
-                To do this, I planned on making a general class for the blocks and a specific one for each block. I wanted
-                the controls to be done through keyboard input by the player. I also wanted a start, pause, and game over
-                screen to make the game more accessible for the user. To be more faithful towards tetris, a score, level, 
-                and lines cleared tabs will be needed on the sides of the main grid. The game will also display a next block
-                feature and a held block feature. These will be used to give the player some help with the game. 
-                finally, I wished to make the resolution a moderate to small size so the game could be more accessible. 
-                This project will be done in Processing, which is a Java tool that helps to make drawing shapes and 
-                objects much easier. Currently, this is my go to application for making simple games. <br> <br>
-            </div>
-            <div class="contentHeader">
-                Process
-            </div>
-            <div class="contentMain">
-                To keep track of everything in this project, I made a google slides list to document the differnet stages
-                of my project. To see more of this directly, you can scroll down to my YouTube video below. What I talk 
-                about here will be an overview of that but more condensed. The first thing I did was draw out on my computer
-                how I wished for the game to look to the user. To achieve this, I made my first class, the Menu class. This
-                class would handle showing most of the games elements, except for the cells. It would display and keep track
-                of the strings and integers for the lines cleared, score, and level values. I ended up settling on a dark
-                gray theme for the general User Interface, since this would help make the actual tetris blocks stand out 
-                more. <br> <br>
 
-                To make a usable grid for the actual tetris blocks, I ended up making a Cell and Grid class. The cell class
-                would keep track of the variables of each block on the grid. The Grid class would then take an x and y 
-                parameter in its constructor to make a 2d array of Cells. This helped model my layout of cells, since I could
-                access this 2d array object inside of the grid class and use certain x and y indexes to manipulate the cells.
-                The cells were not constructed anywhere but inside of the grid class. After the grid class was cosntructed
-                inside of the main program in setup(), it would loop to be shown to the UI inside of draw(). To specify,
-                the setup() function is always ran once, while the draw() function loops infinitely unless directly stopped.
-                This is helpful, since you can initiate objects once inside of setup() then show them and modify them in 
-                draw() for however long you need. <br> <br>
-
-                Now that a grid and cells are made, I could start making the Block class and the specific tetris blocks. 
-                Each tetris block class inherits the block class and passes their color into their constructors. The 
-                specific blocks are named after the letter they represent by their shape, like T or I. After succeeding in
-                getting each block to be constructed and placed at the top of the grid, I worked on figuring out how to 
-                make the blocks fall and rotate. To do this, the Block class had methods to detect if there were 'solid'
-                cells around the 'active' cells. The solid cells were the borders and placed tetris pieces, while the active
-                cells were the current tetris block. This ended up making my code more complicated by the end of the project,
-                but the final product still works well with it. A spawn zone was also added at the top of the grid, and is
-                hidden from the player, so the blocks spawn right above the active grid. User input was also added at this
-                stage with Processing's keyPressed() and keyReleased() functions. These helped to make it so you could get 
-                multiple inputs at once, instead of using their 'key' keyword. <br> <br>
-
-                Now that the blocks could be manipulated, I needed to add conditional checks to make the lines and score
-                update when blocks were placed. I used two for loops to go through the grid array to check if all horizontal
-                blocks in a row were solid. If so, another grid method would be called to clear that specific row, while also
-                moving every row above it down one y position. This made it so the line would go away while also updating
-                the other remaining solid cells. This is when I also implemented updating the score, lines, and level values
-                inside of menu, since they could now also be properly updated. For every ten lines, the level goes up one 
-                number. Every level, the speed of the game gets faster, so the amount of frames before the block drops gets
-                lower. The score will increase based on your level and how many lines you clear at once. The next block and
-                held block features were also implemented now. They would construct a new 4x2 grid each to display the 
-                blocks for their respective purposes. Hidden integer values were kept to keep track of these blocks outside
-                of the grid. A helper function was defined inside of main to help randomly calculate the next block and 
-                swap the current and held block. <br> <br>
-
-                The final features that I added to this game was the different game states and menus that came with them. 
-                These would include the start, pause, and game over screens. I made a switch case statement in the draw()
-                loop in my main program and a integer variable called gameState to keep track of the current state. Constants
-                were defined for the different states and user input or conditions would be used to swap them. The different
-                states would be placed into their own methods to make readability higher for the switch case. This is why
-                the main draw() loop is so short. Most of the games functionality comes from the statePlaying() helper function
-                in Tetris.pde.  <br> <br>
+                
+            <div class="videoBlock">
+                <div class= "videoWrapper">
+                    <iframe width="853" height="505" src="https://www.youtube.com/embed/IJDku8QqP1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-            <div class="contentHeader">
-                Reflection
+
+            <div class="contentNav">
+                <ul>
+                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
+                </ul>
             </div>
-            <div class="contentMain">
-                Since I also made a game in processing during the school year for a project, I really enjoyed tackling 
-                another project after learning some things from my firt game. I felt more confident in designing menus and
-                manipulating objects than I did in my first game. Using inheritance for the tetris blocks also helped me reinforce
-                what I was learning in my java class at the time around finals. Although, I did come across a few issues 
-                with this project. My cell class ended up being more lengthy and complicated than I wished for, and it made
-                manipulating every other method much harder than it had to be. If I was going to start again, I would have 
-                made the grid out of integer values in a 2d array instead of cell objects. This is because integers are primitive
-                and it is easier to change them since they do not point to objects like the Cell class did. This made moving
-                and swapping the cells much more complicated than it had to be. Although, this did teach me to really think
-                through how making early classes can impact the rest of a project, especially core files like Cell or Grid. 
-                Once I got so far in the project, I couldn't really change anything in these classes since they were used so
-                much. I would like to remake this game at some point after planning out how to set up the whole project
-                up with pseudocode. Overall, this was a great project that helped reinforce my java and coding skills. I 
-                am happy to say that this is my first project posted on my website so I hope you enjoyed it! If you want to
-                play my game, you can download the files on github and open them with the processing java application. I am
-                currently trying to embed the game in to my website, but I am having more troubles with that than expected.
-                Thanks for reading!
-            </div>
-            <a class="githubButton" href="https://github.com/JakeHafele101/Tetris-Clone" target="_blank"><i class="fa fa-github"></i></a>
-        </div>
+
+            <div class="contentBlock">
+                <div id="tab1" class="tabcontent">
+                    <Header>
+                    My Goals
+                    </Header>
+    
+                    <General>
+                        The goal of this project was to make the most faithful recreation of an old style tetris game. I 
+                        specifically wanted to use class inheritance to reinforce what I learned in my java coding class at school. 
+                        To do this, I planned on making a general class for the blocks and a specific one for each block. I wanted
+                        the controls to be done through keyboard input by the player. I also wanted a start, pause, and game over
+                        screen to make the game more accessible for the user. To be more faithful towards tetris, a score, level, 
+                        and lines cleared tabs will be needed on the sides of the main grid. The game will also display a next block
+                        feature and a held block feature. These will be used to give the player some help with the game. 
+                        finally, I wished to make the resolution a moderate to small size so the game could be more accessible. 
+                        This project will be done in Processing, which is a Java tool that helps to make drawing shapes and 
+                        objects much easier. Currently, this is my go to application for making simple games. <br> <br>
+                    </General>
+
+                </div>
+
+                <div id="tab2" class="tabcontent">
+                    <Header>
+                    The Process
+                    </Header>
+    
+                    <General>
+                        To keep track of everything in this project, I made a google slides list to document the differnet stages
+                        of my project. To see more of this directly, you can scroll down to my YouTube video below. What I talk 
+                        about here will be an overview of that but more condensed. The first thing I did was draw out on my computer
+                        how I wished for the game to look to the user. To achieve this, I made my first class, the Menu class. This
+                        class would handle showing most of the games elements, except for the cells. It would display and keep track
+                        of the strings and integers for the lines cleared, score, and level values. I ended up settling on a dark
+                        gray theme for the general User Interface, since this would help make the actual tetris blocks stand out 
+                        more. <br> <br>
         
-        <br>
+                        To make a usable grid for the actual tetris blocks, I ended up making a Cell and Grid class. The cell class
+                        would keep track of the variables of each block on the grid. The Grid class would then take an x and y 
+                        parameter in its constructor to make a 2d array of Cells. This helped model my layout of cells, since I could
+                        access this 2d array object inside of the grid class and use certain x and y indexes to manipulate the cells.
+                        The cells were not constructed anywhere but inside of the grid class. After the grid class was cosntructed
+                        inside of the main program in setup(), it would loop to be shown to the UI inside of draw(). To specify,
+                        the setup() function is always ran once, while the draw() function loops infinitely unless directly stopped.
+                        This is helpful, since you can initiate objects once inside of setup() then show them and modify them in 
+                        draw() for however long you need. <br> <br>
+        
+                        Now that a grid and cells are made, I could start making the Block class and the specific tetris blocks. 
+                        Each tetris block class inherits the block class and passes their color into their constructors. The 
+                        specific blocks are named after the letter they represent by their shape, like T or I. After succeeding in
+                        getting each block to be constructed and placed at the top of the grid, I worked on figuring out how to 
+                        make the blocks fall and rotate. To do this, the Block class had methods to detect if there were 'solid'
+                        cells around the 'active' cells. The solid cells were the borders and placed tetris pieces, while the active
+                        cells were the current tetris block. This ended up making my code more complicated by the end of the project,
+                        but the final product still works well with it. A spawn zone was also added at the top of the grid, and is
+                        hidden from the player, so the blocks spawn right above the active grid. User input was also added at this
+                        stage with Processing's keyPressed() and keyReleased() functions. These helped to make it so you could get 
+                        multiple inputs at once, instead of using their 'key' keyword. <br> <br>
+        
+                        Now that the blocks could be manipulated, I needed to add conditional checks to make the lines and score
+                        update when blocks were placed. I used two for loops to go through the grid array to check if all horizontal
+                        blocks in a row were solid. If so, another grid method would be called to clear that specific row, while also
+                        moving every row above it down one y position. This made it so the line would go away while also updating
+                        the other remaining solid cells. This is when I also implemented updating the score, lines, and level values
+                        inside of menu, since they could now also be properly updated. For every ten lines, the level goes up one 
+                        number. Every level, the speed of the game gets faster, so the amount of frames before the block drops gets
+                        lower. The score will increase based on your level and how many lines you clear at once. The next block and
+                        held block features were also implemented now. They would construct a new 4x2 grid each to display the 
+                        blocks for their respective purposes. Hidden integer values were kept to keep track of these blocks outside
+                        of the grid. A helper function was defined inside of main to help randomly calculate the next block and 
+                        swap the current and held block. <br> <br>
+        
+                        The final features that I added to this game was the different game states and menus that came with them. 
+                        These would include the start, pause, and game over screens. I made a switch case statement in the draw()
+                        loop in my main program and a integer variable called gameState to keep track of the current state. Constants
+                        were defined for the different states and user input or conditions would be used to swap them. The different
+                        states would be placed into their own methods to make readability higher for the switch case. This is why
+                        the main draw() loop is so short. Most of the games functionality comes from the statePlaying() helper function
+                        in Tetris.pde.  <br> <br>
+                    </General>
+
+                </div>
+
+                <div id="tab3" class="tabcontent">
+                    <Header>
+                    My Reflection
+                    </Header>
+                    
+                    <General>
+                        Since I also made a game in processing during the school year for a project, I really enjoyed tackling 
+                        another project after learning some things from my firt game. I felt more confident in designing menus and
+                        manipulating objects than I did in my first game. Using inheritance for the tetris blocks also helped me reinforce
+                        what I was learning in my java class at the time around finals. Although, I did come across a few issues 
+                        with this project. My cell class ended up being more lengthy and complicated than I wished for, and it made
+                        manipulating every other method much harder than it had to be. If I was going to start again, I would have 
+                        made the grid out of integer values in a 2d array instead of cell objects. This is because integers are primitive
+                        and it is easier to change them since they do not point to objects like the Cell class did. This made moving
+                        and swapping the cells much more complicated than it had to be. Although, this did teach me to really think
+                        through how making early classes can impact the rest of a project, especially core files like Cell or Grid. 
+                        Once I got so far in the project, I couldn't really change anything in these classes since they were used so
+                        much. I would like to remake this game at some point after planning out how to set up the whole project
+                        up with pseudocode. Overall, this was a great project that helped reinforce my java and coding skills. I 
+                        am happy to say that this is my first project posted on my website so I hope you enjoyed it! If you want to
+                        play my game, you can download the files on github and open them with the processing java application. I am
+                        currently trying to embed the game in to my website, but I am having more troubles with that than expected.
+                        Thanks for reading!
+                    </General>
+                </div>
+
+                <div class="githubBox">
+                    <a href="https://github.com/JakeHafele101/Tetris-Clone" target="_blank">Github Repo</a>
+                </div>
+            </div>
+        </div>
 
         <div class="tetrisGame">
-            <canvas data-processing-sources="./script/tetrisCombined.pde"></canvas>
-        </div>
-        
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/o5h3SPisYNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <canvas width="640" height="640" data-processing-sources="./script/tetrisCombined.pde"></canvas>
         </div>
 
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/IJDku8QqP1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class=footer>
+            <a href="https://twitter.com/Jake_Hafele" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/jakehafele/" target="_blank" class="fa fa-instagram"></a> 
         </div>
 
-        <div><footer></footer></div>
+    </div>
 
-        <script type="text/javascript" src="./script/myScript.js"></script>
+    <script type="text/javascript" src="./script/myScript.js"></script>
     </body>
 </html>

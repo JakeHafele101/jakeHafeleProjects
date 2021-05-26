@@ -1,135 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Jake's Summer Projects</title>
+    <head >
+        <title>Jake Hafele - Project Portfolio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="./script/processing.js"></script>
-
         
     </head>
 
-    <body style="background-color: #e41937;">
+    <body class="body">
 
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1>Jake Hafele Summer Projects</h1>
+        <div class="content">
+
+            <div class="titleBlock">
+                <a>Jake Hafele</a>
+                <div></div>
+                <a>Project Portfolio</a>
             </div>
-        </div>
 
-        <div>
-            <nav>
+            <div class="pageNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="yearOne.html">Year One</a></li>
-                    <li><a href="yearTwo.html">Year Two</a></li>
+                    <li class="dropdown">
+                        <a>Year One</a>
+                        <div class="dropdown-content">
+                            <a href="tetris.html">Tetris</a>
+                            <a href="ledCube.html">LED Cube</a>
+                            <a href="soundLedStrips.html">Sound LED Strips</a>
+                            <a href="motionRobot.html">Motion Arm</a>
+                            <a href="spiderRobot.html">Spider Robot</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a>Year Two</a>
+                        <div class="dropdown-content">
+                            <a href="isuPCB.html">ISU PCB</a>
+                            <a href="uselessRobot.html">Useless Robot</a>
+                        </div>
+                    </li>
                     <li><a href="3dPrint.html">3D Printing</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </nav>
-        </div>
+            </div>
 
-        <div class="title">
-            <h2>Making a Spider Robot<h2>
-        </div>
+            <div class="videoBlock">
+                <div class= "videoWrapper">
+                    <iframe width="853" height="505" src="https://www.youtube.com/embed/ReN3IegwbWc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
 
-        <div class="textChunk">
-            <div class="contentHeader">
-                Parts
+            <div class="contentNav">
+                <ul>
+                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
+                </ul>
             </div>
-            <ol>
-                <li>2 Arduino nanos</li>
-                <li>Breadboard</li>
-                <li>2 9 Volt Batteries</li>
-                <li>4 AA Lithium Batteries</li>
-                <li>Battery Cases</li>
-                <li>8 SG90 microservos</li>
-                <li>Arduino Servo Driver</li>
-                <li>2 NRF24L01 Wireless Receivers</li>
-                <li>DC Barrel Jack</li>
-                <li>Soldering Iron and 60/40 Rohsin</li>
-                <li>3D Printer</li>
-                <li>M3 and M2 Screws</li>
-                <li>8 Buttons</li>
-                <li>Male to Male Jumper Wires</li>
-                <li>Female to Male Jumper Wires</li>
 
-            </ol> <br>
-            <div class="contentHeader">
-                Goals
-            </div>
-            <div class="contentMain">
-                The main goal of this project was to create a robot that would act like a spider. This would be done by creating 
-                different parts of legs to connect to servos, that would act as joints. I would also need to design a base that could
-                connect the four seperate legs and hold the arduino and other electronics. I would use a servo driver to control the 
-                seperate legs with arduino code and a servo driver library. I will also design a controller that will be used with
-                wireless receivers between the controller and spider. Two seperate power supplies will be needed on the spider to power
-                the arduino nano and the servos seperately. I planned on making the spider be able to move forwards and backwards, while
-                also being able to turn left and right. I also added more buttons on the controller to make the spider be able to do
-                other fun actions.
-            </div>
-            <div class="contentHeader">
-                Process
-            </div>
-            <div class="contentMain">
-                At the start of this project, my main focus was trying to design how the different joints would connect to the servos.
-                I ended up doing this by cutting out space for the horns to fit in on the joints so the servos could screw in to them
-                from one end. The other end had holes that would slot in to cylinders to keep the joint in place on the sides that 
-                didn't have the servos attached. This made for a very consistent way to connect the joints of the legs for the spider.
-                I started with using three servos and joints for the spider, but later reduced it to two due to the servos not being 
-                able to support the whole spider when it was put together. I also made the base much smaller than my first design. After
-                the spider was getting designed, I worked on a CAD model for the wireless controller. This was a fairly simple design,
-                but the cover took a little bit more time since I added some text and pictures on it. As all of these parts were being
-                printed and tested, I was also working on the code that would make these parts move. <br><br>
+            <div class="contentBlock">
+                <div id="tab1" class="tabcontent">
+                    <Header>
+                    My Goals
+                    </Header>
+    
+                    <General>
+                        The main goal of this project was to create a robot that would act like a spider. This would be done by creating 
+                        different parts of legs to connect to servos, that would act as joints. I would also need to design a base that could
+                        connect the four seperate legs and hold the arduino and other electronics. I would use a servo driver to control the 
+                        seperate legs with arduino code and a servo driver library. I will also design a controller that will be used with
+                        wireless receivers between the controller and spider. Two seperate power supplies will be needed on the spider to power
+                        the arduino nano and the servos seperately. I planned on making the spider be able to move forwards and backwards, while
+                        also being able to turn left and right. I also added more buttons on the controller to make the spider be able to do
+                        other fun actions.
+                    </General>
 
-                I made many different programs for this project. Many of them are test programs that I use to demo and try out the new
-                electronics that I bought to work with Arduino. I first made a test send and recieve code to test out the wireless
-                receivers. This acted as a call and response and you set it so one side sends the data, while the other takes the data 
-                from the sender. It was hard to tell when the code was the issue or the wires, but once it was working, it functioned 
-                just like I needed it to. I also found a library and coded how the servo driver would work with the servos on the legs.
-                This was pretty straightforward once I found a good library to use with the servo driver. I then started working on 
-                the code for the wireless controller. This would send the number of which button was being pressed only once to the 
-                receiving side, so I could use a switch case and change the movements of the spider when that was ready. This code was
-                fairly short and easy to read, and I was really happy with how it turned out. <br><br>
+                </div>
 
-                Once all my parts were shipped and printed, it was time to put together the spider. I attached the legs to the servos 
-                when they were positioned at 90 degrees, so I could move them both left and right 90 degrees. I then soldered the
-                arduino nano, wireless receiver, and wires to the servo driver to the prototype board. After this was done, I mounted
-                the prototype board to the base of the spider after placing the battery packs on the base. As you can see in the videos,
-                the prototype board sits right on top of the batteries compactly. Once everything was put together, I started coding the
-                movement for the spider. I wrote many helper functions to make this easier for me. While this took a bit of time, it made
-                me visualize the movement of the spider much easier. This was the last part of my project and by this point I was very
-                happy with how the spider turned out. This design for the legs could be applied to spiders with more legs or other 
-                sensors, which could be useful for the future. <br><br>
-            </div>
-            <div class="contentHeader">
-                Reflection
-            </div>
-            <div class="contentMain">
-                To conclude, I am really happy with how this project turned out. There was a lot of time spent on redesigning the spider
-                and trying to minimize the size of it, but it was worth it in the end. I feel a lot more confident in using servos after
-                this project and whenever I use them again I think it will be a lot easier. I plan on still doing projects once the school
-                year starts, but they will probably not be done as often. Either way, thank you for checking out my last project of the 
-                Summer! It was a really fun project to work on for a couple weeks before school starts again!
-            </div>
-            <a class="githubButton" href="https://github.com/JakeHafele101/Spider-Robot" target="_blank"><i class="fa fa-github"></i></a>
-        </div>
+                <div id="tab2" class="tabcontent">
+                    <Header>
+                    The Process
+                    </Header>
+    
+                    <General>
+                        At the start of this project, my main focus was trying to design how the different joints would connect to the servos.
+                        I ended up doing this by cutting out space for the horns to fit in on the joints so the servos could screw in to them
+                        from one end. The other end had holes that would slot in to cylinders to keep the joint in place on the sides that 
+                        didn't have the servos attached. This made for a very consistent way to connect the joints of the legs for the spider.
+                        I started with using three servos and joints for the spider, but later reduced it to two due to the servos not being 
+                        able to support the whole spider when it was put together. I also made the base much smaller than my first design. After
+                        the spider was getting designed, I worked on a CAD model for the wireless controller. This was a fairly simple design,
+                        but the cover took a little bit more time since I added some text and pictures on it. As all of these parts were being
+                        printed and tested, I was also working on the code that would make these parts move. <br><br>
         
-        <br>
+                        I made many different programs for this project. Many of them are test programs that I use to demo and try out the new
+                        electronics that I bought to work with Arduino. I first made a test send and recieve code to test out the wireless
+                        receivers. This acted as a call and response and you set it so one side sends the data, while the other takes the data 
+                        from the sender. It was hard to tell when the code was the issue or the wires, but once it was working, it functioned 
+                        just like I needed it to. I also found a library and coded how the servo driver would work with the servos on the legs.
+                        This was pretty straightforward once I found a good library to use with the servo driver. I then started working on 
+                        the code for the wireless controller. This would send the number of which button was being pressed only once to the 
+                        receiving side, so I could use a switch case and change the movements of the spider when that was ready. This code was
+                        fairly short and easy to read, and I was really happy with how it turned out. <br><br>
         
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ReN3IegwbWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        Once all my parts were shipped and printed, it was time to put together the spider. I attached the legs to the servos 
+                        when they were positioned at 90 degrees, so I could move them both left and right 90 degrees. I then soldered the
+                        arduino nano, wireless receiver, and wires to the servo driver to the prototype board. After this was done, I mounted
+                        the prototype board to the base of the spider after placing the battery packs on the base. As you can see in the videos,
+                        the prototype board sits right on top of the batteries compactly. Once everything was put together, I started coding the
+                        movement for the spider. I wrote many helper functions to make this easier for me. While this took a bit of time, it made
+                        me visualize the movement of the spider much easier. This was the last part of my project and by this point I was very
+                        happy with how the spider turned out. This design for the legs could be applied to spiders with more legs or other 
+                        sensors, which could be useful for the future. <br><br>
+                    </General>
+
+                </div>
+
+                <div id="tab3" class="tabcontent">
+                    <Header>
+                    My Reflection
+                    </Header>
+                    
+                    <General>
+                        To conclude, I am really happy with how this project turned out. There was a lot of time spent on redesigning the spider
+                        and trying to minimize the size of it, but it was worth it in the end. I feel a lot more confident in using servos after
+                        this project and whenever I use them again I think it will be a lot easier. I plan on still doing projects once the school
+                        year starts, but they will probably not be done as often. Either way, thank you for checking out my last project of the 
+                        Summer! It was a really fun project to work on for a couple weeks before school starts again!
+                    </General>
+                </div>
+
+                <div class="githubBox">
+                    <a href="https://github.com/JakeHafele101/Spider-Robot" target="_blank">Github Repo</a>
+                </div>
+            </div>
         </div>
 
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/IgXi9hINJ74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="videoBlock">
+            <div class= "videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/IgXi9hINJ74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
 
-        <div><footer></footer></div>
+        <div class=footer>
+            <a href="https://twitter.com/Jake_Hafele" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/jakehafele/" target="_blank" class="fa fa-instagram"></a> 
+        </div>
 
-        <script type="text/javascript" src="./script/myScript.js"></script>
+    </div>
+
+    <script type="text/javascript" src="./script/myScript.js"></script>
     </body>
 </html>

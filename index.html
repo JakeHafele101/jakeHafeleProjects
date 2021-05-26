@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Jake's Summer Projects</title>
+    <head >
+        <title>Jake Hafele - Project Portfolio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -9,59 +9,131 @@
         
     </head>
 
-    <body style="background-color: #e41937;">
+    <body class="body">
 
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1>Jake Hafele Summer Projects</h1>
+        <div class="content">
+
+            <div class="titleBlock">
+                <a>Jake Hafele</a>
+                <div></div>
+                <a>Project Portfolio</a>
             </div>
-        </div>
 
-        <div>
-            <nav>
+            <div class="pageNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="yearOne.html">Year One</a></li>
-                    <li><a href="yearTwo.html">Year Two</a></li>
+                    <li class="dropdown">
+                        <a>Year One</a>
+                        <div class="dropdown-content">
+                            <a href="tetris.html">Tetris</a>
+                            <a href="ledCube.html">LED Cube</a>
+                            <a href="soundLedStrips.html">Sound LED Strips</a>
+                            <a href="motionRobot.html">Motion Arm</a>
+                            <a href="spiderRobot.html">Spider Robot</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a>Year Two</a>
+                        <div class="dropdown-content">
+                            <a href="isuPCB.html">ISU PCB</a>
+                            <a href="uselessRobot.html">Useless Robot</a>
+                        </div>
+                    </li>
                     <li><a href="3dPrint.html">3D Printing</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </nav>
-        </div>
-
-        <div class="title">
-            <h2>My Collection of Projects</h2>
-        </div>
-
-        <div class="textChunk">
-            <div class="contentHeader">
-                Making My own Website
             </div>
-            <div class="contentMain">
-            Hello to anyone and everyone who has stumbled across my website! This is my first time working with 
-            Javascript and HTML and I am excited to get my first website up and running. I have lots of ideas and
-            plans for future projects and hope to keep them all organized on this website in the future. I plan on
-            having a youtube video going over the project and what I learned throughout the process of creating different
-            things. These will all be posted on my youtube channel and embedded in this very here website too. I also
-            have a page about me and another for my contact information for anyone interested. At the ends of every page
-            I also am planning on posting a github link to each seperate repository of code. This is done so people can
-            understand my projects and take a look into my process of coding as a college student. I'm sure I could be doing
-            a lot of stuff better or more efficiently but I am having a lot of fun learning and doing my own stuff along
-            the way. If any of this sounds interesting, please check out my other tabs of stuff!
 
+            <div class="videoBlock">
+                <div class= "videoWrapper">
+                    <iframe width="853" height="505" src="https://www.youtube.com/embed/eKbx1288tJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-            <a class="githubButton" href="https://github.com/JakeHafele101/jakeHafeleProjects" target="_blank"><i class="fa fa-github"></i></a>
+
+            <div class="contentNav">
+                <ul>
+                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>My Portfolio</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>About Me</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Resume</a></li>
+                </ul>
+            </div>
+
+            <div class="contentBlock">
+                <div id="tab1" class="tabcontent">
+                    <Header>
+                    My Portfolio
+                    </Header>
+    
+                    <General>
+                    Hello to anyone and everyone who has stumbled upon my website! This is a place all about yours truly, Jake Hafele. On here I mainly
+                    post projects I make, but also have links to my social media accounts, youtube videos, and some other fun things like 3D printing. 
+                    This acts as a hub to all of the content and stuff I like to show off, which can also be seen through my youtube videos (Link below
+                    in footer) or in my github repositories (button below this paragraph). This is the second iteration of my html portfolio, with the 
+                    first one being done back in May of 2020. As I have finished my second year of college, I figured it would be a great time to clean
+                    up my website and make it even easier for people to enjoy my content. Feel free to click on the content tabs above this paragraph
+                    to see some other general information about me, or click on the page headers at the top to see different projects I have created so 
+                    far. Hope you enjoy your stay!
+                    </General>
+
+                    <div class="githubBox">
+                        <a href="https://github.com/JakeHafele101/jakeHafeleProjects" target="_blank">Github Repo</a>
+
+                    </div>
+
+                </div>
+
+                <div id="tab2" class="tabcontent">
+                    <Header>
+                    About Me
+                    </Header>
+    
+                    <General>
+                        This year, I will be working on my third year towards a computer engineering degree at Iowa State University. 
+                        I am involved in a few different clubs at Iowa State, including solar car, critical tinkers, and TEAM.
+                        All of these clubs give me a great opportunity to make strong connections with other students and build upon what 
+                        I have learned in my classes. Solar car especially has helped me learn more about board design and hardware 
+                        ahead of some of the classes for my major. I also enjoy scuba diving, working on projects, and spending time with my dogs.
+                        In my down time I like to work on making youtube videos for my side projects, which are seen on this very website!
+                        Video editing is something I have increasingly become more interested in, because I think it is a really good way 
+                        of showing off myself and my own ideas. 
+                        <br> <br>
+                        Fun facts about me:
+                        <ul>
+                            <li>Favorite Movie: Whiplash</li>
+                            <li>Favorite Video Game: Portal 2</li>
+                            <li>Favorite Music Genre: Alternative Rock</li>
+                            <li>Favorite TV show from last year: Invincible</li>
+                            <li>Place I want to travel to: Ireland (Travel abroad!!)</li>
+                            <li>A dog I want sometime: A corgi</li>
+                        </ul>
+                        
+                    </General>
+
+                    <img class="picture" src="./img/about/kali.jpg">
+
+                </div>
+
+                <div id="tab3" class="tabcontent">
+                    <Header>
+                    My Resume
+                    </Header>
+                    
+                    <a href="./pdf/resumePDF.pdf" >
+                        <img class="picture" src="./img/Home/resume.JPG">
+                    </a>
+                </div>
+                
+            </div>
         </div>
 
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/eKbx1288tJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class=footer>
+            <a href="https://twitter.com/Jake_Hafele" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/jakehafele/" target="_blank" class="fa fa-instagram"></a> 
         </div>
 
-        <div><footer></footer></div>
+    </div>
 
-        <div></div>
-
-        <script type="text/javascript" src="./script/myScript.js"></script>
+    <script type="text/javascript" src="./script/myScript.js"></script>
     </body>
 </html>
