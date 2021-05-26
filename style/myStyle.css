@@ -110,13 +110,9 @@
   background-position: 0 0;
 }
 
-.dropdown:active .dropdown-content {
+.dropdown:hover .dropdown-content {
   display: block;
 }
-
-/* .dropdown:hover .dropdown-content {
-  display: block;
-} */
 
 .videoBlock{
   background-color: var(--background-color);
@@ -298,21 +294,6 @@
 }
 
 @media screen and (max-width: 1024px){
-
-  /* .pageNav a:active{
-    background-color: var(--hover-color);
-    color: var(--hover-text-color);
-  }
-  
-  .dropdown-content a:active {
-    background-color: var(--hover-color);
-    color: var(--hover-text-color);
-    background-position: 0 0;
-  }
-  
-  .dropdown:active .dropdown-content {
-    display: block;
-  } */
 
   .tetrisGame{
     display: none;
