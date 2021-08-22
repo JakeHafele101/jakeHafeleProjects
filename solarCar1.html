@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head >
+        <title>Jake Hafele - Project Portfolio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+        
+    </head>
+
+    <body class="body">
+
+        <div class="content">
+
+            <div class="titleBlock">
+                <a>Jake Hafele</a>
+                <div></div>
+                <a>Project Portfolio</a>
+            </div>
+
+            <div class="pageNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="">Year One</a>
+                        <div class="dropdown-content">
+                            <a href="tetris.html">Tetris</a>
+                            <a href="ledCube.html">LED Cube</a>
+                            <a href="soundLedStrips.html">Sound LED Strips</a>
+                            <a href="motionRobot.html">Motion Arm</a>
+                            <a href="spiderRobot.html">Spider Robot</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="">Year Two</a>
+                        <div class="dropdown-content">
+                            <a href="isuPCB.html">ISU PCB</a>
+                            <a href="uselessRobot.html">Useless Robot</a>
+                            <a href="solarCar1.html">Solar Car: Year one</a>
+                        </div>
+                    </li>
+                    <li><a href="3dPrint.html">3D Printing</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="videoBlock">
+                <div class= "videoWrapper">
+                    <iframe width="853" height="505" src="https://www.youtube.com/embed/x7lennWXEGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div> -->
+
+            <div class="contentNav">
+                <ul>
+                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Board Design</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Summer</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Librarian</a></li>
+                </ul>
+            </div>
+
+            <div class="contentBlock">
+                <div id="tab1" class="tabcontent">
+                    <Header>
+                    Board Design
+                    </Header>
+    
+                    <General>
+                        When I started solar car, one of the first things I was taught was how to design PCB's with Altium. I was then placed on my first 
+                        project, buttonboard. The job of this board was to take inputs off of buttons on the steering wheel and have them read by our 
+                        compute module to turn on different lights and our horn. The circuit itself was pretty straightforward, consisting of pull down
+                        resistors that would be connected to each of the buttons and read by the compute. We also later down the line included some filtering
+                        with an RC circuit to denoise the lines. I was able to get our first rev of the board ordered around winter break and test it. 
+                        Testing the board mostly consisted of checking the power circuit and seeing how much voltage drop was on it to adjust it with the
+                        trim up resistor on the 5V switching regulator. We have talked about stepping the voltage down to 3.3V in the future since the micro 
+                        controller can still handle that and since it would also save us a little bit of power. This board was implemented in the front of the
+                        car behind the steering wheel. It was really fun to see my first board get tested and implemented over the course of my first year. <br> <br>
+
+                        In the Spring, I also helped to redesign and layout another one of our boards, headnode. This board is in charge of turning on three 
+                        large relays that are in our battery pack box to start the battery pack. This works by using logic IC's with AND gates to check to 
+                        make sure different pins are connected and what we expect. For example, we have a button on the outside of the car called external kill,
+                        and if that is pressed then headnode shuts out the relays and makes sure the battery pack relays are not closed. This then cuts off 
+                        power from the battery pack in a "safe state". We moved these relays to headnode on the rev I worked on and also added a third one, 
+                        the charge relay, to help meet regulations for our car for rayce. The board got much more "busy", since we had to keep it
+                        the same size as a previous rev while also packing in more parts. Headnode was the first 4 layer board that I helped design too.
+                        This board was much more complicated than my first board but it was very fun to learn about it throughout the Spring and Summer. <br> <br>
+
+                        I also began work on a new project for solar car in the Spring for a power supply board. This board was designed by two alumni of the
+                        team for a senior design project intended to be used for solar car. After the fall semester was over, they handed the board off to us
+                        with one of the project members to help ease us into it. We tested the first rev of the board while identifying a few key issues. The
+                        board takes in AC power and turns it to 34V DC through 4 transformers. This is then stepped down by various power regulators to 12 and
+                        5V. One issue was that the enable pin for the linear regulator was taking 34V instead of the maximum of around 12V. To fix this, we 
+                        added a voltage divider to the next rev to ensure we wouldn't fry the IC again. We also had lots of issues with software connections
+                        to multiple pins on our microcontroller. I helped lead redesigning the 4 layer board to help clean it up too at the start of the 
+                        Summer. We made one layer horizontal traces and another vertical for the in-between layers. The top layer had many different planes
+                        spanning different voltages, depending on which section of parts were close. The bottom layer was ground which contained mostly vias
+                        to help ground parts on our top layer. I am now going into my second year of solar car as the manager of this board which I am very 
+                        excited for. We will start with testing the newest rev that we had designed over the Summer. 
+                    </General>
+
+                </div>
+
+                <div id="tab2" class="tabcontent">
+                    <Header>
+                    Summer + Rayce
+                    </Header>
+    
+                    <General>
+                        Throughout my first year, I spent more and more time working on solar car since I joined it. This was mostly obvious during the 
+                        Summer, where after work at my internship ended I would go to help work on the car from around 5-11pm most nights. During my time
+                        over the Summer, I was able to learn about the overall electrical system of our solar car. I worked to meet with different managers
+                        during this time so they could help explain boards I was unfamiliar with to understand how our battery pack fully turned on. This in
+                        turn helped me understand more what I was doing on headnode from the Spring before. On weekends we would take our car out to Jack
+                        Trice stadium on campus to drive it around in parking lots. This helped us see what did and didn't currently work on the car. We
+                        were also able to give drivers the chance to practice driving more in figure eights like we would for dynamics testing on rayce. 
+                        The summer was also a great time to learn better how to debug a full electrical system. When something didn't work, we would pull out
+                        multimeters and probe around to check for continuity or different voltages of lines on test points. This was great, because I was able
+                        to watch other people test this at the start of the Summer and ease in to doing my own debugging as I got more confident with our 
+                        system as a whole. I came to realize how much I learned over the Summer after I was teaching other members who hadn't been around 
+                        the whole Summer about different aspects of the car as we led up to rayce. <br><br>
+
+                        As for the actual rayce, there are two. The first is FSGP, which is a track event including many different cars from teams around the
+                        United States. The track event includes both the single occupant and multi occupant cars, where we had a multi occupant. I was slated
+                        to go on the second rayce, ASC, that would be a cross state rayce to compete who could drive the most miles on their car. Due to some 
+                        technical problems, we were not able to get on the track until the third and last day of the first rayce. So, our team failed to 
+                        qualify but we still did learn a lot about the whole process of scrutineering and what it takes to rayce. There will be a rayce coming
+                        up next year so the team is working hard currently to get our car in a reliable driving state before then. We have also been working
+                        hard on outreach as the next school year starts to bring on new members to the team. 
+                    </General>
+
+                </div>
+
+                <div id="tab3" class="tabcontent">
+                    <Header>
+                    Librarian
+                    </Header>
+                    
+                    <General>
+                        In the spring of my first year, I had got picked to be the librarian for our electrical team. This meant I would be in charge of 
+                        organizing parts, helping transition to Altium 365, and building parts libraries. My main focus of the Summer was to organize and
+                        catalogue all of our parts. This meant that I had logged and labeled over 500 parts in our parts sytem, EPCOS, that some of our 
+                        software team had designed the year prior. This was something that I heard was very helpful on rayce, and I'm hoping it will be nice
+                        as we get new board orders coming in this year too. Going forward, I have started the process of building a parts library containing 
+                        all of our currently used parts. After we have filled in all of our current parts, I plan to buff out the library with other common
+                        resistors, capacitors, and mosfets. This should help make board orders much easier in the future, but the initial switch will be the
+                        hardest part. Hopefully in a year this is all done so it makes future revs much easier to manage and order!
+                    </General>
+                </div>
+
+            </div>
+        </div>
+
+        <div class=footer>
+            <a href="https://twitter.com/Jake_Hafele" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/jakehafele/" target="_blank" class="fa fa-instagram"></a> 
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="./script/myScript.js"></script>
+    </body>
+</html>

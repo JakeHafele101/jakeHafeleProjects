@@ -46,6 +46,7 @@
   overflow: hidden; 
   background-color: var(--page-nav-color);
   margin: 0px;
+  margin-bottom: 10px;
 }
 
 .pageNav ul{
@@ -125,14 +126,12 @@
   background-color: var(--content-nav-color); /* Dark background color */
   position:static;
   border-radius: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   width: 853px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 853px;
-  margin: auto;
+  margin: auto
 }
 
 .contentNav ul{
