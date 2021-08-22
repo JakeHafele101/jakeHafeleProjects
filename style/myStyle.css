@@ -191,15 +191,12 @@
 .contentBlock Header {
   font-size: var(--text-size-header);
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
-.contentBlock  {
+.contentBlock General{
   font-size: var(--text-size-general);
   text-align: left;
-  padding-top: 20px;
-  padding-bottom: 20px;
   padding: 20px;
   line-height: 24px;
 }
