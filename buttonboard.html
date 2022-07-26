@@ -57,70 +57,96 @@
 
             <div class="videoBlock">
                 <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/4vpoWULZCto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="853" height="505" src="https://www.youtube.com/embed/DqeCcPwzgoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
 
             <div class="contentNav">
                 <ul>
-                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Managing Hardware Projects</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>FSGP 2022</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Librarian</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Design</a></li>
+                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
                 </ul>
             </div>
 
             <div class="contentBlock">
                 <div id="tab1" class="tabcontent">
                     <Header>
-                    Managing Hardware Projects
+                    Goals
                     </Header>
     
                     <General>
-
+                        The primary goal of buttonboard is to take driver inputs on the steering wheel and convert them to signals that can control the varying lights
+                        and horn of the solar car. As per regulations needed for the vehicle, it was required that the driver select these buttons without taking their
+                        hands off the wheel and that they will be able to control them. Some buttons will be latching to represent turn signal indicators, while other
+                        buttons will be nonlatching, like the horn. Buttonboard is represented as an "application" PCB in the solar car that is used to help manage
+                        driver interaction with the car off of the 12V Main power line from the battery pack, which is turned on only after the battery protection
+                        system connects the positive and negative relays to the battery pack.
                     </General>
 
                 </div>
 
                 <div id="tab2" class="tabcontent">
                     <Header>
-                    FSGP 2022
+                    Design
                     </Header>
     
                     <General>
-
+                        Before pull up resistors can be used to read the button inputs on buttonboard, we had to design a power circuit to step down a 12V power source
+                        to a 5V source. This 5V source would be used by our microcontroller so that it could receive the button inputs and both send and recieve CAN 
+                        packets to other PCB's in the car. As I learned on the solar car team, we have design standards that we created for our power circuit. Most of
+                        the PCB's in the car use the same switching regulator to step a 12V line down to a 5V source. Other commonalities include a PMOS to protect against
+                        reverse polarity, a TVS diode (D1) to protect against voltage spikes, a fuse in series to limit the current going into the board, and a diode on 
+                        the output of the switching regulator to protect the part. During the second revision of buttonboard that I worked on that year, we added a ferrite
+                        bead in series to the power line and 4 capacitors of decreasing capacitance and package size to filter the line. Again, we made an effort to
+                        standardize this part of the circuit so we would have multiple members working on the same circuit across different PCB's in the car. <br> <br>
+                        
+                        As mentioned before, this 5V source would be used to power the microcontroller, which could only take an input up to about 6V according to the
+                        datasheet. To confirm that we would never be reading a floating input, we designed pull up resistors that were connected to the 5V source and each
+                        digital pin reading the input of one of 6 different buttons. So, this meant that when the buttons were reading 5V, or logic high, the buttons would
+                        not be pressed. Each button on the steering wheel was then in turn wired so that one end would be going into the PCB and 6 pin connected, while the
+                        other one would be wired to the battery pack ground, which was the same ground as the 12V source coming into the board. We also added a simple RC
+                        circuit to filter at high frequency noise from the buttons that may occur due to pressing and unpressing the buttons, which could have dire 
+                        consequences of never turning the horn off. <br> <br>
+                        
+                        While it took more time to understand why we were making design choices on the schematic of buttonboard, it was more clear to me how lacking I was
+                        in PCB design from the beginning. There is something very telling about how good you are at something based on what it looks like, and with PCB 
+                        design that becomes apparent very fast! For this board, to keep my mentors sane, we decided to keep the power circuit on the left side of the board
+                        in a column, so it would be clear what those parts did without looking at the schematic or documentation. This was a huge help for people that had
+                        to debug the board without me around. I also made an effort to keep all of the connectors on one side of the board to make our wiring and systems
+                        implementation easier. The most difficult part about the PCB design was fitting the pull up resistors and RC circuit between the output connectors
+                        and the microcontroller digital pins. As you can see in my video, there is not much room. In hindsight, I could have gotten away with making it a 
+                        little larger, but the extra challenge probably pushed me more too. <br> <br>
+                        
+                        The PCB was two layers, with a 5V plane on the top that was outputted from the switching regulator, and our battery pack ground on the bottom layer.
+                        To keep the button signals clean, I tried to make the top layer have as many vertical traces around this section as possible, with the bottom
+                        layer consisting of only horizontal signals to go to test points. I made sure to also include the test points on the corner of the board so they
+                        be easier to measure with a multimeter and avoid blowing a fuse. <br> <br>
+                        
+                        For a more in depth explanation on technical design, watch my video above!
                     </General>
 
                 </div>
 
                 <div id="tab3" class="tabcontent">
                     <Header>
-                    Librarian
+                    What I Learned
                     </Header>
                     
                     <General>
-
+                        With this being my first electrical project on the solar car team in the Fall of 2020, I had a lot to learn. Throughout working on this process, I
+                        was able to learn about circuit design, PCB layout, creating a bill of materials, soldering a PCB, bench testing a PCB, and applying it to a 
+                        road worthy vehicle. This was my exact goal that I wanted out of solar car when I joined, so getting this development cycle through the club in my
+                        sophomore year meant a lot to me. Through this project, I specifically learned more about how circuits work, since at the time I hadn't taken one
+                        circuit class at the time. Looking back, this gave me tons of early exposure to parts like mosfets, diodes, switching regulators, and 
+                        microcontrollers that I wouldn't have had access to until I moved further up on the Electrical Engineering flagpole. This project also helped show
+                        me that I wanted to help lead electrical projects and teach technical work to other engineers at Iowa State, since it is very hard to replace a lot
+                        of this work in classes and is very unique. <br> <br>
+                        
+                        For everybody who was patient with me during my first year on this project, thank you for sticking with me. 
                     </General>
                 </div>
 
-            </div>
-        </div>
-
-        <div class="videoBlock">
-            <div class= "videoWrapper">
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/7eBsAqBmwiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-        
-
-        <div class="videoBlock">
-            <div class= "videoWrapper">
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/KnCWRAr7SQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="videoBlock">
-            <div class= "videoWrapper">
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/WHAGUKXiKuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
