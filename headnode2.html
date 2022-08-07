@@ -75,7 +75,13 @@
                     </Header>
     
                     <General>
-
+                        During this revision of Headnode, I had now become the BPS hardware manager. After the last revision and Summer testing, 
+                        I decided that this revision would be used to clean up old redundancies or unused parts of the last board, while 
+                        standardizing circuits to match our other boards. Some changes include updating our 12 V power circuit, removing 
+                        unused charging logic, updating the mosfet buffers to the other battery pack boards, removing unused Moduleboard circuits, 
+                        and updating the circuit that drives the battery pack relays to the new power switch part, instead of the old relays. The 
+                        goal was to maintain meeting all the regulations of the old board while adding quality of life improvements that would 
+                        help future development of Headnode. 
                     </General>
 
                 </div>
@@ -86,7 +92,41 @@
                     </Header>
     
                     <General>
-
+                        In general, the largest change that was made to the 12V power circuit was the standardization of power protection that 
+                        was also used on boards like Buttonboard or HAL. If you would like to learn more about this, please visit those pages 
+                        on this site. Connector ports were also removed for some of the charging logic that was now not needed. <br> <br>
+                        
+                        On the interface page, we removed the XOR gate that was previously used for the external charging logic. This was handled 
+                        by software in the previous revision so it is now removed to avoid confusion. We also decided to update the buffer circuits 
+                        to powerboard and precharge, so that they would now both use one PMOS to buffer a 5 V signal to each board. On each respective 
+                        board now, that 5 V signal would get buffered, and in turn help reduce dependencies across the boards. We had to make 
+                        sure to implement these changes to each of these boards during the same revision, or else we would not have been able to 
+                        turn the car on or drive the motors. <br> <br>
+                        
+                        On the moduleboard interface schematic, we decided to remove the 0 ohm jumper that was previously used to start the 5 V 
+                        logic line for the Moduleboard analog fault. Since we always needed this connected, it was one less part to manage and 
+                        worry about on the working revision of the board. <br> <br>
+                        
+                        On the regulator page, we decided to change the 5 V regulator from the previous linear regulator to the standardized 
+                        switching regulator circuit that was used on other boards. This is a push I made as both the manager and Librarian for 
+                        parts standardization. We also removed the 2.5 V regulator since we did not use it anymore on Headnode. <br> <br>
+                        
+                        The microcontroller page remained the same, but we did update the schematic block so that there was less text on it, which 
+                        made it more readable.<br> <br>
+                        
+                        The relay logic page removed the 2 0 Ohm resistor jumpers that were used to select between the relay and power switches 
+                        that would be used to power 12 V to the battery pack relays. After we were able to receive and test the power switch part, 
+                        we determined that they were more efficient and easier to implement, which is what we did on this revision. The circuit was 
+                        created from the reccomended parts and connections in the datasheet. We used to logic signal mentioned previously to turn them 
+                        on, with a 5 V input. We used the 12 V supply and ground to power the switch, and connected the output to the control lines 
+                        used to power the inductors on the battery pack relays.<br> <br>
+                        
+                        In general, this update helped to clear up lots of space on the PCB. We did not fully redo the board this time, instead 
+                        opting to clean up traces where we removed parts. We did move the power switches to the top of the board instead of the 
+                        bottom, which enabled for easier testing since they were now the only way of closing the battery pack relays. We also 
+                        added some extra parts that were included for our power filtering circuit in the bottom left hand side of the board. <br> <br>
+                        
+                        The updated revision of this board can be seen in the Github repo below!
                     </General>
 
                 </div>
@@ -97,7 +137,10 @@
                     </Header>
                     
                     <General>
-
+                        Overall, while this revision of the board did not include huge changes, that was a good sign for how well the board worked 
+                        last year. We were still able to implement quality of life improvements to the board, which were seen at the next race 
+                        during FSGP 2022 in the Summer. Overall, I was glad to be involved in two back to back revisions of one board in solar car, 
+                        since I was able to see the continuous improvements our team could make to one custom PCB. 
                     </General>
                 </div>
 
