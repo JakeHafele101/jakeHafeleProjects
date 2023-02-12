@@ -48,18 +48,23 @@
   background-color: var(--page-nav-color);
   margin: 0px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .pageNav ul{
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .pageNav li{
   text-align: center;
   list-style: none;
   float: left;
-  width: 25%;
   cursor: pointer;
 }
 
@@ -87,7 +92,6 @@
   position: absolute;
   background-color: #f1f1f1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  width: 25%;
   z-index: 10;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
