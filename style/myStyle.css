@@ -1,7 +1,8 @@
 :root {
   /*Colors*/
   --background-color: #0d1117;
-  --header-footer-color: #639cdd;
+  --header-color: #639cdd;
+  --footer-color: #0d1117;
   --page-nav-color: #4375af;
   --content-nav-color: #4375af;
   --text-color: white;
@@ -21,7 +22,7 @@
   margin: 0px;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #0d1117;
+  background-color: var(--background-color);
 }
 
 .content {
@@ -30,7 +31,7 @@
 
 .titleBlock {
   text-align: center;
-  background-color: var(--header-footer-color);
+  background-color: var(--header-color);
   color: var(--text-color);
   font-size: var(--text-size-title);
   padding: 10px;
@@ -127,11 +128,7 @@
   position:static;
   border-radius: 20px;
   width: 853px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 853px;
-  margin: auto
+  margin: auto;
 }
 
 .contentNav ul{
@@ -139,13 +136,15 @@
   padding: 0;
   list-style: none;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  
 }
 
 .contentNav li{
   text-align: center;
   list-style: none;
   float: left;
-  width: 33.33%;
   cursor: pointer;
   top: 50%;
 }
@@ -229,8 +228,9 @@
 
 .footer {
   text-align: center;
-  background-color: var(--header-footer-color);
+  background-color: var(--footer-color);
   color: var(--text-color);
+  padding-bottom: 10px;
   width: 100%;
   bottom: 0;
 }
@@ -245,22 +245,12 @@
   border-radius: 75%;
 }
 
-.fa-twitter {
-  background: var(--page-nav-color);
-  color: var(--text-color);
-}
-
 .fa-linkedin {
   background: var(--page-nav-color);
   color: var(--text-color);
 }
 
 .fa-youtube {
-  background: var(--page-nav-color);
-  color: var(--text-color);
-}
-
-.fa-instagram {
   background: var(--page-nav-color);
   color: var(--text-color);
 }
