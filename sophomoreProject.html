@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="body">
+
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>ISU LED Array</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>"Useless" Machine</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Solar Car: Buttonboard</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab4')"><a>Solar Car: Headnode R1</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab5')"><a>Solar Car: Year One</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab6')"><a>3D Printing</a></li>
+            </ul>
+        </div>
+
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
+                    <a href="isuPCB.html">ISU LED Array (Click here for more info)</a>
+                </Header>
+
+                <General>
+                    The main goal of this project was to create a PCB that would light up an Iowa State University logo with LEDs. I wanted
+                        to also design a box and glass cover over the circuit board. Since I was using a PCB, I wanted to try and design a 
+                        circuit without using an Arduino microcontroller and instead apply some of what I learned through my digital logic class
+                        that I took in the Fall semester. To do this, I would use a oscillator to act as a clock and a counter to activate the 
+                        transistors that would light up the yellow LEDs. I also would like to further learn how to use Alitum, which is the 
+                        PCB design software I used to design my board. <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/-oNzbakD7iQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    <a href="uselessRobot.html">"Useless" Robot</a>
+                </Header>
+
+                <General>
+                    With this project, I wanted to create something that would push what I have done so far with electronics design while 
+                        also making something fun. For this, I decided to make a useless machine. The sole job of this robot was to flip off
+                        any switch that I pressed down or turned on with the box. The robot arm is an improved version of my robot from 
+                        the motion controlled arm, which was a big challenge for this project. Overall, it is a very interesting build and 
+                        was tons of fun to make. <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/x7lennWXEGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    <a href="buttonboard.html">Solar Car: Buttonboard</a>
+                </Header>
+
+                <General>
+                    The primary goal of buttonboard is to take driver inputs on the steering wheel and convert them to signals that can control the varying lights
+                        and horn of the solar car. As per regulations needed for the vehicle, it was required that the driver select these buttons without taking their
+                        hands off the wheel and that they will be able to control them. Some buttons will be latching to represent turn signal indicators, while other
+                        buttons will be nonlatching, like the horn. Buttonboard is represented as an "application" PCB in the solar car that is used to help manage
+                        driver interaction with the car off of the 12V Main power line from the battery pack, which is turned on only after the battery protection
+                        system connects the positive and negative relays to the battery pack. <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/DqeCcPwzgoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab4" class="tabcontent">
+                <Header>
+                    <a href="headnode1.html">Solar Car: Headnode Rev 1</a>
+                </Header>
+
+                <General>
+                    Headnode is one of two different custom PCB's in solar car that are apart of our Battery Protection System 
+                        (BPS). The two boards included are Moduleboard, which monitors the status of a battery module, which includes
+                        34 18650GA Lithium Ion batteries in parallel. Our entire battery pack includes 35 of these battery modules in 
+                        series to reach a nominal voltage of 140 V. Headnode, on the other hand, controls the battery pack relays by 
+                        checking if either the hardware or software faults on either board are triggered. Both the hardware checks made 
+                        by comparators and the software checks made against a voltage reference need to not be triggered on a moduleboard. 
+                        The hardware fault is ANDed with the logic check from the next board, so when one module faults in the middle 
+                        of the board, the proceeding moduleboards will also fault. The initial 5V "Working" signal for the fault is 
+                        initially supplied by Headnode, and sent to Moduleboard #1. At the last Moduleboard, #35, this ANDed logic 
+                        signal will be sent back in to Headnode as an input. The software checks are made over an isolated CAN network 
+                        that is connected only to the boards inside the battery pack. <br> <br>
+                        
+                        Generally, the purpose of BPS is to monitor these faults and control the battery pack relays that open/close to 
+                        control battery consumption. Both BPS and Powerboard, a board used to regulate the battery pack voltage down to 
+                        12 V, are powered off of a 25 V supplemental battery used to check the state of the batteries before drawing 
+                        current from them. This is needed as a safety precaution and because of regulations we have to follow to build 
+                        the car. With this supplemental battery, BPS will check to see if any hardware and software faults trigger in 
+                        the car, and if they don't, BPS will close the positive, negative, and charge relays in the battery pack. After 
+                        this is done, Headnode will send a buffered 12V logic signal to powerboard indicating that it is now okay to 
+                        draw current from the battery pack through the closed relays. Powerboard will simultaneously switch off of 
+                        drawing power from the supplemental battery pack to our main battery pack. After this, the fourth and final 
+                        board in the battery pack, Precharge, is powered and can start to slowly increase the voltage given to the 
+                        motors through a power resistor. Since we use DC series motors, if we instantly give it 140 V through a closed 
+                        relay, we would blow them up. <br> <br>
+                        
+                        Generally, this lays out how our newly revised battery pack architecture works. Before this revision of Headnode, 
+                        Precharge was used to drive 12 V through the positive and negative relays that connect to the battery pack 
+                        terminals. So, the primary goal of this rev was to maintain satisfying regulations to turning on the 
+                        car and moving relay logic from Precharge to Headnode.  <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/cFftIjgDIVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab5" class="tabcontent">
+                <Header>
+                    <a href="solarCar1.html">Solar Car: Year One</a>
+                </Header>
+
+                <General>
+                    The link to this tab goes over what I learned during my first year on the PrISUm solar car team at Iowa State University. 
+                    Some of the things included are learning board design, working on the car over Summer 2021, and working with as a leader on 
+                    the electrical team. <br> <br>
+                </General>
+
+            </div>
+
+            <div id="tab6" class="tabcontent">
+                <Header>
+                    <a href="3dPrint.html">3D Printing</a>
+                </Header>
+
+                <General>
+                    In the middle of June I ended up getting my first 3D printer. The printer I ended up buying was Creality's Ender 3 Pro. 
+                        From what I looked up, the ender 3 pro offered great detail and print quality for entry level printers. It came with all
+                        of the tools I needed to set it up and some white PLA filament. After this ran out, I bought a 1 kg spool of black PLA 
+                        filament to fuel my first large project. I designed a box that will be printed with this printer later for my led strip
+                        project. More information will be posted about that soon in another tab on my site later. The idea of this page is to 
+                        share pictures of my more detailed or fun prints and also post my issues and solutions with the printer. Since 3D printing
+                        is so complex, there are many issues that come up over time. As I use the printer more, I hope to document these problems
+                        and my process in how I handled them. This could be helpful for any other new printers or people who are just curious about
+                        how the printer runs. The dimensions of the ender 3 pro are around 8 x 8 x 9 inches, which allows me to print basically anything
+                        I wish. I am looking forward to showing this thing off throughout the Summer! <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/iU_GhOivqv0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
+
+    </div>
+
+    <script type="text/javascript" src="./script/myScript.js"></script>
+</body>
+
+</html>

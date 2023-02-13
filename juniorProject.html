@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="body">
+
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Tetris</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>LED Cube</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Sound LED's</a></li>
+            </ul>
+        </div>
+
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
+                    <a href="hal.html">Solar Car: Horn and Lights (Click here for more info)</a>
+                </Header>
+
+                <General>
+                    During my time on HAL, the Horn and Lights project, I was able to manage and help guide new members in designing another one of our application 
+                        boards, similar to when I worked on my first PCB last year. HAL's focus is to take in packets over our software's CAN network to turn on different
+                        lights and the horn in the car. If you have seen my writeup or video on buttonboard, you will notice that this is the direct inverse to that board,
+                        where this time we are receiving CAN packets and converting them to a voltage output on this board.  Since the first revision of this board was 
+                        already created in the previous year, it was our job to improve on where it had failed us. Specifically, we had issues with some parts being
+                        underspecced in how much current they could handle. Also, some of the traces on the PCB were not well equipped to handle current outputs over 5A. 
+                        To fix this, we made it our goal in redesigning to spec out larger parts, create larger PCB traces, and expand the board to 4 layers to make 
+                        signal management cleaner. <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/fUdIL56IZJQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    <a href="headnode2.html">Solar Car: Headnode R2</a>
+                </Header>
+
+                <General>
+                    During this revision of Headnode, I had now become the BPS hardware manager. After the last revision and Summer testing, 
+                    I decided that this revision would be used to clean up old redundancies or unused parts of the last board, while 
+                    standardizing circuits to match our other boards. Some changes include updating our 12 V power circuit, removing 
+                    unused charging logic, updating the mosfet buffers to the other battery pack boards, removing unused Moduleboard circuits, 
+                    and updating the circuit that drives the battery pack relays to the new power switch part, instead of the old relays. The 
+                    goal was to maintain meeting all the regulations of the old board while adding quality of life improvements that would 
+                    help future development of Headnode. <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/KkJWNHUNfRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    <a href="solarCar2.html">Solar Car: Year Two</a>
+                </Header>
+
+                <General>
+                    On the following page, I cover the second year I did in Solar Car. This includes managing hardware 
+                    projects, going on my first solar car race, and being on the electrical leadership team. <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/4vpoWULZCto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
+
+    </div>
+
+    <script type="text/javascript" src="./script/myScript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="body">
+
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>FPGA Design</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Senior Design: Digital ASIC Fabrication</a></li>
+            </ul>
+        </div>
+
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
+                    <a href="IntroFPGA.html">FPGA Intro (Click here for more info)</a>
+                </Header>
+
+                <General>
+                    The last time that I had written any Verilog was when I worked as a Digital Logic Teaching Assistant
+                    back in the Spring 2021 semester of school. Since then, I have done a lot of work on Iowa State’s
+                    solar car team, PrISUm, learning things about PCB design and system wide testing. As I am looking
+                    ahead towards getting my Masters at Iowa State, I have thought about learning more about FPGA’s
+                    since I enjoyed my time in Digital Logic learning about combinational logic, sequential logic, and
+                    state machines. <br> <br>
+                    To get myself more familiar with the basics of digital design and Verilog, I decided to buy the
+                    Basys 3 Artix 7 FPGA development board sold by Diligent. This board comes with a 100 MHz clock, 16
+                    switches, 16 LED’s, 5 buttons, a USB Host, UART Bridge, VGA output, and seven segment displays.
+                    Between all of these features, I figured that I would be able to apply what I have learned in my
+                    digital logic class and go beyond it to more topics based on my personal interests and future
+                    classes. <br> <br>
+                    On this specific page, both videos cover demos and conversation about my time working with designing
+                    modules and testbenches related to combination logic, sequential logic, finite state machines, UART
+                    communication, and PS2 keyboard receiving interfaces. As a guide, I have been following through the
+                    first 9 chapters of the textbook “FPGA Prototyping by Verilog Examples” by Pong P. Chu. This book is
+                    very useful since it has helped expand on the syntax that is both synthesizable and not for Verilog
+                    while also explaining widely accepted design practices. I have found this extremely beneficial for
+                    modules involving UART, PS2 communication, and complex state machines. Normally in each chapter, the
+                    concepts and basic outline of a module will be defined, with extra experiments added at the bottom
+                    to expand upon what is given. Through my work over two months, the code presented in these demos is
+                    from those experiments. If you are interested in the modules and testbenches I have designed, feel
+                    free to access my GitHub repository below! <br> <br>
+                </General>
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/wo8B2E-kzvY"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    <a href="index.html">Senior Design: Digital ASIC Fabrication</a>
+                </Header>
+
+                <General>
+                    Senior design page coming soon! <br> <br>
+                </General>
+
+            </div>
+
+        </div>
+
+        <div class=footer>
+            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank"
+                class="fa fa-youtube"></a>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="./script/myScript.js"></script>
+</body>
+
+</html>

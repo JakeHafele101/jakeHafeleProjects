@@ -191,9 +191,35 @@
 }
 
 .contentBlock Header {
-  font-size: var(--text-size-header);
+  font-size: var(--text-size-general);
   text-align: center;
   padding: 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+.contentBlock Header a {
+  font-size: var(--text-size-general);
+  color: var(--text-color);
+  background-color: var(--content-nav-color); /* Dark background color */
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  border-radius: 20px;
+
+  float: center; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  background-image: linear-gradient(to bottom, transparent, transparent 50%, var(--content-nav-color) 50%, var(--content-nav-color));
+  background-position: 0 100%;
+  background-size: 100% 200%;
+  transition: all .25s ease-in;
+
+}
+
+.contentBlock Header a:hover{
+  background-color: var(--hover-color);
+  color: var(--hover-text-color);
+  background-position: 0 0;
 }
 
 .contentBlock General{
