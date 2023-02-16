@@ -206,6 +206,7 @@
   padding: 20px;
   text-decoration: none;
   border-radius: 20px;
+  margin: 10px;
 
   float: center; /* Make sure that the links stay side-by-side */
   display: block; /* Change the display to block, for responsive reasons (see below) */

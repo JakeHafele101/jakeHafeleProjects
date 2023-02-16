@@ -1,173 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head >
-        <title>Jake Hafele - Project Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        
-    </head>
 
-    <body class="body">
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
 
-        <div class="content">
+</head>
 
-            <div class="titleBlock">
-                <a>Jake Hafele - Project Portfolio</a>
-            </div>
-    
-            <div class="pageNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li class="dropdown">
-                        <a href="">Projects</a>
-                        <div class="dropdown-content">
-                            <a href="freshmanProject.html">Freshman Year</a>
-                            <a href="sophomoreProject.html">Sophomore Year</a>
-                            <a href="juniorProject.html">Junior Year</a>
-                            <a href="seniorProject.html">Senior Year</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="">Work Experience</a>
-                        <div class="dropdown-content">
-                            <a href="intern.html">Internships</a>
-                            <a href="TA.html">Teaching Assistant</a>
-                        </div>
-                    </li>
-                    <li><a href="reflection.html">Reflections</a></li>
-                </ul>
-            </div>
+<body class="body">
 
-            <div class="videoBlock">
-                <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/mwrbdDF8V_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div>
-            </div>
+    <div class="content">
 
-            <div class="contentNav">
-                <ul>
-                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
-                </ul>
-            </div>
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
 
-            <div class="contentBlock">
-                <div id="tab1" class="tabcontent">
-                    <Header>
-                    My Goals
-                    </Header>
-    
-                    <General>
-                        The goal of the last two week for me has been to create a 4 x 4 x 4 LED cube. For this project, my main goal was to get 
-                        more familiar with soldering electronic parts to be used with arduino boards.I had never soldered before so I figured 
-                        that this would be the most challenging part of this build for me. I would have to solder together every LED, resistor, 
-                        and wire all to connect back to the arduino board to send different signals for the pattern. To do this, I would need to
-                        create a template to create one layer of the cube. After all the layers would be built, I would have to solder them 
-                        together and wire it up to a board to make a more permanent and final structure. At every point, I would need to check
-                        to make sure each LED could light up after soldering the layers together with 5 volt and ground pins. After that, wires
-                        and resistors would be added to the board and the arduino uno would be placed on the permanent. After that, I could use 
-                        some test code I found online to test my cube and then create my own fun patterns.
-                    </General>
-
-                </div>
-
-                <div id="tab2" class="tabcontent">
-                    <Header>
-                    The Process
-                    </Header>
-    
-                    <General>
-                        The goal of the last two week for me has been to create a 4 x 4 x 4 LED cube. For this project, my main goal was to get 
-                        more familiar with soldering electronic parts to be used with arduino boards.I had never soldered before so I figured 
-                        that this would be the most challenging part of this build for me. I would have to solder together every LED, resistor, 
-                        and wire all to connect back to the arduino board to send different signals for the pattern. To do this, I would need to
-                        create a template to create one layer of the cube. After all the layers would be built, I would have to solder them 
-                        together and wire it up to a board to make a more permanent and final structure. At every point, I would need to check
-                        to make sure each LED could light up after soldering the layers together with 5 volt and ground pins. After that, wires
-                        and resistors would be added to the board and the arduino uno would be placed on the permanent. After that, I could use 
-                        some test code I found online to test my cube and then create my own fun patterns. <br> <br>
-
-                        One challenge that I didn't consider until doing a hardware project like this was finding a proper set up and the right
-                        tools. It took me a little bit to find the right tools from our garage and the right materials to make my project go as
-                        easy as possible. But, eventually, I found a drill and small enough drill bit that would work, alongside some cardboard. 
-                        Although, there were many things I had to order online that I didn't have readily available. The biggest thing was ordering
-                        a soldering kit. This was essential for the job. I also got an almost excessive amount of LEDs, resistors, and wires to 
-                        help me with the current and future projects. After I set everything up in my kitchen, I was ready to go. <br> <br>
-        
-                        My first goal was to figure out an efficient process for making a 4 x 4 layer of LEDs. With the guide I followed, it 
-                        reccomended bending the cathodes, or negative legs, of the LEDs down to be parallel with the template I made. This made
-                        it so the overall cube would have the ground signals being controlled by the specific layer it was on, and the anodes, 
-                        or the positive legs, be soldered together vertically between each layer. This technique is known as multiplexing, which
-                        makes it so I only would need 20 different pins to control each LED individually from my arduino uno, instead of 64. The
-                        positive LEDs would end up going through the holes of the final prototype board, while the 4 ground wires would come out
-                        of the side of the cube. I ended up soldering the negative legs of the LEDs together in 4 rows for the layers, and soldered
-                        two wires on the ends of the layers to help connect the ground signal between each of the rows. This also helped in giving
-                        the cube more support for each layer. After I was successfully done with creating one layer, I created three more in the 
-                        same way. <br> <br>
-        
-                        Now that I had four identical layers built, the next step was to solder the positive legs, or anodes, together to stack
-                        the layers on top of each other. To help do this, I cut out two little cardboard strips that would be used to prop up the
-                        layer when not many joints were soldered on yet. Crocodile clips also helped with this, as I would clip the three corners 
-                        while I soldered the first leg of one of the corners between the layers. I worked my way from the outside in, starting 
-                        with each of the four corners. This was the best way to build overall support for the cube, which made it easier to solder
-                        the inside joints. Once I had all four layers attached, I went over every layer to make sure each ground signal was being
-                        reached by every LED, to make sure my soldering was still holding up. After that was good, I moved on to the permanent 
-                        setup. <br> <br>
-        
-                        My final product was based around building the cube on a prototype board. A prototype board is a board that has tons of 
-                        tiny holes for wires to go through, which makes wire management and soldering much easier for projects like this. The 
-                        first thing I did was get an adhesive pad and stuck it between the arduino uno and the prototype board to mount the 
-                        arduino on to one half of the board. After that, I placed 16 resistors for the LEDs right by the arduino uno's side of 
-                        the board, so the wires would come out closer to the arduino. This made cable management much easier and made it so wires
-                        would not get in the way of the flashing cube once it was finished. After this, I used crocodile clips and tweezers from
-                        my soldering kit to push the 16 positive LED legs through the prototype board. Once this was done, I soldered 4 wires, 
-                        one going to each layer, that would end up connecting to the arduino to control the ground signals. After this, I soldered
-                        the positive LED legs to the resistors on the backside of the prototype board. At this point, everything is soldered and
-                        set. At this point I loaded up preset code to test my cube to make sure it was running properly. After that, I created
-                        my own patterns using this code as a template to run my cube. <br> <br>
-                    </General>
-
-                </div>
-
-                <div id="tab3" class="tabcontent">
-                    <Header>
-                    My Reflection
-                    </Header>
-                    
-                    <General>
-                        Overall, this project ended up being more challenging than I expected in different ways than my other coding projects.
-                        I didn't expect the soldering to be as time consuming as it was, but that was definitely because I am still a beginner
-                        with it. Although, I did learn a lot about soldering and many helpful tricks through trial and error. I also am excited
-                        to do more hardware projects like this in the future. I think it is really fun to create tangible things like this LED 
-                        cube to make it light and and make fun patterns. I hope I can write more of my own code from scratch in the future to
-                        help further solidify using hardware and code together to make this projects function correctly. I plan on making something
-                        with LED strips next with 3D printing, and I am planning on writing all of my code from scratch for that to learn more about
-                        that. 
-                    </General>
-                </div>
-
-                <div class="githubBox">
-                    <a href="https://github.com/JakeHafele101/LED-Cube" target="_blank">Github Repo</a>
-                </div>
-            </div>
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
         </div>
 
         <div class="videoBlock">
-            <div class= "videoWrapper">
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/u02Qf4_wqzQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/mwrbdDF8V_Q"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
 
-        <div class=footer>
-            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
-            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
+            </ul>
         </div>
+
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
+                    My Goals
+                </Header>
+
+                <General>
+                    The first hardware project I ever created was a 4 x 4 x 4 LED cube. For this project, my main goal
+                    was to get more familiar with soldering electronic part, to be interfaced with an Arduino Uno
+                    microcontroller. I had never soldered before this, so I assumed that this would be the most
+                    challenging part of the build for me. I would have to solder together every LED and resistor, then
+                    wire them all back to the Arduino board to send different signals for the patterns. To do this, I
+                    would need to create a template to create one layer of the cube. After all the layers would be
+                    built, I would have to solder them together and wire it up to a perf board to make a more permanent
+                    and final structure. At each point, I would need to check to make sure each LED could light up after
+                    soldering the layers together with 5 volt and ground pins. After that, wires and resistors would be
+                    added to the board and the Arduino uno would be placed on the permanent. After that, I could use
+                    some test code I found online to test my cube and then create my own fun patterns.
+                </General>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    The Process
+                </Header>
+
+                <General>
+                    One challenge that I didn't consider until doing a hardware project like this was finding a proper
+                    setup and the right tools. It took me a decent sum of time to find the right tools from our garage
+                    and the right materials to make my project go as easy as possible. After enough searching, I found a
+                    drill and some small bits that would equip me to create a cardboard template to make each layer of
+                    the LED cube. Although, there were many things I had to order online that I didn't have readily
+                    available. The most important tool to order was my first soldering kit. I also got an almost
+                    excessive number of LEDs, resistors, and wires to help me with both current and future projects.
+                    After I set everything up in my kitchen, I was ready to go. <br> <br>
+
+                    &#8195;My first goal was to figure out an efficient process for making a 4 x 4 layer of LEDs. With the
+                    guide I followed, it recommended bending the cathodes of the LEDs down to be parallel with the
+                    cardboard template I designed. This made it so the overall cube would have the ground signals being
+                    controlled by the specific layer it was on, and the anodes be soldered together vertically between
+                    each layer. This technique is known as multiplexing, which makes it so I only would need 20
+                    different pins to control each LED individually from my Arduino Uno, instead of 64. The positive LED
+                    ends would end up going through the holes of the final perf board, while the 4 ground wires would
+                    come out of the side of the cube. I ended up soldering the negative legs of the LEDs together in 4
+                    rows for the layers, and soldered two wires on the ends of the layers to help connect the ground
+                    signal between each of the rows. This also helped in giving the cube more support for each layer.
+                    After I was successfully done with creating one layer, I created three more in the same way. <br> <br>
+
+                    &#8195;Now that I had four identical layers built, the next step was to solder the positive legs together
+                    to stack the layers on top of each other. To help do this, I cut out two small cardboard strips that
+                    would be used to prop up the layer when there were not many joints connected yet. Crocodile clips
+                    also helped with this, as I would clip the three corners while I soldered the first leg of one of
+                    the corners between the layers. I worked my way from the outside in, starting with each of the four
+                    corners. I found that this was the best way to build overall support for the cube, which made it
+                    easier to solder the inside joints. Once I had all four layers attached, I went over every layer
+                    with solder to ensure each ground signal had a solid connection to every LED. After that was
+                    confirmed, I moved on to the permanent setup. <br> <br>
+
+                    &#8195;My final product was based around building the cube on a perf board, as mentioned before. The first
+                    thing I did was get an adhesive pad, and I placed it between the Arduino Uno and the board to mount
+                    the Arduino on to one half of the board. After that, I placed 16 resistors for the LEDs right by the
+                    Arduino Uno, so the wires could come out closer to the Arduino. This made cable management much
+                    easier, and also made it so wires would not get in the way of the final lightshow. After this, I
+                    used crocodile clips and tweezers from my soldering kit to push the 16 positive LED legs through the
+                    prototype board. Once this was done, I soldered 4 wires, one going to each layer, that would end up
+                    connecting to the Arduino to control the ground signals. After that, I soldered the positive LED
+                    legs to the resistors on the backside of the prototype board. At this point, everything was soldered
+                    and set. At this point I loaded up preset code to test my cube to make sure it was running properly.
+                    After that, I created my own patterns using this code as a template to run my cube. <br> <br>
+
+                </General>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    My Reflection
+                </Header>
+
+                <General>
+                    Overall, this project ended up being more challenging than I expected, and in different ways than my
+                    other coding projects. I didn't expect the soldering to be as time consuming or difficult as it was,
+                    but that was because I was still a beginner with it at the time. Although, I did learn a lot about
+                    soldering and many helpful tricks through trial and error. At the time, this was my first exposure
+                    to directly working with electronics and hands on circuits, which definitely boosted my interest in
+                    electrical engineering as a whole. I think it is really satisfying to create tangible designs like
+                    this LED cube to interact with the real world. I hope I can write more of my own code from scratch
+                    in the future, to help further solidify using hardware and code together to make this projects
+                    function correctly. <br> <br>
+
+                    &#8195;Note from 2023: After editing this page, I got a wave of nostalgia from when I was working on this
+                    during COVID-19. I had a great time teaching myself about circuits and soldering, and this project
+                    definitely attributed to a lot of my motivation for the rest of the projects on my portfolio. Thanks
+                    again for reading! <br> <br>
+
+                </General>
+            </div>
+
+            <div class="githubBox">
+                <a href="https://github.com/JakeHafele101/LED-Cube" target="_blank">Github Repo</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="videoBlock">
+        <div class="videoWrapper">
+            <iframe width="853" height="505" src="https://www.youtube.com/embed/u02Qf4_wqzQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
 
     </div>
 
     <script type="text/javascript" src="./script/myScript.js"></script>
-    </body>
+</body>
+
 </html>
