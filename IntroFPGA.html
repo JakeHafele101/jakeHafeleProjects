@@ -1,121 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head >
-        <title>Jake Hafele - Project Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo/logo.png">
-    </head>
 
-    <body class="body">
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="logo/logo.png">
+</head>
 
-        <div class="content">
+<body class="body">
 
-            <div class="titleBlock">
-                <a>Jake Hafele - Project Portfolio</a>
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="videoBlock">
+            <div class="videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/wo8B2E-kzvY"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-    
-            <div class="pageNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li class="dropdown">
-                        <a href="">Projects</a>
-                        <div class="dropdown-content">
-                            <a href="freshmanProject.html">Freshman Year</a>
-                            <a href="sophomoreProject.html">Sophomore Year</a>
-                            <a href="juniorProject.html">Junior Year</a>
-                            <a href="seniorProject.html">Senior Year</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="">Work Experience</a>
-                        <div class="dropdown-content">
-                            <a href="intern.html">Internships</a>
-                            <a href="TA.html">Teaching Assistant</a>
-                        </div>
-                    </li>
-                    <li><a href="reflection.html">Reflections</a></li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="videoBlock">
-                <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/wo8B2E-kzvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Starting out</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Testbenches</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Synthesizing</a></li>
+            </ul>
+        </div>
 
-            <div class="contentNav">
-                <ul>
-                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Starting out</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Testbenches</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Synthesizing</a></li>
-                </ul>
-            </div>
-
-            <div class="contentBlock">
-                <div id="tab1" class="tabcontent">
-                    <Header>
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
                     Jumping Back in To Verilog
-                    </Header>
+                </Header>
 
-                    <General>
-                        The last time that I had written any Verilog was when I worked as a Digital Logic Teaching Assistant back in the Spring 2021 semester of school. Since then, I have done a lot of work on Iowa State’s solar car team, PrISUm, learning things about PCB design and system wide testing. As I am looking ahead towards getting my Masters at Iowa State, I have thought about learning more about FPGA’s since I enjoyed my time in Digital Logic learning about combinational logic, sequential logic, and state machines.  <br> <br> 
-                        To get myself more familiar with the basics of digital design and Verilog, I decided to buy the Basys 3 Artix 7 FPGA development board sold by Diligent. This board comes with a 100 MHz clock, 16 switches, 16 LED’s, 5 buttons, a USB Host, UART Bridge, VGA output, and seven segment displays. Between all of these features, I figured that I would be able to apply what I have learned in my digital logic class and go beyond it to more topics based on my personal interests and future classes.  <br> <br>
-                        On this specific page, both videos cover demos and conversation about my time working with designing modules and testbenches related to combination logic, sequential logic, finite state machines, UART communication, and PS2 keyboard receiving interfaces. As a guide, I have been following through the first 9 chapters of the textbook “FPGA Prototyping by Verilog Examples” by Pong P. Chu. This book is very useful since it has helped expand on the syntax that is both synthesizable and not for Verilog while also explaining widely accepted design practices. I have found this extremely beneficial for modules involving UART, PS2 communication, and complex state machines. Normally in each chapter, the concepts and basic outline of a module will be defined, with extra experiments added at the bottom to expand upon what is given. Through my work over two months, the code presented in these demos is from those experiments. If you are interested in the modules and testbenches I have designed, feel free to access my GitHub repository below! <br> <br>
-                    </General>
+                <General>
+                    The last time I had written any Verilog was when I worked as a Digital Logic Teaching Assistant back
+                    in the Spring 2021 semester of school. Since then, I have done a lot of work on Iowa State’s solar
+                    car team, PrISUm, learning many skills related to PCB design and system wide testing. As I look
+                    ahead towards getting my Masters at Iowa State, I have thought about learning more about FPGA’s
+                    since I enjoyed my time in Digital Logic learning about combinational logic, sequential logic, and
+                    state machines. <br> <br>
 
-                </div>
+                    &#8195;
+                    To get myself more familiar with the basics of digital design and Verilog, I decided to buy the
+                    Basys 3 Artix 7 FPGA development board sold by Diligent. This board comes with a 100 MHz clock, 16
+                    switches, 16 LED’s, 5 buttons, a USB Host, UART Bridge, VGA output, and seven segment displays.
+                    Between all of these features, I figured that I would be able to apply what I have learned in my
+                    digital logic class and go beyond it to more topics based on my personal interests and future
+                    classes. <br> <br>
 
-                <div id="tab2" class="tabcontent">
-                    <Header>
+                    &#8195;
+                    On this specific page, both videos cover demos and conversation about my time working with designing
+                    modules and testbenches related to combination logic, sequential logic, finite state machines, UART
+                    communication, and PS2 keyboard receiving interfaces. As a guide, I have been following through the
+                    first 9 chapters of the textbook “FPGA Prototyping by Verilog Examples” by Pong P. Chu. This book
+                    has helped expand on the syntax that is both synthesizable and not for Verilog, while also
+                    explaining useful design practices. I have found this extremely beneficial for modules involving
+                    UART, PS2 communication, and complex state machines. Normally in each chapter, the concepts and
+                    basic outline of a module will be defined, with extra experiments added at the bottom to expand upon
+                    what is given. Through my work over two months, the code presented in these demos are from those
+                    experiments. If you are interested in the modules and testbenches I have designed, feel free to
+                    access my GitHub repository below! <br> <br>
+
+                </General>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
                     Creating Effective Testbenches
-                    </Header>
-    
-                    <General>
-                        One of the biggest challenges working with Verilog was designing quality testbenches. In the beginning when I was testing 1 bit comparators or combinational logic, the testbenches were fairly straightforward. As my code became more complex though, that is where I think the learning began to speed up. When working with modules like UART or PS2 receiving systems, I found a steep learning curve in deriving effective code in Verilog. I started to design separate always blocks to drive a clock based on a parameter designated period. I also had my asynchronous reset be set in an initial block once at the beginning of each test. I also thought about edge cases where I would force the largest and smallest inputs to see what would happen. <br> <br>
-                        As I moved to testing state machines, things also became trickier (in a fun way). When the output data I was expecting came out wrong, I had to think about both why and where that data was outputting from. This is because the code could have forced my module into the wrong state at the wrong time! I started to add more output ports with useful information like the state register or additional internal signals that were not meant to be outputted temporarily. This was exteremly beneficial, as sometimes I would find errors such as not instantiating the state register with enough bits, so it would only alternate between the first two states instead of all four. That one made me facepalm pretty hard after staring at waveforms for an hour. <br> <br>
-                        Looking ahead, I would like to try and automate more with my testbenches. I am beginning to see a trend that I am spending much more time writing code for my testbench than I am designing the hardware. I would like to incorporate more tasks and event triggers within my code, and take full advantage of the done ticks of my state machines for hold times. The way I see it, the more I can test before synthesizing the better, since it is much easier to debug waveforms and edit the testbench. <br> <br>
-                        Although, I do think that it is extremely satisfying when things come out just like you expected it to. This is especially the case with the nature of HDL and how every little building block comes together to build something fun. <br> <br>
-                    </General>
+                </Header>
 
-                </div>
+                <General>
+                    One of the largest challenges working with Verilog was designing quality testbenches. In the
+                    beginning when I was testing 1-bit comparators or combinational logic, the testbenches were fairly
+                    straightforward. As my code became more complex though, that is where I think the learning began to
+                    speed up. When working with modules involving UART or PS2 receiving systems, I found a steep
+                    learning curve in deriving effective code in Verilog. I started to design separate always blocks to
+                    drive a clock based on a parameter designated period. I also had my asynchronous reset be set in an
+                    initial block once at the beginning of each test. I also thought about edge cases where I would
+                    force the largest and smallest inputs to see what would happen. <br> <br>
 
-                <div id="tab3" class="tabcontent">
-                    <Header>
+                    &#8195;
+                    As I moved to testing state machines, things also became trickier (in a fun way). When the output
+                    data I was expecting came out wrong, I had to think about both why and where that data was
+                    outputting from. This is because the code could have forced my module into the wrong state at the
+                    wrong time! I started to add more output ports with useful information like the state register or
+                    additional internal signals that were not meant to be outputted temporarily. This was extremely
+                    beneficial, as sometimes I would find errors such as not instantiating the state register with
+                    enough bits, so it would only alternate between the first two states instead of all four. That one
+                    made me facepalm pretty hard after staring at waveforms for an hour. <br> <br>
+
+                    &#8195;
+                    Looking ahead, I would like to try and automate more with my testbenches. I am beginning to see a
+                    trend that I am spending much more time writing code for my testbench than I am designing the
+                    hardware. I would like to incorporate more tasks and event triggers within my code, and take full
+                    advantage of the done ticks of my state machines for hold times. The way I see it, the more I can
+                    test before synthesizing the better, since it is much easier to debug waveforms and edit the
+                    testbench. I do think that it is extremely satisfying when tests come out just like you expected it
+                    to. This is especially the case with the nature of HDL and how every little building block comes
+                    together to build something interesting and challenging. <br> <br>
+
+                </General>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
                     Synthesizing to My First Board
-                    </Header>
-                    
-                    <General>
-                        After taking and teaching my Digital Logic class online during COVID-19 at Iowa State, I assumed that synthesizing would be my biggest challenge. To start out with synthesizing and creating bitstream files on my FPGA, I started with small things like driving the LED’s or connecting them to buttons. I believe that if you started with more than you can chew, then you would just get slowed down later down the line. By being confident in the small building blocks that I created, I was able to work myself up to creating more and more fun modules! <br> <br>
-                        Working with a 100 MHz clock made me consider many problems when interfacing a board with the real world. Before this, I never considered clock dividers too much on hardware. I now had to consider if I wanted something to display or update slower so that it would be practical to interface and test a module. This is very apparent when looking at the basic state machines I created that make fun patterns to display on the 4 7 segment display module on my Basys 3 board. <br> <br>
-                        Another problem I had to break down was the idea of debouncing my button inputs to avoid glitches. I have previously done this while working with Arduino projects or microcontrollers by adding in hold times, but as I learned with FPGA’s is that you can not wait like that easily in hardware! So, I had to design a state machine that would wait a set amount of time before reading the next input to create a debounced output. I also worked on creating a module to provide a rising or falling edge tick based on a button press, so that I could manipulate state machines easier without worrying about an input running through for too long. <br> <br>
-                        All of these problems were super interesting to work through, and I love the idea of combining software coding in a “hardware” mindset. I believe that with my skills in both domains, I would excel at working with FPGA’s in the future. In upcoming semesters, I am planning on taking some classes relating to signals, computer architecture, and embedded systems. With all of these, I hope I can further improve my skills involving FPGA’s, because this type of stuff is just so cool. <br> <br>
-                    </General>
-                </div>
-                
-                <div class="githubBox">
-                    <a href="https://github.com/JakeHafele101/FPGA-Intro" target="_blank">Github Repo</a>
-                </div>
+                </Header>
 
+                <General>
+                    After taking and teaching my Digital Logic class online during COVID-19 at Iowa State, I assumed
+                    that synthesizing would be my biggest challenge while working through the textbook I had. To start
+                    out with synthesizing and creating bitstream files on my FPGA, I began with small designs such as
+                    driving the LED’s or connecting them to buttons. I believe that if I started with more than I could
+                    chew, then I would just have gotten slowed down later down the line. By being confident in the small
+                    building blocks that I created, I was able to work myself up to creating more and more fun modules! <br> <br>
+
+                    &#8195;
+                    Working with a 100 MHz clock made me consider many problems when interfacing a board with the real
+                    world. Before this, I never considered clock dividers too much on hardware. I now had to consider if
+                    I wanted something to display or update slower so that it would be practical to interface and test a
+                    module. This is very apparent when looking at the basic state machines I created that make fun
+                    patterns to display on the 4 7 segment display module on my Basys 3 board. <br> <br>
+
+                    &#8195;
+                    Another problem I had to break down was the idea of debouncing my button inputs to avoid glitches. I
+                    have previously done this while working with Arduino projects or microcontrollers by adding in hold
+                    times, but as I learned with FPGA’s is that you cannot wait like that easily in hardware! So, I had
+                    to design a state machine that would wait a set amount of time before reading the next input to
+                    create a debounced output. I also worked on creating a module to provide a rising or falling edge
+                    tick based on a button press, so that I could manipulate state machines easier without worrying
+                    about an input running through for too long. <br> <br>
+
+                    &#8195;
+                    All of these problems were super interesting to work through, and I love the idea of combining
+                    coding in a “hardware” mindset. I believe that with my skills between hardware, software, and
+                    systems design, I would excel at working with FPGA’s in the future. In upcoming semesters, I am
+                    planning on taking some classes relating to signals, computer architecture, and embedded systems.
+                    With all of these, I hope I can further improve my skills involving FPGA’s, because this type of
+                    work is very rewarding. <br> <br>
+
+                </General>
             </div>
 
-            <div class="videoBlock">
-                <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/82jYPKr5Hz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>
-                </div>
+            <div class="githubBox">
+                <a href="https://github.com/JakeHafele101/FPGA-Intro" target="_blank">Github Repo</a>
             </div>
+
         </div>
 
-        <div class=footer>
-            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
-            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+        <div class="videoBlock">
+            <div class="videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/82jYPKr5Hz8"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
         </div>
+    </div>
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
 
     </div>
 
     <script type="text/javascript" src="./script/myScript.js"></script>
-    </body>
+</body>
+
 </html>
