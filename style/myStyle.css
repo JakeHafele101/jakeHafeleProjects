@@ -190,6 +190,8 @@
   margin: auto;
   margin-bottom: 10px;
   margin-top: 10px;
+  text-decoration: none;
+
 }
 
 .contentBlock Header {
@@ -230,6 +232,10 @@
   text-align: left;
   padding: 20px;
   line-height: 24px;
+}
+
+.contentBlock General ul li a{
+  color: var(--text-color);
 }
 
 .tabcontent {
