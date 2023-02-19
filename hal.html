@@ -1,146 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head >
-        <title>Jake Hafele - Project Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo/logo.png">
-    </head>
 
-    <body class="body">
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="logo/logo.png">
+</head>
 
-        <div class="content">
+<body class="body">
 
-            <div class="titleBlock">
-                <a>Jake Hafele - Project Portfolio</a>
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="videoBlock">
+            <div class="videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/fUdIL56IZJQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-    
-            <div class="pageNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li class="dropdown">
-                        <a href="">Projects</a>
-                        <div class="dropdown-content">
-                            <a href="freshmanProject.html">Freshman Year</a>
-                            <a href="sophomoreProject.html">Sophomore Year</a>
-                            <a href="juniorProject.html">Junior Year</a>
-                            <a href="seniorProject.html">Senior Year</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="">Work Experience</a>
-                        <div class="dropdown-content">
-                            <a href="intern.html">Internships</a>
-                            <a href="TA.html">Teaching Assistant</a>
-                        </div>
-                    </li>
-                    <li><a href="reflection.html">Reflections</a></li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="videoBlock">
-                <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/fUdIL56IZJQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
+            </ul>
+        </div>
 
-            <div class="contentNav">
-                <ul>
-                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
-                </ul>
-            </div>
-
-            <div class="contentBlock">
-                <div id="tab1" class="tabcontent">
-                    <Header>
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
                     Goals
-                    </Header>
-    
-                    <General>
-                        During my time on HAL, the Horn and Lights project, I was able to manage and help guide new members in designing another one of our application 
-                        boards, similar to when I worked on my first PCB last year. HAL's focus is to take in packets over our software's CAN network to turn on different
-                        lights and the horn in the car. If you have seen my writeup or video on buttonboard, you will notice that this is the direct inverse to that board,
-                        where this time we are receiving CAN packets and converting them to a voltage output on this board.  Since the first revision of this board was 
-                        already created in the previous year, it was our job to improve on where it had failed us. Specifically, we had issues with some parts being
-                        underspecced in how much current they could handle. Also, some of the traces on the PCB were not well equipped to handle current outputs over 5A. 
-                        To fix this, we made it our goal in redesigning to spec out larger parts, create larger PCB traces, and expand the board to 4 layers to make 
-                        signal management cleaner. 
-                    </General>
+                </Header>
 
-                </div>
-
-                <div id="tab2" class="tabcontent">
-                    <Header>
-                    Design
-                    </Header>
-    
-                    <General>
-                        While looking at the schematic for HAL, you will notice that the power circuit is the exact same as buttonboard! Since the boards have similar
-                        functionality system wide, we made an effort to standardize our power circuit so if you work on mulitple projects over the years, it is easier to
-                        get into and implement them. If you would like to learn more about our power circuit, please watch my buttonboard video. The most important circuit
-                        of HAL is the mosfet buffer, which uses 1 NMOS and 1 PMOS to buffer a 5V logic output signal from a microcontroller into a 12V power line that can 
-                        be draw up to 10A and is sourced from our standard 12V Main line in the car. If we tried to draw that much current directly from the microcontroller,
-                        we would not have enough current to make the lights bright enough, and would also damage the part. The first mosfet is a NMOS which is smaller and 
-                        does not need to handle as much current. This is because it takes the logic signal generated from the microcontroller on the gate of the NMOS and 
-                        compares it to the source, which is connected to ground. If that signal is greater than around 2.5V, or our logic level high output of 5V, the first
-                        NMOS will conduct current from the drain to the source. When this happens, the gate of the larger mosfet, the PMOS, will now be connected to ground.
-                        Since the current consumption of the gate of a MOSFET is practically 0A, we do not have to worry about the size of the NMOS. Once the gate of the
-                        PMOS is grounded, it will check the difference with the source, which is connected to our 12V line that also acts as an input to HAL. Since Vgs is
-                        less than around -6V, the mosfet will conduct from the source to the drain. The drain of the PMOS is the 12V output which is then connected to a 
-                        fuse in series and the output connector to the lights or horn. This circuit is repeated 8 times, each the same way for different lights or the horn
-                        output. <br> <br>
-                        
-                        Even though there was a previous PCB designed for HAL, I decided that our team should restart from the ground up to both give us more room to 
-                        piece parts together but also to give the new members on my team a better oppportunity for hands on learning. Similar to buttonboard, we kept the
-                        power circuit on the left side of the board. Since we were using larger connectors for the 12V lights and horn outputs, we decided to keep the 
-                        front side outputs on the top of the board and the rear side outputs of the car on the bottom of the board. As mentioned before, we also made the
-                        choice of making HAL a four layer board. This gave us a plane for 5V, 12V, and two for ground. This made power management across the board much 
-                        easier, since the buffer circuit needed both 12V and ground, while the microcontroller needed 5V across 6 pins. The 4 layer board also made it 
-                        easier to manage the control pins that turn the lights on and off since we were able to put them on their own layer and keep them cleaner. While
-                        the board ended up being much than its previous revision, it was now capable of handling any output that we needed from the solar car.
-                    </General>
-
-                </div>
-
-                <div id="tab3" class="tabcontent">
-                    <Header>
-                    What I Learned
-                    </Header>
-                    
-                    <General>
-                        In this project, I gained both valuable experience a a technical designer but also a manager. On the technical side, I was able to learn from the 
-                        design mistakes we made last year and witness the effects of those first hand over Summer testing. Through this work, we were able to make the 
-                        team's life easier through systems implementation after the design cycle. As a manager, I learned how to be patient and encourage my teammates to
-                        try ideas out on their own. Most of the time I was around to suggest how to do something in Altium or answer questions, but the new members were
-                        the ones commiting the design changes on the schematic and layout, which they did great in. <br> <br>
-                        
-                        During FSGP 2022, we had a great opportunity of seeing this work pay off. After using the horn so often while passing other solar cars, it started
-                        to sputter and eventually break during out last day on the track. We had to have an emergency swap of a new horn that we bought at an auto store, 
-                        and we were prepared to swap it in the car because we knew that the new version of HAL was capable of outputting that much current. Since things 
-                        were so hectic, we didn't have the time or equipment to measure the current draw of the horn, and were able to swap it in. Seeing these impacts 
-                        right away are always very satisfying to me, since I am able to see the time and work pay off in a very fast paced situation at race.
-                    </General>
-                </div>
-
-                <div class="githubBox">
-                    <a href="https://github.com/JakeHafele101/HAL" target="_blank">Github Repo</a>
-                </div>
+                <General>
+                    During my time on working on the Horn and Lights Project, HAL, I was able to manage and help guide
+                    new members in designing one of our application boards for Solar Car. HAL's focus is to take in data
+                    over our software's CAN network to turn on different lights and the horn in the car. If you have
+                    seen my writeup or video on buttonboard, you will notice that this is the direct inverse to that
+                    board, where this time we are receiving CAN packets and converting them to a voltage output on this
+                    board. Since the first revision of this board was already created in the previous year, it was our
+                    job to improve on where it had failed before. Specifically, we had issues with some parts being
+                    underspecced in how much current they should be capable of handling. Also, some of the traces on the
+                    PCB were not well equipped to handle current outputs over 5A. To fix this, we made our goal in
+                    redesigning the board to spec out larger parts, create wider PCB traces, and expand the board to 4
+                    layers to make signal management cleaner.
+                </General>
 
             </div>
-        </div>
 
-        <div class=footer>
-            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
-            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    Design
+                </Header>
+
+                <General>
+                    While looking at the schematic for HAL, you will notice that the power circuit is the exact same as
+                    buttonboard! Since the boards have similar functionality system wide, we made an effort to
+                    standardize our power circuit so if you work on multiple projects over the years, it’s easier to get
+                    in and implement them. If you would like to learn more about our power circuit, please watch my
+                    buttonboard video. The most important circuit of HAL is the MOSFET buffer, which uses 1 NMOS and 1
+                    PMOS to buffer a 5V logic output signal from a microcontroller into a 12V power line that can be
+                    draw up to 10A. If we tried to draw that much current directly from the microcontroller, we would
+                    not have enough current to make the lights bright enough, and would also damage or kill the part.
+                    The first MOSFET is a NMOS which is smaller and does not need to handle as much current. This is
+                    because it takes the logic signal generated from the microcontroller on the gate of the NMOS and
+                    compares it to the source, which is connected to ground. If that signal is greater than around 2.5V,
+                    or our logic level high output of 5V, the first NMOS will conduct current from the drain to the
+                    source. When this happens, the gate of the larger MOSFET, the PMOS, will now be connected to ground.
+                    Since the current consumption of the gate of a MOSFET is practically 0A, we do not have to worry
+                    about the size of the NMOS. Once the gate of the PMOS is grounded, it will check the difference with
+                    the source, which is connected to our 12V line that also acts as an input to HAL. Since Vgs is less
+                    than around -6V, the MOSFET will conduct from the source to the drain. The drain of the PMOS is the
+                    12V output which is then connected to a fuse in series and the output connector to the lights or
+                    horn. This circuit is repeated 8 times, each the same way for different lights or the horn output.
+                    <br> <br>
+
+                    &#8195;
+                    Even though there was a previous PCB designed for HAL, I decided that our team should restart from
+                    the ground up to both give us more room to piece parts together but also to give the new members on
+                    my team a better opportunity for hands on learning. Similar to buttonboard, we kept the power
+                    circuit on the left side of the board. Since we were using larger connectors for the 12V lights and
+                    horn outputs, we decided to keep the front side outputs on the top of the board and the rear side
+                    outputs of the car on the bottom of the board. As mentioned before, we also made the choice of
+                    making HAL a four-layer board. This gave us a plane for 5V, 12V, and two for ground. This made power
+                    management across the board much easier, since the buffer circuit needed both 12V and ground, while
+                    the microcontroller needed 5V across 6 pins. The four-layer board also made it easier to manage the
+                    control pins that turn the lights on and off since we were able to put them on their own layer and
+                    keep them cleaner. While the board ended up being much than its previous revision, it was now
+                    capable of handling any output that we needed from the solar car.
+
+                </General>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    What I Learned
+                </Header>
+
+                <General>
+                    In this project, I gained both valuable experience a technical designer but also a manager. On the
+                    technical side, I was able to learn from the design mistakes we made last year and witness the
+                    effects of those first hand over summer testing. Through this work, we were able to make the team's
+                    life easier through systems implementation after the design cycle. As a manager, I learned how to be
+                    patient and encourage my teammates to try ideas out on their own. Most of the time I was around to
+                    suggest how to do something in Altium or answer questions, but the new members were the ones
+                    committing the design changes on the schematic and layout, which they did great in.
+
+                    &#8195;
+                    During FSGP 2022, we had a great opportunity of seeing this work pay off. After using the horn so
+                    often while passing other solar cars, it started to sputter and eventually break during out last day
+                    on the track. We had to have an emergency swap of a new horn that we bought at an auto store, and we
+                    were prepared to swap it in the car because we knew that the new version of HAL was capable of
+                    outputting that much current. Since things were so hectic, we didn't have the time or equipment to
+                    measure the current draw of the horn, and were able to swap it in. Seeing these impacts right away
+                    are always very satisfying to me, since I am able to see the time and work pay off in a very fast
+                    paced situation at race. <br> <br>
+
+                </General>
+            </div>
+
+            <div class="githubBox">
+                <a href="https://github.com/JakeHafele101/HAL" target="_blank">Github Repo</a>
+            </div>
+
         </div>
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
 
     </div>
 
     <script type="text/javascript" src="./script/myScript.js"></script>
-    </body>
+</body>
+
 </html>

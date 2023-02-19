@@ -1,185 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head >
-        <title>Jake Hafele - Project Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo/logo.png">
-    </head>
 
-    <body class="body">
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="logo/logo.png">
+</head>
 
-        <div class="content">
+<body class="body">
 
-            <div class="titleBlock">
-                <a>Jake Hafele - Project Portfolio</a>
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="videoBlock">
+            <div class="videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/4vpoWULZCto"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-    
-            <div class="pageNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li class="dropdown">
-                        <a href="">Projects</a>
-                        <div class="dropdown-content">
-                            <a href="freshmanProject.html">Freshman Year</a>
-                            <a href="sophomoreProject.html">Sophomore Year</a>
-                            <a href="juniorProject.html">Junior Year</a>
-                            <a href="seniorProject.html">Senior Year</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="">Work Experience</a>
-                        <div class="dropdown-content">
-                            <a href="intern.html">Internships</a>
-                            <a href="TA.html">Teaching Assistant</a>
-                        </div>
-                    </li>
-                    <li><a href="reflection.html">Reflections</a></li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="videoBlock">
-                <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/4vpoWULZCto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Managing Hardware Projects</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>FSGP/ASC 2022</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Librarian</a></li>
+            </ul>
+        </div>
 
-            <div class="contentNav">
-                <ul>
-                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Managing Hardware Projects</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>FSGP/ASC 2022</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Librarian</a></li>
-                </ul>
-            </div>
-
-            <div class="contentBlock">
-                <div id="tab1" class="tabcontent">
-                    <Header>
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
                     Managing Hardware Projects
-                    </Header>
-    
-                    <General>
-                        As mentioned on the other pages, I managed the hardware projects for both the horn and lights PCB, HAL, and
-                        our battery protection system, BPS. HAL was designated as a new member project, where I worked with 2 new 
-                        electrical engineers to iteratively design and update the board based off of design issues from the previous 
-                        year. This was a fantastic opportunity to help new college students learn more about PCB design and electrical
-                        engineering as they are working through the intro classes like calculus and physics. I also enjoyed being in a 
-                        mentor position to help them if they ever had any general questions on the team. If you would like to learn 
-                        more about the technical changes with HAL please take a look at it's individual page on this site. <br><br>
-                        
-                        When managing BPS, I was in charge of creating a new revision for Headnode and maintaining the Moduleboard 
-                        project. Both of these boards are essential for running our car and maintaining the safety of our driver and
-                        passenger, so I took a great role of responsibility with this job. Since the board is more technical, we did
-                        not have any new members on this project with me so I assumed both a leadership and technical role with BPS. 
-                        This meant that I would conduct design changes on headnode while also advising how we should address upcoming
-                        issues as the hardware leader for this project. If you would like to learn more about the technical side of
-                        BPS, please look into my Headnode Rev 1 or Headnode Rev 2 pages. 
-                    </General>
+                </Header>
 
-                </div>
+                <General>
+                    As mentioned on the other pages, I managed the hardware projects for both the horn and lights PCB,
+                    HAL, and our battery protection system, BPS. HAL was designated as a new member project, where I
+                    worked with 2 new electrical engineers on the team to iteratively design and update the board based
+                    off of design issues from the previous year. This was a fantastic opportunity to help new college
+                    students learn more about PCB design and electrical engineering as they are working through
+                    introductory classes like their first Circuits class. I also enjoyed being in a mentor position to
+                    help them if they ever had any general questions on the team. If you would like to learn more about
+                    the technical changes with HAL, please take a look at its individual page on my portfolio. <br> <br>
 
-                <div id="tab2" class="tabcontent">
-                    <Header>
+                    &#8195;
+                    When managing BPS, I was in charge of creating a new revision for Headnode and maintaining the
+                    Moduleboard project. Both of these boards are essential for running our car and maintaining the
+                    safety of our driver and passenger, so I took a great role of responsibility with this job. Since
+                    the board is more technical, we did not have any new members on this project with me so I assumed
+                    both a leadership and technical role with BPS. This meant that I would conduct design changes on
+                    Headnode while also advising how we should address upcoming issues as the hardware leader for this
+                    project. If you would like to learn more about the technical side of BPS, please look into my
+                    Headnode Rev 1 or Headnode Rev 2 pages.
+
+                </General>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
                     FSGP/ASC 2022
-                    </Header>
-    
-                    <General>
-                        For solar car, there are two different types of races that you can participate in. Every year, FSGP, or the
-                        formula sun grand prix, is hosted. FSGP consists of a track race and also doubles as a qualifying event for
-                        the second race, ASC. To race at FSGP, we have to go through multiple scrutineering panels with officials to 
-                        prove our car meets regulations surrounding topics like our battery protection system, driver egress, and 
-                        dynamics driving. This year, I was one of four drivers that participated in both races. This meant I was very
-                        involved in the scrutineering and admission process before our first race started. I had to get a ballast bag
-                        so that my overall seat weight was 180 pounds, had to practice egressing out of the car under a set amount of
-                        time, and also had to pass multiple dynamics tests performing slalom and figure eight maneuvers around cones. 
-                        The scrutineering process overall took 3 days, which involved lots of preparation on the car both mechanically
-                        and electrically. After we passed everything though on the third day, we were ready to go out to the track race.<br><br>
-                        
-                        The track race was in Topeka, Kansas at the Heartland Motorsports Park. Similar to scrutineering, the track 
-                        event lasted three days. To qualify as a team to proceed to the next race, our team had to either finish 80 
-                        laps in one day, or 120 laps across two days. As a driver, I had to personally drive at least 21 laps so that
-                        I could drive in the next race. On the first day, our first driver accured around 25 laps before we were facing
-                        our first car troubles. This was a suspected issue for a while with our electrical system, so we took the car
-                        out of the hot pit to fix it for around 2 hours. After that time, we were back on the track with a couple of 
-                        hours left in the day. I was neither a driver or passenger the first day, but our second driver was able to 
-                        get around 15 laps towards her personal qualification. We ended up only getting around 40 laps on our first day,
-                        so we broke even for the two day qualification. The next day, I was able to be our first driver. In one burst
-                        without any breaks, I was able to complete 25 laps in the morning and qualify as a driver. After that, we 
-                        rotated in the two other drivers to get their personal laps and qualify. By this time, we had around 50 laps
-                        completed, and were getting close to hitting the 80 lap qualify goal. While things weren't very exciting during
-                        this time, that was a good thing, since it meant the car was working as expected. As the day ended, we racked
-                        up 90 laps. Last year at the track event, we were only able to complete 20 laps for the entire three days, so
-                        our team was very happy about this. For the third day, we completed another 80 laps and had a similar process
-                        of switching out drivers every 1 to 2 hours. <br><br>
-                        
-                        ASC stands for the American Solar Challenge, and this is the more traditional racing style that you might see
-                        from a solar car competition. Instead of racing on a track with only solar cars, you race across the oregon 
-                        trail to see how efficient and far your team can get with solar power. Since we qualified this year, we were 
-                        able to start the race with other teams in Independence, Missouri. After driving nearly 20 miles, we were facing
-                        serious motor controller issues that led us unable to drive any further outside of Independence. We did stay to 
-                        reach the first checkpoint to discuss our options with race officials and other teams, but had no luck. Motors 
-                        and motor controllers are a gray area for the team, and we did not want to risk anyones safety, so we decided 
-                        to call the second race there. It was still a great experience to be a part of the caravan process and be a 
-                        driver during this time though. <br><br>
-                        
-                        If you are interested in seeing what testing, driving on the track, or driving on the highway is like with me
-                        in the car, check out my videos on this page!
-                    </General>
+                </Header>
 
-                </div>
+                <General>
+                    For solar car, there are two different types of races that you can participate in. Every year, the
+                    formula sun grand prix, or FSGP, is hosted, while every other year the American Solar Challenge, or
+                    ASC, occurs. FSGP consists of a track race which also doubles as a qualifying event for the second
+                    race, ASC. To race at FSGP, we had to go through multiple scrutineering panels with officials to
+                    prove our car meets regulations surrounding requirements including our battery protection system,
+                    driver egress, and dynamic driving. This year, I was one of four drivers that participated in both
+                    races. This meant I was very involved in the scrutineering and admission process before our first
+                    race started. I had to get a ballast bag so that my overall seat weight was 180 pounds, practice
+                    egressing out of the car under a set amount of time, and also pass multiple dynamics tests
+                    performing slalom and figure eight maneuvers around cones. The scrutineering process took a total of
+                    3 days, which involved lots of preparation on the car both mechanically and electrically. After we
+                    passed everything on the third day, we were ready to go out to the race track. <br> <br>
 
-                <div id="tab3" class="tabcontent">
-                    <Header>
+                    &#8195;
+                    The track race was in Topeka, Kansas at the Heartland Motorsports Park. Similar to scrutineering,
+                    the track event lasted three days. To qualify as a team to proceed to the next race, our team had to
+                    finish 80 laps in one day, or 120 laps across two days. As a driver, I had to personally drive at
+                    least 21 laps so that I could qualify and drive in the next race, ASC. On the first day, our first
+                    driver accrued 25 laps before we were facing our first car troubles. This was a suspected issue for
+                    a while with our electrical system, so we took the car out of the hot pit to fix it for around 2
+                    hours. After that time, we were back on the track with a couple of hours left in the day. I was
+                    neither a driver or passenger the first day, but our second driver was able to get around 15 laps
+                    towards her personal qualification. We ended up only getting around 40 laps on our first day, so we
+                    broke even for the two-day qualification. The next day, I was able to be our first driver. In one
+                    burst without any breaks, I was able to complete 25 laps in the morning and qualify as a driver.
+                    After that, we rotated in the two other drivers to get their personal laps and qualify. By this
+                    time, we had around 50 laps completed, and were getting close to hitting the 80 laps to qualify.
+                    While things weren't very exciting during this time, that was a good thing, since it meant the car
+                    was working as expected. As the day ended, we racked up 90 laps. Last year at the track event, we
+                    were only able to complete 20 laps for the entire three days, so our team was very happy about this.
+                    For the third day, we completed another 80 laps and had a similar process of switching out drivers
+                    every 1 to 2 hours. <br> <br>
+
+                    &#8195;
+                    ASC stands for the American Solar Challenge, and is the more traditional racing style that you might
+                    see from a solar car competition. Instead of racing on a track with only solar cars, you race across
+                    the Oregon trail on real roads to see how efficient and far your team can get with solar power.
+                    Since we qualified this year, we were able to start the race with other teams in Independence,
+                    Missouri. After driving nearly 20 miles, we were facing serious motor controller issues that led us
+                    unable to drive any further outside of Independence. We did stay to reach the first checkpoint to
+                    discuss our options with race officials and other teams, but had no luck. Motors and motor
+                    controllers are a gray area for the team, and we did not want to risk anyone’s safety, so we decided
+                    to call the second race there. It was still a great experience to be a part of the caravan process
+                    and be a driver during this time though.
+
+                </General>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
                     Librarian
-                    </Header>
-                    
-                    <General>
-                        While most of my librarian work was done with creating our new parts catalogue system, I still did lots of 
-                        Librarian work in the Fall of 2021 too. My main focus was creating a new standardized parts library for our 
-                        boards to use, since a lot of the older boards use old parts that are not included in the shared list of today. 
-                        The benefit of making a new library was that it was now trimmed down much more, making it easier to both 
-                        organize the parts physically, and order them online since more boards would have a standardized resistor or
-                        mosfet. I have heard that the library is a success from other hardware managers, especially when they need to
-                        create a smaller board or project from this year, since it is much more straightforward in finding what you 
-                        need. I am hoping other managers and projects will work to integrate this library in the future, but now they
-                        atleast have the option to. <br><br>
-                        
-                        Another one of my jobs was to clean up and standardize our github repositories for our hardware projects. 
-                        Since this was managed and organized person to person on each project, it was very difficult to find 
-                        documentation, bill of materials, and the actual schematic of the PCB's at times. As you will see in the 
-                        github links on my page, each repository is now organized at the root level with a folder for a BOM, project, 
-                        documentation, and gerber file. While this may have seemed redundant at the start of the Fall, this made it 
-                        incredibly easy to organize documentation or part orders for the 2022 races that I previously mentioned. This 
-                        was something I personally struggled to find across our different PCB's the previous race cycle, so it was 
-                        another one of my primary goals as I was exiting the librarian role. 
-                    </General>
-                </div>
+                </Header>
 
+                <General>
+                    While most of my librarian work was done with creating our new parts catalogue system, I still did
+                    lots of Librarian work in the Fall of 2021 too. My main focus was creating a new standardized parts
+                    library for our boards to use, since a lot of the older boards use old parts that are not included
+                    in the shared list of today. The benefit of making a new library was that it was now trimmed down
+                    much more, making it easier to both organize the parts physically, and order them online since more
+                    boards would have a standardized resistor or MOSFET. I have heard that the library is a success from
+                    other hardware managers, especially when they need to create a smaller board or project from this
+                    year, since it is much more straightforward in finding what you need. I am hoping other managers and
+                    projects will work to integrate this library in the future, but now they at least have the option
+                    to. <br> <br>
+
+                    &#8195;
+                    Another one of my jobs was to clean up and standardize our GitHub repositories for our hardware
+                    projects. Since this was managed and organized person to person on each project, it was very
+                    difficult to find documentation, bill of materials, and the actual schematic of the PCBs at times.
+                    As you will see in the GitHub links on my page, each repository is now organized at the root level
+                    with a folder for a BOM, project, documentation, and Gerber file. While this may have seemed
+                    redundant at the start of the Fall, this made it incredibly easy to organize documentation or part
+                    orders for the 2022 races that I previously mentioned. This was something I personally struggled to
+                    find across our different PCB's the previous race cycle, so it was another one of my primary goals
+                    as I was exiting the librarian role.
+
+                </General>
             </div>
-        </div>
 
-        <div class="videoBlock">
-            <div class= "videoWrapper">
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/7eBsAqBmwiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
         </div>
+    </div>
 
-        <div class="videoBlock">
-            <div class= "videoWrapper">
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/WHAGUKXiKuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+    <div class="videoBlock">
+        <div class="videoWrapper">
+            <iframe width="853" height="505" src="https://www.youtube.com/embed/7eBsAqBmwiE"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
+    </div>
 
-        <div class=footer>
-            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
-            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    <div class="videoBlock">
+        <div class="videoWrapper">
+            <iframe width="853" height="505" src="https://www.youtube.com/embed/WHAGUKXiKuw"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
 
     </div>
 
     <script type="text/javascript" src="./script/myScript.js"></script>
-    </body>
+</body>
+
 </html>
