@@ -1,218 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head >
-        <title>Jake Hafele - Project Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo/logo.png">
-    </head>
 
-    <body class="body">
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="logo/logo.png">
+</head>
 
-        <div class="content">
+<body class="body">
 
-            <div class="titleBlock">
-                <a>Jake Hafele - Project Portfolio</a>
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="videoBlock">
+            <div class="videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/cFftIjgDIVw"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-    
-            <div class="pageNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li class="dropdown">
-                        <a href="">Projects</a>
-                        <div class="dropdown-content">
-                            <a href="freshmanProject.html">Freshman Year</a>
-                            <a href="sophomoreProject.html">Sophomore Year</a>
-                            <a href="juniorProject.html">Junior Year</a>
-                            <a href="seniorProject.html">Senior Year</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="">Work Experience</a>
-                        <div class="dropdown-content">
-                            <a href="intern.html">Internships</a>
-                            <a href="TA.html">Teaching Assistant</a>
-                        </div>
-                    </li>
-                    <li><a href="reflection.html">Reflections</a></li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="videoBlock">
-                <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/cFftIjgDIVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
+            </ul>
+        </div>
 
-            <div class="contentNav">
-                <ul>
-                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
-                </ul>
-            </div>
-
-            <div class="contentBlock">
-                <div id="tab1" class="tabcontent">
-                    <Header>
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
                     Goals
-                    </Header>
-    
-                    <General>
-                        Headnode is one of two different custom PCB's in solar car that are apart of our Battery Protection System 
-                        (BPS). The two boards included are Moduleboard, which monitors the status of a battery module, which includes
-                        34 18650GA Lithium Ion batteries in parallel. Our entire battery pack includes 35 of these battery modules in 
-                        series to reach a nominal voltage of 140 V. Headnode, on the other hand, controls the battery pack relays by 
-                        checking if either the hardware or software faults on either board are triggered. Both the hardware checks made 
-                        by comparators and the software checks made against a voltage reference need to not be triggered on a moduleboard. 
-                        The hardware fault is ANDed with the logic check from the next board, so when one module faults in the middle 
-                        of the board, the proceeding moduleboards will also fault. The initial 5V "Working" signal for the fault is 
-                        initially supplied by Headnode, and sent to Moduleboard #1. At the last Moduleboard, #35, this ANDed logic 
-                        signal will be sent back in to Headnode as an input. The software checks are made over an isolated CAN network 
-                        that is connected only to the boards inside the battery pack. <br> <br>
-                        
-                        Generally, the purpose of BPS is to monitor these faults and control the battery pack relays that open/close to 
-                        control battery consumption. Both BPS and Powerboard, a board used to regulate the battery pack voltage down to 
-                        12 V, are powered off of a 25 V supplemental battery used to check the state of the batteries before drawing 
-                        current from them. This is needed as a safety precaution and because of regulations we have to follow to build 
-                        the car. With this supplemental battery, BPS will check to see if any hardware and software faults trigger in 
-                        the car, and if they don't, BPS will close the positive, negative, and charge relays in the battery pack. After 
-                        this is done, Headnode will send a buffered 12V logic signal to powerboard indicating that it is now okay to 
-                        draw current from the battery pack through the closed relays. Powerboard will simultaneously switch off of 
-                        drawing power from the supplemental battery pack to our main battery pack. After this, the fourth and final 
-                        board in the battery pack, Precharge, is powered and can start to slowly increase the voltage given to the 
-                        motors through a power resistor. Since we use DC series motors, if we instantly give it 140 V through a closed 
-                        relay, we would blow them up. <br> <br>
-                        
-                        Generally, this lays out how our newly revised battery pack architecture works. Before this revision of Headnode, 
-                        Precharge was used to drive 12 V through the positive and negative relays that connect to the battery pack 
-                        terminals. So, the primary goal of this rev was to maintain satisfying regulations to turning on the 
-                        car and moving relay logic from Precharge to Headnode. 
-                    </General>
+                </Header>
 
-                </div>
+                <General>
+                    Headnode is one of two different custom PCBs in solar car that are a part of our Battery Protection
+                    System (BPS). The first board, Moduleboard, monitors the status of one battery module, which
+                    includes 34 18650GA Lithium-Ion batteries in parallel. Our entire battery pack includes 35 of these
+                    battery modules in series to reach a nominal voltage of 140 V, and in turn 35 Moduleboards, each
+                    going on the top of a battery module. The second board, Headnode, controls the battery pack relays
+                    by checking if either the hardware or software faults on either board are asserted. Both the
+                    hardware checks made by comparators and the software checks made against a voltage reference need to
+                    not be triggered on a Moduleboard. The hardware fault is ANDed together with the logic check from
+                    the next board, so when one module faults in the middle of the board, the proceeding Moduleboard
+                    will also fault in a ripple carry. The initial 5V "Working" signal for the fault is initially
+                    supplied by Headnode, and sent to Moduleboard #1. At the last Moduleboard, #35, this ANDed logic
+                    signal will be sent back in to Headnode as an input. The software checks are made over an isolated
+                    CAN network that is connected only to the boards inside the battery pack. <br> <br>
 
-                <div id="tab2" class="tabcontent">
-                    <Header>
-                    Design
-                    </Header>
-    
-                    <General>
-                        Since in the goals tab I talked about the top level overview of the architecture for our battery pack, I would 
-                        like to talk about the different changes to the schematic and PCB layout that I helped accomplish for this rev 
-                        of Headnode here. <br> <br>
-                        
-                        On this rev, since there were 8 different schematic pages, we used input and output ports to manage the different 
-                        signals and power lines. So, we had a master page that showed how the interconnections worked between the pages. 
-                        This was very helpful since Altium would highlight when a specific port was either not connected or labeled as an 
-                        input or output wrong. <br> <br>
-                        
-                        On the connector page, we listed the 12V power circuit, which at this time was not the same as Buttonboard or HAL. 
-                        We did not update this circuit for this change, but it should be noted that I did update the power circuit to be the 
-                        same in the following revision. This page also has ports tying to all of the connectors on the board, including logic 
-                        signals for faults or turn on's for different boards. This page also included the 12 V control lines for the three 
-                        different battery pack relays, positive, negative, and charge that are driven by Headnode as of this revision. There 
-                        are also two CAN connectors for our CAN bus and a connector used for logic to turn on the solar cell array and external 
-                        charger. The charging connector is a redundancy and we noted to remove many of these logic signals in the next rev since 
-                        they were not used and would lead to confusion during system implementation. <br> <br>
-                        
-                        On the next schematic page, the interface logic, we handled lots of AND gates, an invertor, and mosfet buffers to manage 
-                        different logic signals going to Powerboard and Precharge, and coming in from Moduleboard. The logic signal START_EN was 
-                        used to monitor any fault conditions that could happen externally from Headnode. Three logic signals were AND'ed together, 
-                        including external kill, a software fault from a moduleboard, and a hardware fault from a moduleboard. External kill is a 
-                        switch that we are required to have by regulation on the outside of the car that will open the relays connected to the 
-                        battery pack. Each individual relay now also is AND'ed with a relay control signal from the microcontroller on Headnode and 
-                        the given START_EN logic. The other AND gates are used to create an XOR gate to enable externally charging or our solar 
-                        array. As mentioned before, many of these logic signals related to charging went unused, so much of this got removed later 
-                        on. The powerboard buffer circuit is very similar to what is used now on HAL, as mentioned before. Generally, a PMOS and 
-                        an NMOS are used to buffer a 5V enable signal from a microcontroller to create a 12 V source that is outputted from 
-                        Headnode to Powerboard that is not being drawn directly from the microcontroller. Precharge used a 5V enable pin and a 
-                        BJT, which was later changed due to our team not using many BJT's, which affected part availability. <br> <br>
-                        
-                        The Moduleboard interface schematic is pretty empty, but it also makes it very easy to follow. On the top portion, a NPN 
-                        transistor is used for the moduleboard hardware fault return line, which will buffer a 5 V signal to determine if there 
-                        is a hardware fault on any module. If the fault return line is 5 V, or logic "high", then there is no fault, but if it is 
-                        0 V, or logic level "low", then we have faulted. We decided to do it this way so that it would be easier to AND this signal 
-                        for START_EN on the previous page. The external kill line is connected to a latching button on the outside of the car, 
-                        with the other end being ground. There is a pull up resistor to 5 V on the external switch line on Headnode, so that when 
-                        the button is not latched, we will not fault the car and disconnect the batteries. When the button is pressed, current will 
-                        flow through ground since it is the path of least resistance, and the car will fault since this logic is used for START_EN. 
-                        There is also a 0 ohm jumper resistor that is used connected between 5 V and the analog fault output that starts the 
-                        hardware checks at Moduleboard #1. this jumper was included for testing and is always connected, which was later removed 
-                        due to redundancies in a later revision. <br> <br>
-                        
-                        The compute page is used to show input and output port connections to the microcontroller. Some notable inputs include 
-                        the external charge switch and hardware Moduleboard fault logic for monitoring. Some essential outputs include the relay 
-                        enable logic that is AND'ed with the START_EN logic to close the relays, and the logic that is buffered to send a signal 
-                        to the other battery pack boards Powerboard and Precharge. <br> <br>
-                        
-                        The regulators page is used to generate a 5 V power line and a 2.5 V reference. The 5 V regulator is very important as 
-                        it powers our microcontroller and is used for multiple logic gates on the board. The 2.5 V reference is a redundancy from 
-                        our previous architecture and will be removed on later revisions. <br> <br>
-                        
-                        The core of the board is within the next two schematic pages, which are used to power the relays that will supply a 12 V 
-                        output from Headnode to the battery pack relays. So, in general, we use relays to power more relays. Like I mentioned 
-                        before, 2 input AND gates are used with START_EN and a software logic signal to turn on each individual relay. The 
-                        positive, negative, and charge relays are all seperated by 200 milliseconds of turn on in the car, which leads to a very 
-                        satisfying sound when we turn the car fully on. We included 0 ohm resistors so that we could choose between using the relays 
-                        to supply 12 V or instead a power switch part that we were testing with this revision. Due to the semiconductor shortage, 
-                        we were unable to test or implement the power switches, but those will make a return in revision 2 of Headnode. The relay 
-                        page uses a similar NMOS/PMOS buffer with a 5 V logic signal to suppler 12 V to the relays on Headnode. We also used flyback 
-                        diodes across the inductors of the relays to ensure the relays would not accidentally close when not wanted, which would 
-                        in turn turn on the battery pack when not expected. <br> <br>
-                        
-                        Since we added so many parts to this version of Headnode, we decided to completely redo the PCB layout. In general, the 
-                        left side of the board is used for the mosfet buffers and relays that are used to supply the 12 V output to drive the 
-                        battery pack relays. The right side of the board is used to manage logic gates relating to charging, and it also includes 
-                        the input for the external kill switch. The top of the board includes connectors to power battery pack fans, current 
-                        sensors for our pack, and the logic signal that is sent to Precharge. On the bottom of the board, we included the buffer 
-                        circuit that creates a 12 V logic signal for Powerboard. The microcontroller is included in the middle of the board so that it 
-                        can be easily reached between every circuit on the respective sides of the board. <br> <br>
-                        
-                        We decided to make the new version of the board 4 layers, so that it would be easier to manage the 12V, 5V, and ground 
-                        layers. On the top and bottom layers, we made the left side of the board 12 V and the right side of the board ground. We 
-                        then used stitching vias to connect the top and bottom layers so that we would not have to worry about islands on our power 
-                        planes. This board is also where I was taught how to manage signals on different layers. In general, we tried to keep 
-                        vertical traces on the bottom plane in blue, and horizontal signals on the top plane in red. <br> <br>
-                        
-                        If you would like to learn more about Headnode, watch my video or check out the Github link below, which has the entire 
-                        Altium project and documentation included!
-                    </General>
+                    &#8195;
+                    In General, the purpose of BPS is to monitor these faults and control the battery pack relays that
+                    open/close to control battery consumption. Both BPS and Powerboard, a board used to regulate the
+                    battery pack voltage down to 12 V, are powered off of a 25 V supplemental battery used to check the
+                    state of the batteries before drawing current from them. This is needed as a safety precaution and
+                    because of regulations we have to follow to build the car. With this supplemental battery, BPS will
+                    check to see if any hardware and software faults trigger in the car, and if they don't, BPS will
+                    close the positive, negative, and charge relays in the battery pack. After this is done, Headnode
+                    will send a buffered 12V logic signal to powerboard indicating that it is now okay to draw current
+                    from the battery pack through the closed relays. Powerboard will simultaneously switch off of
+                    drawing power from the supplemental battery pack to our main battery pack. After this, the fourth
+                    and final board in the battery pack, Precharge, is powered and can start to slowly increase the
+                    voltage given to the motors through a power resistor. Since we use DC series motors, if we instantly
+                    give it 140 V through a closed relay, we would blow them up. <br> <br>
 
-                </div>
+                    &#8195;
+                    Generally, this lays out how our newly revised battery pack architecture works. Before this revision
+                    of Headnode, Precharge was used to drive 12 V through the positive and negative relays that connect
+                    to the battery pack terminals. So, the primary goal of this rev was to maintain the same
+                    requirements for turning on the car and moving relay logic from Precharge to Headnode.
 
-                <div id="tab3" class="tabcontent">
-                    <Header>
-                    What I Learned
-                    </Header>
-                    
-                    <General>
-                        Overall, I would say this project is where I took a deep dive in to solar car. After learning how to do the general PCB 
-                        design process on the team with Buttonboard, I moved in to designing Headnode during the Spring of 2021. During this time, 
-                        I got to learn more about designing circuits and layout for logic gates and diodes, while also learning more about the 
-                        upcoming changes to our battery pack architecture. This opened tons of great opportunities for me, since I was then able 
-                        to actively participate in more debugging sessions before our Summer FSGP 2021 race. This project was a bit of a doozy to 
-                        type out, but I hope I did well enough at conveying just how much goes on in this board.
-                    </General>
-                </div>
-
-                <div class="githubBox">
-                    <a href="https://github.com/JakeHafele101/Headnode" target="_blank">Github Repo</a>
-                </div>
+                </General>
 
             </div>
-        </div>
 
-        <div class=footer>
-            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
-            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    Design
+                </Header>
+
+                <General>
+
+                    Since in the goals tab I talked about the top level overview of the architecture for our battery
+                    pack, I would like to talk about the different changes to the schematic and PCB layout that I helped
+                    accomplish for this rev of Headnode here. On this revision, since there were 8 different schematic
+                    pages, we used input and output ports to manage the different signals and power lines. So, we had a
+                    master page that showed how the interconnections worked between the pages. This was very helpful
+                    since Altium would highlight when a specific port was either not connected or labeled as an input or
+                    output wrong. <br> <br>
+
+                    &#8195;
+                    On the connector page, we listed the 12V power circuit, which at this time was not the same as
+                    Buttonboard or HAL. We did not update this circuit for this change, but it should be noted that I
+                    did update the power circuit to be the same in the following revision. This page also has ports
+                    tying to all of the connectors on the board, including logic signals for faults or enable signals
+                    for different boards. This page also included the 12 V control lines for the three different battery
+                    pack relays, positive, negative, and charge that are driven by Headnode as of this revision. There
+                    are also two CAN connectors for our CAN bus and a connector used for logic to turn on the solar cell
+                    array and external charger. The charging connector is a redundancy and we noted to remove many of
+                    these logic signals in the next rev since they were not used and would lead to confusion during
+                    system implementation. <br> <br>
+
+                    &#8195;
+                    On the next schematic page, the interface logic, we handled multiple AND gates, an inverter, and
+                    MOSFET buffers to manage different logic signals going to Powerboard and Precharge, and coming in
+                    from Moduleboard. The logic signal START_EN was used to monitor any fault conditions that could
+                    happen externally from Headnode. Three logic signals were AND'ed together, including external kill,
+                    a software fault from a Moduleboard, and a hardware fault from a Moduleboard. External kill is a
+                    switch that we are required to have by regulation on the outside of the car that will open the
+                    relays connected to the battery pack. Each individual relay now also is AND'ed with a relay control
+                    signal from the microcontroller on Headnode and the given START_EN logic. The other AND gates are
+                    used to create an XOR gate to enable externally charging or our solar array. As mentioned before,
+                    many of these logic signals related to charging went unused, so much of this got removed later on.
+                    The powerboard buffer circuit is very similar to what is used now on HAL, as mentioned before.
+                    Generally, a PMOS and an NMOS are used to buffer a 5V enable signal from a microcontroller to create
+                    a 12V source that is outputted from Headnode to Powerboard that is not being drawn directly from the
+                    microcontroller. Precharge used a 5V enable pin and a BJT, which was later changed due to our team
+                    not using many BJT's, which affected part availability. <br> <br>
+
+                    &#8195;
+                    The Moduleboard interface schematic is pretty empty, but it also makes it very easy to follow. On
+                    the top portion, a NPN transistor is used for the Moduleboard hardware fault return line, which will
+                    buffer a 5V signal to determine if there is a hardware fault on any module. If the fault return line
+                    is 5V, or logic "high", then there is no fault, but if it is 0V, or logic level "low", then we have
+                    faulted. We decided to do it this way so that it would be easier to AND this signal for START_EN on
+                    the previous page. The external kill line is connected to a latching button on the outside of the
+                    car, with the other end being ground. There is a pull up resistor to 5V on the external switch line
+                    on Headnode, so that when the button is not latched, we will not fault the car and disconnect the
+                    batteries. When the button is pressed, current will flow through ground since it is the path of
+                    least resistance, and the car will fault since this logic is used for START_EN. There is also a
+                    0-ohm jumper resistor that is used connected between 5V and the analog fault output that starts the
+                    hardware checks at Moduleboard #1. this jumper was included for testing and is always connected,
+                    which was later removed due to redundancies in a later revision. <br> <br>
+
+                    &#8195;
+                    The compute page is used to show input and output port connections to the microcontroller. Some
+                    notable inputs include the external charge switch and hardware Moduleboard fault logic for
+                    monitoring. Some essential outputs include the relay enable logic that is AND'ed with the START_EN
+                    logic to close the relays, and the logic that is buffered to send a signal to the other battery pack
+                    boards Powerboard and Precharge. <br> <br>
+
+                    &#8195;
+                    The regulators page is used to generate a 5V power line and a 2.5V reference. The 5V regulator is
+                    very important as it powers our microcontroller and is used for multiple logic gates on the board.
+                    The 2.5V reference is a redundancy from our previous architecture and will be removed on later
+                    revisions. <br> <br>
+
+                    &#8195;
+                    The core of the board is within the next two schematic pages, which are used to power the relays
+                    that will supply a 12V output from Headnode to the battery pack relays. So, in general, we use
+                    relays to power more relays. Like I mentioned before, 2 input AND gates are used with START_EN and a
+                    software logic signal to turn on each individual relay. The positive, negative, and charge relays
+                    are all separated by 200 milliseconds of turn on in the car, which leads to a very satisfying sound
+                    when we turn the car fully on. We included 0-ohm resistors so that we could choose between using the
+                    relays to supply 12V or instead a power switch part that we were testing with this revision. Due to
+                    the semiconductor shortage, we were unable to test or implement the power switches, but those will
+                    make a return in revision 2 of Headnode. The relay page uses a similar NMOS/PMOS buffer with a 5V
+                    logic signal to suppler 12V to the relays on Headnode. We also used flyback diodes across the
+                    inductors of the relays to ensure no relay would accidentally close when undesired, which would
+                    accidentally turn the battery pack on! <br> <br>
+
+                    &#8195;
+                    Since we added so many parts to this version of Headnode, we decided to completely redo the PCB
+                    layout. In general, the left side of the board is used for the MOSFET buffers and relays that are
+                    used to supply the 12 V output to drive the battery pack relays. The right side of the board is used
+                    to manage logic gates relating to charging, and it also includes the input for the external kill
+                    switch. The top of the board includes connectors to power battery pack fans, current sensors for our
+                    pack, and the logic signal that is sent to Precharge. On the bottom of the board, we included the
+                    buffer circuit that creates a 12 V logic signal for Powerboard. The microcontroller is included in
+                    the middle of the board so that it can be easily reached between every circuit on the respective
+                    sides of the board. <br> <br>
+
+                    &#8195;
+                    We decided to make the new version of the board 4 layers, so that it would be easier to manage the
+                    12V, 5V, and ground layers. On the top and bottom layers, we made the left side of the board 12V and
+                    the right side of the board ground. We then used stitching vias to connect the top and bottom layers
+                    so that we would not have to worry about islands on our power planes. This board is also where I was
+                    taught how to manage signals on different layers. In general, we tried to keep vertical traces on
+                    the bottom plane in blue, and horizontal signals on the top plane in red.
+
+                </General>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    What I Learned
+                </Header>
+
+                <General>
+                    Overall, I would say this project is where I took a deep dive in to solar car. After learning how to
+                    do the general PCB design process with the team on Buttonboard, I moved to designing Headnode during
+                    the Spring of 2021. During this time, I got to learn more about designing circuits and layout for
+                    logic gates and diodes, while also learning more about the upcoming changes to our battery pack
+                    architecture. This opened tons of great opportunities for me, since I was then able to actively
+                    participate in more debugging sessions before our Summer 2021 FSGP race.
+                </General>
+            </div>
+
+            <div class="githubBox">
+                <a href="https://github.com/JakeHafele101/Headnode" target="_blank">Github Repo</a>
+            </div>
+
         </div>
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
 
     </div>
 
     <script type="text/javascript" src="./script/myScript.js"></script>
-    </body>
+</body>
+
 </html>
