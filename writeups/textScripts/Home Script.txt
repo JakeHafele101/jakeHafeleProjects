@@ -1,8 +1,0 @@
-Hello to anyone and everyone who has stumbled upon my website! This is a place all about yours truly, Jake Hafele. On here I mainly
-post projects I make, but also have links to my social media accounts, youtube videos, and some other fun things like 3D printing. 
-This acts as a hub to all of the content and stuff I like to show off, which can also be seen through my youtube videos (Link below
-in footer) or in my github repositories (button below this paragraph). This is the second iteration of my html portfolio, with the 
-first one being done back in May of 2020. As I have finished my second year of college, I figured it would be a great time to clean
-up my website and make it even easier for people to enjoy my content. Feel free to click on the content tabs above this paragraph
-to see some other general information about me, or click on the page headers at the top to see different projects I have created so 
-far. Hope you enjoy your stay!

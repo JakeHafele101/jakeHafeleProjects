@@ -1,151 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head >
-        <title>Jake Hafele - Project Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="logo/logo.png">
-    </head>
 
-    <body class="body">
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="logo/logo.png">
+</head>
 
-        <div class="content">
+<body class="body">
 
-            <div class="titleBlock">
-                <a>Jake Hafele - Project Portfolio</a>
-            </div>
-    
-            <div class="pageNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li class="dropdown">
-                        <a href="">Projects</a>
-                        <div class="dropdown-content">
-                            <a href="freshmanProject.html">Freshman Year</a>
-                            <a href="sophomoreProject.html">Sophomore Year</a>
-                            <a href="juniorProject.html">Junior Year</a>
-                            <a href="seniorProject.html">Senior Year</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="">Work Experience</a>
-                        <div class="dropdown-content">
-                            <a href="intern.html">Internships</a>
-                            <a href="TA.html">Teaching Assistant</a>
-                        </div>
-                    </li>
-                    <li><a href="reflection.html">Reflections</a></li>
-                </ul>
-            </div>
+    <div class="content">
 
-            <div class="videoBlock">
-                <div class= "videoWrapper">
-                    <iframe width="853" height="505" src="https://www.youtube.com/embed/HVVmGFH9a2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div>
-            </div>
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
 
-            <div class="contentNav">
-                <ul>
-                    <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
-                    <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
-                </ul>
-            </div>
-
-            <div class="contentBlock">
-                <div id="tab1" class="tabcontent">
-                    <Header>
-                    My Goals
-                    </Header>
-    
-                    <General>
-                        The main goal of this project was to create a robot arm that would respond to my movements when wearing a glove. The
-                        input from the glove would be gathered from two different sensors. These sensors would be a flex sensor and a motion 
-                        sensor, or the MPU6050. The robot arm would be controlled by micro servos at four different joints. I will end up having
-                        to solder wires together so the glove has enough room to move around from the arduino. I will need two seperate power 
-                        supplies so the servos and arduino do not damage each other. The ground wires will still need to be connected through the
-                        two power supplies though.
-                    </General>
-
-                </div>
-
-                <div id="tab2" class="tabcontent">
-                    <Header>
-                    The Process
-                    </Header>
-    
-                    <General>
-                        One of the first goals of this project was to design the different parts of the robot arm. I did this in CAD software
-                        and then printed it out on my 3D printer. This section probably took the most time out of the project overall. This is
-                        because I had to test and design ways to mount the servos effictively to the arm for joints. I started with designing 
-                        the base for the first servo, which was a large cylinder. The piece that attached to the first servo was a thin disk that
-                        screwed into the servo. This would rotate 90 degrees to the left and right to simulate the arm turning left and right. 
-                        The next 3 servos acted as arm joints near the top of the arm. These would handle the arm for moving up and down. These 
-                        joints were mounted sideways and were very similar. The final servo was attached to a gear and clamp. Another gear was 
-                        made to mirror the servo gear so that when the servo would move back or forth, the opposite gear would follow suit. I 
-                        was really happy with how this turned out and it makes me want to try more gear prints in the future. By this point I had
-                        to wait for these seperate parts to print, where I know started testing the servos and sensors. <br><br>
-        
-                        For this project, I made a few test programs before putting together the final code. I made one program which tested 
-                        just the flex sensor, which only used one analog pin. The code for this was very simple, and the wiring wasn't too 
-                        complicated either. After this, I wrote a program to test the servo library and make sure my servos would work properly.
-                        To do this, you have to define a digital pin for the servo and make a servo object. Then, you have to use the servo object
-                        you made and call the function write() to it to tell it how far over to rotate. You can use any value between 0 and 180 
-                        since it is defined in degrees. This program helped me immensely for making sure my servos worked and for when I had to 
-                        actually put together the build. Finally, I wrote a program to get input from both the flex sensor and the motion sensor.
-                        I used a MPU6050 library online to help me get the best data from the motion sensor. After I used this code, I put in the
-                        flex sensor code from my other program in it. After this worked, I wrote my final program to place in the conditional 
-                        checks for the flex and motion sensors. These would check the values of my input sensors to see if and where the servos
-                        should move. By this point, I was ready to put everything together. <br><br>
-        
-                        I had some trouble with putting together the pieces with the holes for the servos to go in. Mounting the servos in to the
-                        seperate parts was not a problem though. So, to fix this, I ended up putting on the plastic arms that come with the servos
-                        on the servos and then hot glueing the parts together. I didn't fully like this solution, since it makes it harder to take
-                        the arm apart for the future. Although, if I didn't do this, I would have had to fully reprint many of the parts and it 
-                        would have probably not been worth the effort. The code actually ended up working really smoothly on the first runs. I 
-                        started the final code by testing one servo joint at a time. I did this so I could make sure each one was working correctly
-                        and so they wouldn't all break at once and damage the robot arm. At this point the project was pretty much done and now 
-                        I had an extra robot hand to help me do whatever I needed. <br><br>
-                    </General>
-
-                </div>
-
-                <div id="tab3" class="tabcontent">
-                    <Header>
-                    My Reflection
-                    </Header>
-                    
-                    <General>
-                        This project helped motivate me to get better at CAD design and it really helped spark my interest in robotics and 
-                        prosthetics. I hope I can keep getting better with using servos and motors in the future so I can keep doing things like
-                        this. At some point I hope to recreate a human arm but I would probably need stronger motors for that. I plan for my
-                        next project to use similar micro servos but I hope I can design and plan them better so that I do not need to worry as
-                        much about the stability of the project. I can't wait to do more stuff like this because the feedback on the input to 
-                        output is very satisfying to create. Thanks for reading about my fun robot project and if you are still interested there
-                        are videos down below where I talk about them more. Thank you for reading!
-                    </General>
-                </div>
-
-                <div class="githubBox">
-                    <a href="https://github.com/JakeHafele101/Motion-Controlled-Robot-Arm" target="_blank">Github Repo</a>
-                </div>
-            </div>
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
         </div>
 
         <div class="videoBlock">
-            <div class= "videoWrapper">
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/AtvTtYe_6_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            </div>
+            <div class="videoWrapper">
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/HVVmGFH9a2s"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
         </div>
 
-        <div class=footer>
-            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
-            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Goals</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Process</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Reflection</a></li>
+            </ul>
         </div>
+
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
+                    My Goals
+                </Header>
+
+                <General>
+                    For this project I designed a robot arm that mirrored the movements of my hand while wearing a
+                    glove. I wanted to gain a better understanding of using multiple analog inputs to control servos,
+                    and I thought an application of a robot arm would be interesting, combined with my 3D printing
+                    skills. These sensors would include a flex (resistive band) and motion sensor (MPU6050). The robot
+                    arm would be controlled by servos at four different joints, to mimic the movements of a real arm. A
+                    glove with both the flex and motion sensor were made to control the robot, with wires attached to
+                    them with enough length to allow full range of motion.
+                </General>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    The Process
+                </Header>
+
+                <General>
+                    One of the first steps of this project was to design the different parts of the robot arm. I did
+                    this in Autodesk Fusion 360, and then printed it out on my 3D printer. This section took the most
+                    time out of the project overall, due to needing to test and design effective ways to mount the
+                    servos to the joints. I started with designing the base for the first servo, which was a large
+                    cylinder. The piece that attached to the first servo was a thin disk that screwed into the servo.
+                    This would rotate 90 degrees to the left and right to simulate the arm turning left and right
+                    respectively. The next 3 servos acted as arm joints near the top of the arm, allowing the arm to
+                    move both up and down vertically. These joints were mounted sideways and were very similar in design
+                    and implementation. The final servo was attached to a gear and clamp, to allow the arm to grab
+                    objects that were light enough. Another gear was made to mirror the servo gear so that when the
+                    servo would move back or forth, the opposite gear would follow suit and clamp the object. I was very
+                    happy with how this turned out, and it made me want to try more gear prints in the future. <br><br>
+
+                    &#8195;
+                    For this project, I made a few test programs before putting together the final code. I designed one
+                    program which tested the flex sensor, which only used one analog pin. The idea in testing the
+                    individual sensors on their own was so that it would be easier to understand what kinds of data
+                    would come out, depending on different states. For example, I wanted to know what analog values I
+                    could get from both bending and keeping the resistive flex sensor straight. Next, I wrote a program
+                    to test the servo library and ensure my servos would work properly. To do this, I had to define a
+                    digital pin for the servo and instantiate a servo object. Then, I used the servo object and called
+                    the function write() to tell it how far to rotate. I could use any value between 0 and 180, since it
+                    is defined in degrees. This program helped me immensely for making sure my servos worked and for
+                    when I had to put together the entire build. Finally, I wrote a program to get the inputs from both
+                    the flex and motion sensor. I used a MPU6050 library to assist me in obtaining the best data from
+                    the motion sensor. After I used this code, I put in the flex sensor code from my other program in
+                    it. After this, I wrote my final program to place in the conditional checks for the flex and motion
+                    sensors. These would check the values of my input sensors to see if and where the servos should
+                    move. This project was interesting since I had to dynamically turn the servos based on a ratio of
+                    the analog values I was receiving, which was unique from my previous digital project where I was
+                    processing the sound LED’s as either on or off. <br><br>
+
+                    
+                    &#8195;
+                    Finally, I was able to assemble the 3D printed parts and individual electronic components I had
+                    tested into one full piece. I had some trouble assembling the pieces with the holes for the servos
+                    to go in that I 3D printed. So, to fix this, I ended up putting the plastic teeth that come with the
+                    servos and then hot gluing the parts together. I didn't enjoy this solution, since it made it more
+                    difficult to take the arm apart in the future. I ended up investigating a better way to implement
+                    the servo attachments, which can be seen in the “useless” machine that I created in my Sophomore
+                    year of school. The code ended up working very smoothly on the first few runs. I started the final
+                    code by testing one servo joint at a time. I did this so I could make sure each individual servo was
+                    working correctly, and so that they wouldn't all break at once and damage the arm. At this point the
+                    project was pretty much done and now I had an extra robot hand to help me do whatever I needed!
+                    <br><br>
+                </General>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    My Reflection
+                </Header>
+
+                <General>
+                    This project helped motivate me to develop stronger CAD design skills, and it really helped to spark
+                    my interest in robotics. I hope to keep improving my skills to interface servos and motors so I can
+                    keep expanding on similar projects. My next project used similar micro servos in a similar fashion
+                    to recreate the movement of a spider, except with four legs. That project also does a great job of
+                    showcasing and expanding what I have learned about 3D design, embedded programming, and problem
+                    solving skills. Thanks for reading my work!
+                </General>
+            </div>
+
+            <div class="githubBox">
+                <a href="https://github.com/JakeHafele101/Motion-Controlled-Robot-Arm" target="_blank">Github Repo</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="videoBlock">
+        <div class="videoWrapper">
+            <iframe width="853" height="505" src="https://www.youtube.com/embed/AtvTtYe_6_c"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class=footer>
+        <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+        <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank" class="fa fa-youtube"></a>
+    </div>
 
     </div>
 
     <script type="text/javascript" src="./script/myScript.js"></script>
-    </body>
+</body>
+
 </html>
