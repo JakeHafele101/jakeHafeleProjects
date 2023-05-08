@@ -104,32 +104,59 @@
 
                 <General>
                     During the Spring 2023 Semester, I began my senior design project at Iowa State University. Senior
-                    Design is a two semester course, with a focus on research and design in the first semester, and then
-                    implementation in the second semester. The project that me and three other group mates are working
-                    on is called Digital ASIC Fabrication, and will involve designing and fabricating a digital ASIC.
-                    Our client and advisor will be Dr. Duwe, a professor at Iowa State who researches and teaches about
-                    computer architecture and cyber security topics. Dr. Duwe has had two previous senior design groups
-                    follow the same process and design cycle as we will, each staggered one semester apart. The first
-                    senior design team was able to successfully get their chip approved and fabricated, and we are
-                    currently waiting to receive it. If all goes well, part of our second semester goal will include
-                    bringing up the first chip developed by an earlier team. <br> <br>
+                    Design is a two-semester course, with a focus on research and planning in the first semester, and
+                    then design and implementation in the second semester. The project that I chose to join with three
+                    other group members was Digital ASIC Fabrication, which involves designing and fabricating a digital
+                    ASIC. Our client and advisor are Dr. Duwe, a professor at Iowa State who researches and teaches
+                    about computer architecture and cyber security topics. Dr. Duwe has had two previous senior design
+                    groups follow the same process and design cycle as we are, each staggered one semester apart. The
+                    first senior design team was able to successfully get their chip approved and fabricated, and we are
+                    currently waiting to receive it. For our project, our requirements are to design a digital ASIC chip
+                    using Verilog and open-source tools, alongside developing firmware and a bring-up plan to assist a
+                    future team in verifying the functional requirements of our design. <br> <br>
 
                     &#8195;
-                    Since we started a few weeks ago, we still do not currently have our project selected. We will be
-                    submitting our open-source project through Efabless, which is an ongoing project working towards
-                    standardizing ASIC production and open-source tooling. There are many helpful links, documents, and
-                    a slack channel full of resources for us to use, alongside the previous senior design team who is in
-                    their second semester currently. By submitting our project through Efabless, we will be able to
-                    perform the logic design, waveform testing, and hardening of a silicon chip, all in one project. I
-                    am extremely excited to see this project from start to end, and am looking forward to narrowing down
-                    our projects and beginning our planning phase. <br> <br>
+                    We are able to create our digital ASIC by working through the company eFabless, which is sponsored
+                    by Google. The goal of eFabless is to use open-source tools that are freely available to silicon
+                    prove both digital and analog ASICs for hobbyists, researchers, and students, who do not have a
+                    large pool of resources to take advantage of. Being a senior design team, this was an excellent
+                    opportunity to learn more about writing Verilog, using new open-source tools, and designing a chip
+                    for fabrication that would come back on an SOC development board. All of the submitted designs are
+                    required to be open-source, with the benefit of receiving 5 ASICs that are placed on a development
+                    board. eFabless produces their silicon wafers through the U.S. based foundry SkyWater, which takes
+                    advantage of 130 nm technology and a standard cell library to fabricate our project. Due to this, we
+                    are limited to this fabrication process and the standard cell library that is provided by SkyWater
+                    in their 130 nm product development kit. Each project submission is produced on a wafer that houses
+                    open-source designs from multiple different projects, enabling eFabless to produce small amounts of
+                    ASICs for each team at a reduced cost. While working with open-source tools and a limited production
+                    cycle has been difficult through eFabless, they are in a very unique and rare position by offering
+                    free digital ASIC fabrication, that is returned on an integrated development SOC board for us to
+                    test. <br> <br>
+
+                    &#8195;
+                    As of now, the first semester of senior design has been completed. During this time, we were able to
+                    determine our design plan with doctor Duwe, research more about the tools we will be using, and
+                    begin testing submodules in our design. Our team decided on a modular design with multiple different
+                    functions, including a clock gating module, digital signals processing filter, an external SPI
+                    interface, and more. The intent of choosing a modular design was to push the capabilities of the
+                    fabrication process at the SkyWater foundry, and see how many working pieces we could receive on our
+                    digital ASIC through working with eFabless. <br> <br>
 
                     <h4>Useful Links</h4>
                     <ul>
+                        <li><a href="http://sddec23-06.sd.ece.iastate.edu/">Senior Design Website</a></li>
+                        <li><a href="http://sddec2306.sd.ece.iastate.edu/reports/Design_Doc_Rev1_1.pdf">Design
+                                Document</a></li>
+                        <li><a href="http://sddec2306.sd.ece.iastate.edu/reports/Final_Presentation.pdf">Design
+                                Presentation</a></li>
                         <li><a href="https://efabless.com/">Efabless</a></li>
-                        <li><a href="https://caravel-user-project.readthedocs.io/en/latest/#quickstart">Open Source Tools</a></li>
-                        <li><a href="https://platform.efabless.com/projects/project_definition/1">Other Projects on Efabless</a></li>
+                        <li><a href="https://caravel-user-project.readthedocs.io/en/latest/#quickstart">Open
+                                SourceTools</a></li>
+                        <li><a href="https://platform.efabless.com/projects/project_definition/1">Other Projects on
+                                Efabless</a></li>
                     </ul>
+
+                </General>
 
                 </General>
 
