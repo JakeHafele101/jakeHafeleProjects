@@ -195,7 +195,7 @@
 }
 
 .contentBlock Header {
-  font-size: var(--text-size-general);
+  font-size: var(--text-size-header);
   text-align: center;
   padding: 20px;
   width: fit-content;
@@ -203,7 +203,7 @@
 }
 
 .contentBlock Header a {
-  font-size: var(--text-size-general);
+  font-size: var(--text-size-header);
   color: var(--text-color);
   background-color: var(--content-nav-color); /* Dark background color */
   text-align: center;
