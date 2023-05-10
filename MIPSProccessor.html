@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jake Hafele - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./style/myStyle.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="logo/logo.png">
+</head>
+
+<body class="body">
+
+    <div class="content">
+
+        <div class="titleBlock">
+            <a>Jake Hafele - Project Portfolio</a>
+        </div>
+
+        <div class="pageNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a href="">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="freshmanProject.html">Freshman Year</a>
+                        <a href="sophomoreProject.html">Sophomore Year</a>
+                        <a href="juniorProject.html">Junior Year</a>
+                        <a href="seniorProject.html">Senior Year</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="">Work Experience</a>
+                    <div class="dropdown-content">
+                        <a href="intern.html">Internships</a>
+                        <a href="TA.html">Teaching Assistant</a>
+                    </div>
+                </li>
+                <li><a href="reflection.html">Reflections</a></li>
+            </ul>
+        </div>
+
+        <div class="contentNav">
+            <ul>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Overview</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Single Cycle</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>5 Stage</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab4')"><a>FPGA Wrapper</a></li>
+            </ul>
+        </div>
+
+        <div class="contentBlock">
+            <div id="tab1" class="tabcontent">
+                <Header>
+                    Project Overview
+                </Header>
+
+                <General>
+                    During the Spring 2023 school semester, I took my first Computer Architecture class, CprE 381, at
+                    Iowa State University. In this class, we learned how to convert basic programs into assembly, design
+                    and analyze a MIPS processor, and compare different cache designs. In the lab portion of the class,
+                    we focused on implementing three different MIPS processors using VHDL and ModelSim, including a
+                    single cycle, 5 stage software pipeline, and 5 stage hardware pipeline processor. We started with
+                    the single cycle processor, and designed modules to increment the program counter, decode
+                    instructions, a register file, a sign extender, and an ALU. For the 5 stage processors, we broke
+                    apart each of these components into five separate stages, so that we could reduce the critical path
+                    latency and improve the maximum clock rate of our design. Near the end of the project, me and my
+                    partner had about a month of time left. Due to this, we decided to work on an extra credit project
+                    through the form of an FPGA wrapper with the Altera DE2 FPGA Development board. For more information
+                    on each of these designs, please look at the other tabs for this project. <br><br>
+
+                    &#8195;
+                    The goal of this project was to learn more about implementing specific components of a processor,
+                    and analyzing the performance tradeoffs between each of our three processors. For the software
+                    pipeline, we inserted NOP instructions to remove the risk of data and control dependencies within
+                    our pipeline. This led to an increased number of instructions, which made our overall execution time
+                    larger. As we implemented stalling in the pipeline registers of our hardware pipeline, we were able
+                    to reduce the number of instructions used, with the tradeoff of our CPI increasing from a near
+                    average of 1. After adding forwarding we were able to reduce the average CPI of our hardware
+                    pipeline while retaining a faster maximum clock frequency compared to our single cycle design. By
+                    analyzing these choices, we were able to make educated design decisions on how to improve our HW
+                    pipeline design, and yield an improved performance compared to our first two processor designs.
+                    <br><br>
+
+                    &#8195;
+                    Another goal of the project was to take ownership in our required work by taking it a step further
+                    with an extra credit project. As mentioned before, we had extra time near the end of the semester,
+                    so me and my partner Thomas worked on designing an FPGA wrapper for the Altera DE2 FPGA development
+                    board. With this, we were able to combine Verilog code from our previous digital design class, that
+                    I also was a teaching assistant for, and a mix of FPGA modules, from the previous library I
+                    designed, to make a robust wrapper. It was very satisfying to combine designs for clock dividers,
+                    button debouncers, and seven segment display interfaces that had already been extensively tested,
+                    and apply them to an interesting and challenging MIPS processor design. This was also a fantastic
+                    goal and achievement since we were finally able to see our processor run on real hardware, and not
+                    just the required simulations for the course and lab. For more information, please reference the
+                    FPGA tab on this page. <br><br>
+
+                    <h4>Design Reports</h4>
+                    <ul>
+                        <li><a href="./pdf/MIPSProcessor/Reports/Single Cycle Processor Design Report.pdf">Single Cycle Design Report</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Reports/5 Stage Processor Design Report.pdf">Multistage Pipeline Design Report</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Reports/Performance Analysis.pdf">Performance Analysis</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Reports/FPGA Synthesis Report.pdf">FPGA Wrapper Report</a></li>
+                    </ul>
+
+                    <h4>Controls Spreadsheets</h4>
+                    <ul>
+                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/Single Cycle Controls.xlsx">Single Cycle Controls</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/5 Stage SW Controls.xlsx">Software Pipeline Controls</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/5 Stage HW Controls.xlsx">Hardware Pipeline Controls</a></li>
+                    </ul>
+
+                </General>
+
+            </div>
+
+            <div id="tab2" class="tabcontent">
+                <Header>
+                    Single Cycle
+                </Header>
+
+                <General>
+
+                </General>
+
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    5 Stage Pipeline
+                </Header>
+
+                <General>
+
+                </General>
+
+            </div>
+
+            <div id="tab4" class="tabcontent">
+                <Header>
+                    FPGA Wrapper
+                </Header>
+
+                <General>
+
+                </General>
+
+            </div>
+
+            <div class="githubBox">
+                <a href="https://github.com/JakeHafele101/5-Stage-MIPS-Processor" target="_blank">Github Repo</a>
+            </div>
+
+        </div>
+
+        <div class=footer>
+            <a href="https://www.linkedin.com/in/jake-hafele-6754511aa/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCH2XCofc5pujRzQc8IvCcXg" target="_blank"
+                class="fa fa-youtube"></a>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="./script/myScript.js"></script>
+</body>
+
+</html>
