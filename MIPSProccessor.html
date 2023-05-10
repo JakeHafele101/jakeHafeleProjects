@@ -99,17 +99,22 @@
 
                     <h4>Design Reports</h4>
                     <ul>
-                        <li><a href="./pdf/MIPSProcessor/Reports/Single Cycle Processor Design Report.pdf">Single Cycle Design Report</a></li>
-                        <li><a href="./pdf/MIPSProcessor/Reports/5 Stage Processor Design Report.pdf">Multistage Pipeline Design Report</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Reports/Single Cycle Processor Design Report.pdf">Single Cycle
+                                Design Report</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Reports/5 Stage Processor Design Report.pdf">Multistage
+                                Pipeline Design Report</a></li>
                         <li><a href="./pdf/MIPSProcessor/Reports/Performance Analysis.pdf">Performance Analysis</a></li>
                         <li><a href="./pdf/MIPSProcessor/Reports/FPGA Synthesis Report.pdf">FPGA Wrapper Report</a></li>
                     </ul>
 
                     <h4>Controls Spreadsheets</h4>
                     <ul>
-                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/Single Cycle Controls.xlsx">Single Cycle Controls</a></li>
-                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/5 Stage SW Controls.xlsx">Software Pipeline Controls</a></li>
-                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/5 Stage HW Controls.xlsx">Hardware Pipeline Controls</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/Single Cycle Controls.xlsx">Single Cycle
+                                Controls</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/5 Stage SW Controls.xlsx">Software Pipeline
+                                Controls</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/5 Stage HW Controls.xlsx">Hardware Pipeline
+                                Controls</a></li>
                     </ul>
 
                 </General>
@@ -122,7 +127,105 @@
                 </Header>
 
                 <General>
+                    The first main project that we completed in CprE 381 was our MIPS single cycle processor. This
+                    processor would take 32-bit instructions, and was able to decode multiple R-type, I-type, and J-type
+                    instructions, including ALU arithmetic operations, conditional branches, unconditional branches, and
+                    memory operations. A full list of the 33 instructions and their respective decoded control signals
+                    can be seen below in the Single Cycle Controls spreadsheet. To implement this processor, we designed
+                    an ALU, register file, control decode, and sign extender. We were provided instantiated RAM modules
+                    to act as memory to interface with the provided testing toolflow. Using the open-source MIPS
+                    simulator MARS, and simulations from Quartus Prime and ModelSim, we would be able to load assembly
+                    instructions into our processor and verify expected behavior every clock cycle. <br><br>
 
+                    &#8195;
+                    Each of our designed modules were written with VHDL, with a combination of structural, dataflow, and
+                    behavioral models. All of our code was managed with revision control by using Git, and we installed
+                    a VHDL plugin to use with VS Code as our text editor. As mentioned before, we used the open-source
+                    MIPS ISA Simulator MARS to simulate and test the assembly programs we would design to later test on
+                    our single cycle processor. <br><br>
+
+                    &#8195;
+                    During the previous labs before the project, we were tasked with implementing a register file and
+                    basic ALU. The ALU could take an add/sub control, and we also included a 32 bit 2x1 multiplexor to
+                    choose between the contents of a second register or an extended immediate value, to dictate
+                    different ALU instructions between R-type and I-type. Since these were completed already, the main
+                    tasks in the single cycle processor project were to create a more integrated ALU, an instruction
+                    decode module, and a program incrementor module. The modules that I worked on were both the
+                    instruction decode and program counter incrementor modules, while my teammate Thomas worked on
+                    including additional functionality for our ALU, based on the added instructions. <br><br>
+
+                    &#8195;
+                    The first module I worked on designing was our instruction decode module. This module would take in
+                    the upper 6 bits of each instruction fetched from instruction memory to determine what instruction
+                    we would run. If the opcode was a 0, we also were required to read in the function of the
+                    instruction, which was the 6 lowest bits of R-type instructions. Finally, we needed to read the RT
+                    address to identify certain branch instructions, including bgez and bltz. By using a process
+                    statement with these three inputs in the sensitivity list, I was able to create a branching case
+                    statement based on the opcode, then potentially reading the function or RT address depending on the
+                    opcode. Once we knew what the decoded instruction was, we were able to properly determine the
+                    control signals for each instruction for the ALU, data memory, and register file. The specific
+                    controls listed were created in a spreadsheet to manage better, and can be seen at the bottom of
+                    this page. Since I designed this module, it was my partner Thomas’s responsibility to test it with a
+                    VHDL testbench. Expected outputs and waveform results can be seen in the Single Cycle Report below.
+                    <br><br>
+
+                    &#8195;
+                    The next module I designed was the fetch module, to appropriately update the program counter for a
+                    following instruction, conditional branches, and unconditional branches. We began by designing a
+                    register to hold the program counter, which was a 32 bit value that could be asynchronously reset
+                    and included a write enable bit. The fetch module would take in an input from the decoded control
+                    module to multiplex between a PC + 4 address, branch address, or jump address, which were all
+                    calculated separately based on the requirements of the MIPS ISA. Other inputs included the jump
+                    address and branch determination to handle both unconditional and conditional branches. As before,
+                    Thomas was responsible with testing this module. <br><br>
+
+                    &#8195;
+                    After Thomas was done completing the ALU, it was my responsibility to test it! This was an awesome
+                    opportunity to test something that I had not designed, which I got lots of practice from on my co-op
+                    as a Systems Engineer at Collins Aerospace. Our ALU would take in two inputs to use as arithmetic
+                    operands, which could be received either from our register file or as a 16 bit extended immediate
+                    value. Depending on what type of ALU instruction we had, the immediate could be extended as either
+                    sign-extended or zero-extended. For example, ADDI instructions were sign-extended but logic
+                    instructions like ANDI were zero-extended. We used more control signals to act as a select line for
+                    a multiplexer between each of our ALU submodules to dictate the correct output. Each unit under test
+                    inside of the ALU included branch determination, an adder, logic operations, and a shift module.
+                    Each of these modules earned their own testbench, which included error flags and automated error
+                    checking based on the inputs and expected outputs. We also were able to create a custom .DO file for
+                    ModelSim to automate compiling our source files, adding waveforms, and fitting the screen to them
+                    all. We even figured out how to color code them to make viewing the waveforms easier for our TA.
+                    <br><br>
+
+                    &#8195;
+                    After all of our individual modules were tested, we were ready to wire them up and instantiate them
+                    together in a top-level processor module. We would include each of our designed modules from the
+                    previous sections and in our first 2 labs, alongside the provided memory module for the instruction
+                    and data memory. The largest challenge was keeping track of all of the internal signals, since this
+                    was the most involved digital design module me and my partner had designed up to now. To help with
+                    this, we designed a top-level schematic connecting each module, and specifically labeled each signal
+                    on that schematic. This was especially useful since we could then reference this schematic to
+                    determine what signals were left to connect. After connecting our processor, we were ready to begin
+                    simulating assembly programs. <br><br>
+
+                    &#8195;
+                    To test our processor, we would simulate assembly programs to run code for a Fibonacci sequence of
+                    bubble sort. Alongside this, we were provided unit cases and other tests to verify the robustness of
+                    our design. During all of these tests, we were able to debug and verify the functionality of ALU
+                    operations, control flow, and memory operations. It was crucial to ensure that instructions such as
+                    JAL and JR would function correctly, since instructions like these required additional hardware to
+                    multiplex inputs to the register file. It was also especially helpful to have another custom DO file
+                    to automatically load the generated waveform from our toolflow and add in all of the relevant
+                    waveforms, including but not limited to the target read and write registers, ALU output, and program
+                    counter. Connecting and verifying each of these modules gave a wholistic view on computer
+                    architecture and allowed for more complexity that I was looking for in my first digital design
+                    class. Next, we were ready to begin designing our first multistage pipelined design. <br><br>
+
+                    <h4>References</h4>
+                    <ul>
+                        <li><a href="./pdf/MIPSProcessor/Reports/Single Cycle Processor Design Report.pdf">Single Cycle
+                                Design Report</a></li>
+                        <li><a href="./pdf/MIPSProcessor/Controls_Sheets/Single Cycle Controls.xlsx">Single Cycle
+                                Controls</a></li>
+                    </ul>
                 </General>
 
             </div>
