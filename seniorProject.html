@@ -47,11 +47,23 @@
                 <li class="tablinks" onclick="openTab(event, 'tab1')"><a>FPGA Design</a></li>
                 <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Digital ASIC Fabrication</a>
                 <li class="tablinks" onclick="openTab(event, 'tab3')"><a>MIPS Proccessor</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab4')"><a>FPGA OLED Display</a></li>
             </ul>
         </div>
 
         <div class="contentBlock">
             <div id="tab1" class="tabcontent">
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/wo8B2E-kzvY"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
                 <Header>
                     <a href="IntroFPGA.html">FPGA Intro (Click here for more info)</a>
                 </Header>
@@ -85,15 +97,6 @@
                     experiments. If you are interested in the modules and testbenches I have designed, feel free to
                     access my GitHub repository below! <br> <br>
                 </General>
-
-                <div class="videoBlock">
-                    <div class="videoWrapper">
-                        <iframe width="750" height="422" src="https://www.youtube.com/embed/wo8B2E-kzvY"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
 
             </div>
 
@@ -159,6 +162,17 @@
             </div>
 
             <div id="tab3" class="tabcontent">
+
+                <div class="videoBlock">
+                    <div class="videoWrapper">
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/sWxA-6_HusQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
                 <Header>
                     <a href="MIPSProccessor.html">MIPS Proccessor</a>
                 </Header>
@@ -220,15 +234,86 @@
                     
                 </General>
 
+            </div>
+
+            <div id="tab4" class="tabcontent">
+
                 <div class="videoBlock">
                     <div class="videoWrapper">
-                        <iframe width="750" height="422" src="https://www.youtube.com/embed/sWxA-6_HusQ"
+                        <iframe width="750" height="422" src="https://www.youtube.com/embed/CGrQW_aL_QQ"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
                 </div>
+        
 
+                <Header>
+                    <a href="OLEDDisplayFPGA.html">FPGA OLED Controller</a>
+                </Header>
+
+                <General>
+                    Over the Summer of 2023, I was looking for a project that could help me practice reading datasheets, implement more complex state machines, and provide a useful module to help me take advantage of other FPGA projects. After spending some time thinking of ideas, I landed on using Digilent’s 96x64 OLEDrgb display PMOD. This display uses the SSD1331 OLED controller, and the PMOD is wired to be used as a write only SPI interface.  <br> <br>
+
+                    &#8195;
+                    To utilize this PMOD, my goal was to create an array of 8x8 pixel ASCII characters, that could be stored or updated as ASCII values. This could be converted from binary, hex, bcd, or scanned through something like UART. It would be very straightforward to convert the values into ASCII, as long as I could keep that ASCII array as a top level input and treat the OLED controller as a hands off display after it is tested. I would also like to be able to use inputs to change the color of the text and background, to make the displays more dynamic based on different states of the logic modules it works with.  <br> <br>
+
+                    &#8195;
+                    As of now, the first semester of senior design has been completed. During this time, we were able to
+                    determine our design plan with doctor Duwe, research more about the tools we will be using, and
+                    begin testing submodules in our design. Our team decided on a modular design with multiple different
+                    functions, including a clock gating module, digital signals processing filter, an external SPI
+                    interface, and more. The intent of choosing a modular design was to push the capabilities of the
+                    fabrication process at the SkyWater foundry, and see how many working pieces we could receive on our
+                    digital ASIC through working with eFabless. <br> <br>
+
+                    <h4>The following requirements are to be followed to interface with the OLED controller:</h4>
+                    <ul>
+                        <li><a>The Master driven clock SCK shall have a frequency less than 6.66 MHz</a></li>
+                        <li><a>The Chip Select pin CS to the OLED slave controller must be pulled low before transmission</a></li>
+                        <li><a>Data on the MOSI line will be read on the positive edge of SCK on the OLED Controller</a></li>
+                        <li><a>A command code will force D/C to 0, while a data byte will force D/C to 1</a></li>
+                        <li><a>VCCEN and PMODEN must be set to 1 after an appropriate delay to turn on the OLED controller</a></li>
+                        <li><a>The command code 0xAF must be sent to power ON the display, followed by a 100ms wait</a></li>
+                    </ul> <br>
+
+                    &#8195;
+                    The above requirements are determined based on the reference manual for the SSD1331 OLED display controller and the schematic for the OLEDrgb breakout PMOD from Digilent. This would dictate the turn on sequence for the OLED controller, and lead me to designing a standard write only SPI module, which would handle driving the CS and MOSI pins.  <br><br>
+
+                    <h4>The following requirements were determined by myself to achieve the goal of a fully controllable ASCII display:</h4>
+                    <ul>
+                        <li><a>The full range of the display will be utilized, being 96 columns and 64 rows of pixels</a></li>
+                        <li><a>Each ASCII character will have 8 columns and 8 rows, or 64 total pixels</a></li>
+                        <li><a>The ASCII values will be stored as ASCII types, and converted to the 8x8 bit array through a case statement</a></li>
+                        <li><a>The ASCII values will be displayed one at a time, modifying the start and end addresses to display each 8x8 bit block in succession</a></li>
+                        <li><a>The ASCII characters will be displayed row by row, starting at column position 0 and incrementing to the right</a></li>
+                        <li><a>The ASCII text shall be one set color, and the ASCII background shall be another color, as inputs to the OLED Interface controller</a></li>
+                    </ul> <br>
+
+                    <h4>The following set of modules were planned to be implemented, to achieve a fully customizable ASCII display in real time:</h4>
+                    <ul>
+                        <li><a>Nbit_MOSI_SPI: A shift register will handle transmitting 1 byte of data over MOSI and driving CS, on the negative edge of SCK</a></li>
+                        <li><a>Nbit_MOSI_SPI_Buffer: Another module will load multiple bytes of data and D/C bits to send strings of commands in a row, updating on the positive edge of SCK</a></li>
+                        <li><a>OLED_interface: An OLED Controller module will be created to handle the turn on, turn off, and display states by writing to the byte buffer</a></li>
+                        <li><a>Ascii_font_8x8: Decodes 1 byte ASCII type into 8x8 bit array of pixels, with MSB being the top right pixel, LSB being the bottom left pixel, row by row</a></li>
+                    </ul> <br>
+
+                    <h4>References</h4>
+                    <ul>
+                        <li><a href="./pdf/FPGA OLED Interface/Reference Sheets/SSD1331_1.2_reference.pdf">SSD1331 OLED Controller</a></li>
+                        <li><a href="./pdf/FPGA OLED Interface/Reference Sheets/OLED_PMOD_SCHEM.pdf">Digilent OLED PMOD Schematic</a></li>
+                        <li><a href="./pdf/FPGA OLED Interface/Reference Sheets/OLED_PMOD_REF.pdf">Digilent OLED PMOD Reference</a></li>
+                        <li><a href="./pdf/FPGA OLED Interface/Reference Sheets/Display_Datasheet.pdf">OLED Display</a></li>
+        
+                    </ul> <br>
+        
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="./pdf/FPGA OLED Interface/OLED_Interface_Notes.pdf">Project Notes</a></li>
+                        <li><a href="./pdf/FPGA OLED Interface/OLED_Interface_Work.pdf">Project Work</a></li>
+                    </ul> <br>
+                    
+                </General>
 
             </div>
 
