@@ -44,16 +44,53 @@
 
         <div class="contentNav">
             <ul>
-                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Collins Aerospace</a></li>
-                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Workiva</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Garmin</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Collins Aerospace</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Workiva</a></li>
             </ul>
         </div>
 
         <div class="contentBlock">
+
             <div id="tab1" class="tabcontent">
                 <Header>
+                    Design Engineer Intern - Garmin<br> <br>
+                    May 2023 to August 2023
+                </Header>
+
+                <General>
+
+                    In my final internship, I traveled to Olathe, Kansas to spend my Summer at Garmin headquarters. During this three-month period, I had the opportunity to work as a design engineer, working on both a prototype power supply design and an FPGA test interface in the Avionics business unit. During the first two months, while I was designing a power supply design, I was tasked with determining load shedding estimations and decomposing power and lightning surge DO-160 requirements. During the last month, I was able to work with the FPGA team in Avionics, and develop a new design for a QSPI test interface, that would verify a FPGA image on another piece of hardware. To do this, I updated the QSPI module to interface with a Read/Write standard, from an existing AXI Lite interface. This design was then synthesized and verified on an Artix-7 FPGA, viewable on an oscilloscope.  
+
+                    <h4>Tasks Performed</h4>
+                    <ul>
+                        <li>Updated a QSPI entity to communicate with a CPU using a defined Read/Write interface, from an AXI Lite interface</li>
+                        <li>Designed a Bus Functional Model using VHDL to read and write QSPI transactions with FPGA interface</li>
+                        <li>Defined pinout and timing constraints in Vivado to synthesize Artix-7 Xilinx FPGA</li>
+                        <li>Simulated new and existing circuit designs in LTSpice for prototype power supply design</li>
+                        <li>Designed prototype power supply design for transponder using Cadence Allegro</li>
+                    </ul>
+
+                    <h4>Skills/Tools Developed</h4>
+                    <ul>
+                        <li>FPGA Synthesis using Vivado</li>
+                        <li>Loading FPGA image in Quartus Prime</li>
+                        <li>Simulating testbench in Active-HDL</li>
+                        <li>Revision Control using Git for FPGA Codebase</li>
+                        <li>Developed QSPI Bus Functional Model and Testbench in VHDL</li>
+                        <li>Schematic Capture and PCB Layout in Cadence System Capture/Allegro</li>
+                        <li>Circuit Simulations in LTSpice</li>
+                    </ul>
+
+                </General>
+
+            </div>
+
+
+            <div id="tab2" class="tabcontent">
+                <Header>
                     Systems Engineer Intern - Collins Aerospace<br> <br>
-                    May 2021 to December 2022
+                    May 2022 to December 2022
                 </Header>
 
                 <General>
@@ -93,7 +130,7 @@
 
             </div>
 
-            <div id="tab2" class="tabcontent">
+            <div id="tab3" class="tabcontent">
                 <Header>
                     Software Engineer Intern - Workiva<br> <br>
                     May 2021 to August 2021
