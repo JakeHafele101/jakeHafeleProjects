@@ -45,6 +45,7 @@
             <ul>
                 <li class="tablinks" onclick="openTab(event, 'tab1')"><a>Overview</a></li>
                 <li class="tablinks" onclick="openTab(event, 'tab2')"><a>Semester 1</a></li>
+                <li class="tablinks" onclick="openTab(event, 'tab3')"><a>Semester 2</a></li>
             </ul>
         </div>
 
@@ -53,6 +54,8 @@
                 <Header>
                     Project Overview
                 </Header>
+
+                <img class=picture_centered src="./img/senior_design/Senior_Design_Layout.JPG" width="50%" height="50%">
 
                 <General>
                     During the Spring 2023 Semester, I began my senior design project at Iowa State University. Senior
@@ -86,21 +89,20 @@
                     test. <br> <br>
 
                     &#8195;
-                    As of now, the first semester of senior design has been completed. During this time, we were able to
-                    determine our design plan with doctor Duwe, research more about the tools we will be using, and
-                    begin testing submodules in our design. Our team decided on a modular design with multiple different
-                    functions, including a clock gating module, digital signals processing filter, an external SPI
-                    interface, and more. The intent of choosing a modular design was to push the capabilities of the
-                    fabrication process at the SkyWater foundry, and see how many working pieces we could receive on our
-                    digital ASIC through working with eFabless. <br> <br>
+                    As of December 2023, the project has been completed, and has passed the precheck so that it is ready for submission in the next Multi Project Wafer submission at the Skywater foundry with the 130nm process and open-source PDK. I learned a lot about this process both from utilizing rapidly evolving open-source tools, and working on varying parts of the ASIC design process, such as functional design, verification, and place and route all at different times! This project was extremely valuable and was a great capstone for my senior year of school at Iowa State University.  <br> <br>
+
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="https://sddec23-06.sd.ece.iastate.edu/reports/492/Design_Doc_Rev2_1.pdf">Design Document</a></li>
+                        <li><a href="https://sddec23-06.sd.ece.iastate.edu/reports/492/Presentation.pdf">Design Presentation</a></li>
+                        <li><a href="https://sddec23-06.sd.ece.iastate.edu/reports/492/Poster.pdf">Poster</a></li>
+                        <li><a href="https://sddec23-06.sd.ece.iastate.edu/reports/492/BringUpPlan.pdf">Bringup Plan</a></li>
+                        <li><a href="https://sddec23-06.sd.ece.iastate.edu/reports/492/UserGuide.pdf">Caravel User Guide</a></li>
+                    </ul>
 
                     <h4>Useful Links</h4>
                     <ul>
                         <li><a href="http://sddec23-06.sd.ece.iastate.edu/">Senior Design Website</a></li>
-                        <li><a href="http://sddec2306.sd.ece.iastate.edu/reports/Design_Doc_Rev1_1.pdf">Design
-                                Document</a></li>
-                        <li><a href="http://sddec2306.sd.ece.iastate.edu/reports/Final_Presentation.pdf">Design
-                                Presentation</a></li>
                         <li><a href="https://efabless.com/">Efabless</a></li>
                         <li><a href="https://caravel-user-project.readthedocs.io/en/latest/#quickstart">Open
                                 SourceTools</a></li>
@@ -148,6 +150,26 @@
 
                 </General>
 
+            </div>
+
+            <div id="tab3" class="tabcontent">
+                <Header>
+                    Semester 2
+                </Header>
+
+                <General>
+                    In the second semester of senior design, we were ready to implement our design using open-source tools after we took a semester to design our system and test plan. For me, this involved designing the external SPI interface and interfacing with two other modules in our system, the Wishbone Test Module and the DSP Accelerator module. I was required to design and verify functional Verilog modules and testbenches to guarantee that these two modules would interface with the SPI communication bus as expected. Multiple waveform results can be seen in the Appendix of our design document with functional verification waveform results. When this was complete, we integrated all of the other module designs and the SPI interface into the top-level wrapper design, which included custom layout cells using Magic, functional Verilog designs, and pre-hardened open source SRAM modules that would work functionally with the 130nm Skywater fabrication process for this open-source, sponsored project. <br><br>
+
+                    &#8195;
+                    The largest roadblock in the second semester of senior design was the synthesis and place and route steps that were ran while utilizing OpenROAD, the open-source tool that would combine Verilog synthesis, macro placement, place and route, and STA all in one tool flow. We had multiple issues synthesizing Verilog and getting power pins to connect to the premade macros such as the prehardened SRAM or custom 2 input NAND cell that we created utilizing Magic. This was critical to solve because without fixing LVS issues which flagged that our power pins were not hooked up, we would not be able to power parts of our design for validation post-fabrication. We solved most of these issues by looking on the public Slack forum for eFabless and online at other projects, which was available to us due to the open-source nature of the project. <br><br>
+
+                    &#8195;
+                    Eventually we were able to get all of our individual design modules hardened in the top-level wrapper, in which we were able to verify and view each of these design modules together using another open-source tool, KLayout, which can be utilized to view GDSII files after we completed place and route with the OpenROAD toolchain. It was very gratifying to see all of the hours and work laid out in front of us, which will eventually be fabricated into a real chip for free! After our top level design had hardened and passed DRC and LVS checks, we had to run the eFabless submission precheck tool, which was a separate git repository which would cross check multiple aspects of our design to verify that it was ready to submit for the next open-source MPW Shuttle submission. This precheck included multiple analysis points such as DRC and LVS checks to verify our layout and netlists matched, alongside other more basic tests such as verifying that our README had been updated and our source Verilog code contained a unique design that was not just a copy of the example code. After passing precheck, we had satisfied the first deliverable requirement which was to submit a functional design to our client/advisor which would pass precheck for a submission ready design. <br><br>
+
+                    &#8195;
+                    After our design passed precheck, our focus switched mainly to documenting all of our work in the form of a user guide, which overviewed our design process utilizing all of the open-source tools throughout the year we spent on our project. We also created a bringup plan, which a future team can utilize to validate our design after our chip is fabricated, packaged, and delivered after another MPW shuttle submission is opened, expected as of now April 2024. Finally, we created a poster, presentation, and updated design document for a industry panel presentation, where we overviewed our implementation and testing procedures as outlined above. <br><br>
+
+                </General>
             </div>
 
         </div>

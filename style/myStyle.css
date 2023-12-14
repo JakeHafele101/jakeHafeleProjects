@@ -322,6 +322,13 @@
   height: 100%;
 }
 
+.picture_centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:20px;
+}
+
 @media screen and (max-width: 1024px){
 
   .tetrisGame{
